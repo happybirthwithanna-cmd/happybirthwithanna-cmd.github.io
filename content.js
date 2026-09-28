@@ -42,6 +42,8 @@ window.SITE = {
       skip: "Skip to content",
       langName: "Русский",
       footerAbout: "Doula support, antenatal courses, postnatal care, baby massage and Bach therapy across Kent, Medway and London — in English and Russian.",
+      partnersTitle: "Where you can find me",
+      partnersLead: "The organisations I belong to, trained with and work alongside. Each link opens their own website.",
       footerExplore: "Explore",
       footerContact: "Contact",
       rights: "Happy Birth Doula"
@@ -49,7 +51,7 @@ window.SITE = {
 
     nav: {
       home: "Home", pregnancy: "Pregnancy", postnatal: "After birth", children: "Children",
-      adults: "Adults", about: "About", team: "Team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas"
+      adults: "Adults", about: "About", team: "Team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas", payment: "Payment"
     },
 
     meta: {
@@ -61,6 +63,7 @@ window.SITE = {
     about: { title: "About Anna Pifko – Doula UK Mentor, Kent & London", description: "Doula since 2016, Doula UK mentor, mother of three, baby massage instructor and Bach practitioner, supporting families in English and Russian." },
       team: { title: "Trusted Pregnancy & Postnatal Specialists | Kent & London", description: "Osteopath, psychologist, homeopath, rehabilitation therapist and midwives Anna Pifko recommends to families — with client discounts." },
       reviews: { title: "Doula Reviews Kent & London | Happy Birth with Anna", description: "Real reviews from families Anna supported through hospital births, home births, postnatal recovery and baby massage in Kent and London." },
+      payment: { title: "Payment Options | Happy Birth with Anna", description: "How to pay for doula support: secure Revolut payment links, card or bank transfer, deposit and balance, instalments, and your cancellation rights." },
       mentoring: { title: "Doula UK Mentor | Mentoring for New Doulas", description: "Doula UK recognised mentoring for birth and postnatal doulas: debriefs, reflection and the recognition process. £300 birth, £300 postnatal, £600 both." },
       contact: { title: "Contact a Doula in Kent & Medway | Free Consultation", description: "Book a free 45-minute online meeting with doula Anna Pifko, or message on WhatsApp or Telegram. Kent, Medway and London." }
     },
@@ -348,6 +351,40 @@ window.SITE = {
       leaveAlt: "or send it by email"
     },
 
+    payment: {
+      eyebrow: "Payment",
+      h1: "Payment options",
+      lead: "How payment works, what secures your date and when the balance is due. If anything here is unclear, please ask before you book — nothing is agreed until it is agreed in writing.",
+      howTitle: "How to pay",
+      how: [
+        "I send a secure payment link from my Revolut business account, by email or by message. You open the link and pay the way that suits you — debit or credit card, Apple Pay, Google Pay, or a bank transfer.",
+        "You do not need a Revolut account to use the link, and there is no booking fee or card surcharge. The price you are quoted is the amount you pay.",
+        "If you would rather pay by direct bank transfer, tell me and I will send the account details separately. I never ask for card details by phone, email or message, and you should never send them to me."
+      ],
+      currencyTitle: "Currency and receipts",
+      currency: [
+        "All prices are quoted and charged in pounds sterling (GBP).",
+        "You receive a written invoice before each payment and a receipt after it. Keep these — some employers and health insurers, including Carrot, will reimburse doula support against them."
+      ],
+      depositTitle: "Deposit and balance",
+      deposit: [
+        "For birth support, a deposit secures your date and takes me off the market for the weeks around it. The balance is due before your baby is due.",
+        "The exact deposit, the balance and the dates they fall are set out in your service agreement, which you receive and sign before any money changes hands.",
+        "Courses, single sessions and postnatal hours are usually paid in full when they are booked."
+      ],
+      plansTitle: "Paying in instalments",
+      plansText: "If paying in one or two amounts is difficult, say so at the consultation. I would far rather arrange a schedule that works than have cost be the reason a family goes without support.",
+      cancelTitle: "Changes, cancellations and refunds",
+      cancel: [
+        "Birth is unpredictable, and so is life. What happens if you cancel, if I am unable to attend, or if your plans change is written into the service agreement in plain language, and I will talk you through it before you sign.",
+        "Your statutory rights as a consumer are not affected by anything on this page or in the agreement."
+      ],
+      questionsTitle: "Questions about money are welcome",
+      questionsText: "Cost matters, and asking about it is not awkward. Bring it to the free consultation and we will be straightforward with each other.",
+      ctaTitle: "Still deciding?",
+      ctaText: "Book a free 45-minute meeting. There is no charge and no obligation to book anything afterwards."
+    },
+
     contact: {
       eyebrow: "Contact",
       h1: "Contact a doula in Kent & Medway",
@@ -396,6 +433,8 @@ window.SITE = {
       skip: "Перейти к содержанию",
       langName: "English",
       footerAbout: "Сопровождение беременности и родов, курсы подготовки к родам, послеродовая поддержка, детский массаж и терапия Баха в Кенте, Медуэе и Лондоне — на русском и английском.",
+      partnersTitle: "Где меня можно найти",
+      partnersLead: "Организации, в которых я состою, у которых училась и с которыми работаю. Каждая ссылка ведёт на их сайт.",
       footerExplore: "Разделы",
       footerContact: "Контакты",
       rights: "Happy Birth Doula"
@@ -403,7 +442,7 @@ window.SITE = {
 
     nav: {
       home: "Главная", pregnancy: "Беременность", postnatal: "После родов", children: "Детям",
-      adults: "Взрослым", about: "Обо мне", team: "Специалисты", reviews: "Отзывы", contact: "Контакты", mentoring: "Доулам"
+      adults: "Взрослым", about: "Обо мне", team: "Специалисты", reviews: "Отзывы", contact: "Контакты", mentoring: "Доулам", payment: "Оплата"
     },
 
     meta: {
@@ -415,6 +454,7 @@ window.SITE = {
     about: { title: "Анна Пифко — доула и ментор Doula UK, Англия", description: "Доула с 2016 года, ментор Doula UK, мама троих детей, инструктор детского массажа и практик цветов Баха. Поддержка на русском языке." },
       team: { title: "Проверенные специалисты для беременных — Англия", description: "Остеопат, психолог, гомеопат, реабилитолог и акушерки, которых рекомендует Анна Пифко, — со скидками для клиентов." },
       reviews: { title: "Отзывы о доуле Анне Пифко — Кент и Лондон", description: "Настоящие отзывы семей о родах в роддоме и дома, восстановлении после родов и детском массаже с доулой Анной Пифко." },
+      payment: { title: "Способы оплаты — Анна Пифко, доула", description: "Как оплатить сопровождение доулы: защищённые ссылки Revolut, карта или банковский перевод, предоплата и остаток, оплата частями, права при отмене." },
       mentoring: { title: "Ментор Doula UK — менторство для новых доул", description: "Менторство Doula UK для доул в родах и послеродовых: дебрифинг, рефлексия и путь к признанию. £300 роды, £300 послеродовое, £600 оба." },
       contact: { title: "Связаться с доулой — бесплатная консультация", description: "Запишись на бесплатную онлайн-встречу на 45 минут с доулой Анной Пифко или напиши в WhatsApp или Telegram. Кент, Медуэй, Лондон." }
     },
@@ -702,6 +742,40 @@ window.SITE = {
       leaveAlt: "или отправить по почте"
     },
 
+    payment: {
+      eyebrow: "Оплата",
+      h1: "Способы оплаты",
+      lead: "Как проходит оплата, что закрепляет за тобой дату и когда вносится остаток. Если что-то здесь непонятно — спроси до записи: договорённость вступает в силу только после письменного согласования.",
+      howTitle: "Как оплатить",
+      how: [
+        "Я отправляю защищённую ссылку на оплату со своего бизнес-счёта Revolut — по электронной почте или в мессенджере. Ты открываешь ссылку и платишь удобным способом: дебетовой или кредитной картой, через Apple Pay, Google Pay либо банковским переводом.",
+        "Счёт в Revolut для этого не нужен. Комиссии за бронирование и надбавки за оплату картой нет: ты платишь ровно ту сумму, которая была названа.",
+        "Если удобнее обычный банковский перевод — скажи, и я пришлю реквизиты отдельно. Данные карты я никогда не запрашиваю ни по телефону, ни в письмах, ни в сообщениях, и присылать их мне не нужно."
+      ],
+      currencyTitle: "Валюта и документы",
+      currency: [
+        "Все цены указываются и списываются в фунтах стерлингов (GBP).",
+        "Перед каждой оплатой ты получаешь счёт, после — подтверждение об оплате. Их стоит сохранять: некоторые работодатели и страховые компании, включая Carrot, компенсируют услуги доулы по этим документам."
+      ],
+      depositTitle: "Предоплата и остаток",
+      deposit: [
+        "При сопровождении родов предоплата закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Остаток вносится до предполагаемой даты родов.",
+        "Точные суммы предоплаты и остатка, а также сроки их внесения прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
+        "Курсы, разовые встречи и послеродовые часы обычно оплачиваются полностью при записи."
+      ],
+      plansTitle: "Оплата частями",
+      plansText: "Если внести сумму одним или двумя платежами тяжело — скажи об этом на консультации. Мне гораздо важнее подобрать удобный график, чем оставить семью без поддержки из-за денег.",
+      cancelTitle: "Изменения, отмена и возврат",
+      cancel: [
+        "Роды непредсказуемы, и жизнь тоже. Что происходит при отмене с твоей стороны, при моей невозможности приехать или при изменении планов, написано в договоре простым языком, и перед подписанием я всё объясню.",
+        "Ничто на этой странице и в договоре не ограничивает твои права потребителя, установленные законом."
+      ],
+      questionsTitle: "О деньгах спрашивать нормально",
+      questionsText: "Стоимость важна, и обсуждать её не неловко. Приноси этот вопрос на бесплатную консультацию — поговорим честно.",
+      ctaTitle: "Ещё думаешь?",
+      ctaText: "Запишись на бесплатную встречу на 45 минут. Она ничего не стоит и ни к чему не обязывает."
+    },
+
     contact: {
       eyebrow: "Контакты",
       h1: "Связаться с доулой в Кенте и Медуэе",
@@ -734,6 +808,38 @@ window.SITE = {
    Each article has an English (en) and/or Russian (ru) version.
    To add one: copy a block, give it a new short "slug" (the web address),
    write the text. Lines starting with "## " become headings, lines starting with "- " become bullet points. */
+/* =====================================================================
+   PARTNERS — organisations Anna belongs to, trained with or works with.
+   To show a logo, put the image file in the images/ folder and write its
+   name in "logo". Leave logo as "" and the name is shown as text instead.
+   Only use a logo you have permission to use.
+   ===================================================================== */
+window.SITE.partners = [
+  { name: "Doula UK", url: "https://doula.org.uk/doula/anna-pifko/", logo: "",
+    en: "My professional body. Recognised doula and recognised mentor — my profile is on their register.",
+    ru: "Моя профессиональная ассоциация. Признанная доула и признанный ментор — мой профиль есть в их реестре." },
+
+  { name: "Red Tent Doulas", url: "https://redtentdoulas.co.uk/", logo: "",
+    en: "Where I trained as a doula.",
+    ru: "Здесь я училась на доулу." },
+
+  { name: "Carrot", url: "https://www.get-carrot.com/", logo: "",
+    en: "Carrot approved. If your employer offers Carrot benefits, doula support with me may be reimbursed.",
+    ru: "Carrot approved. Если работодатель предоставляет программу Carrot, сопровождение доулы может быть компенсировано." },
+
+  { name: "IAIM", url: "https://www.iaim.org.uk/", logo: "",
+    en: "International Association of Infant Massage — my baby massage instructor qualification.",
+    ru: "Международная ассоциация детского массажа — по её программе я сертифицирована как инструктор." },
+
+  { name: "Healing Herbs", url: "https://www.healingherbs.co.uk/", logo: "",
+    en: "The Bach flower essences I use, made in Herefordshire to Dr Bach’s original method.",
+    ru: "Эссенции Баха, с которыми я работаю, — производятся в Херефордшире по оригинальному методу доктора Баха." },
+
+  { name: "Doula.ru", url: "https://doula.ru/", logo: "",
+    en: "The Russian-speaking doula community I am part of.",
+    ru: "Русскоязычное сообщество доул, частью которого я являюсь." }
+];
+
 window.SITE.articles = [
   {
     slug: "what-does-a-doula-do",

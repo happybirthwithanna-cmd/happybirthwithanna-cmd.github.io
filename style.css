@@ -320,3 +320,13 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .philo .wrap{position:relative}
 .philo p:first-of-type{font-size:19px}
 .carrot{border-left:2px solid var(--rose);padding-left:16px;max-width:52em}
+
+/* ---- partners ---- */
+.partners{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.partners .pt a{height:100%;display:flex;flex-direction:column;gap:8px;padding:20px 18px;background:#fff;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);transition:border-color .15s, transform .15s}
+.partners .pt a:hover{border-color:var(--clay);transform:translateY(-2px)}
+.pt-name{font-size:18px;font-weight:500;color:var(--rose-d)}
+.pt-logo{max-height:46px;max-width:150px;width:auto;height:auto;object-fit:contain;align-self:flex-start}
+.pt-text{font-size:14.5px;line-height:1.55;color:var(--muted)}
+@media (max-width:900px){ .partners{grid-template-columns:1fr 1fr} }
+@media (max-width:540px){ .partners{grid-template-columns:1fr} }

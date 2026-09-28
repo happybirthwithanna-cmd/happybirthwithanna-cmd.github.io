@@ -13,8 +13,9 @@ const win = {};
 new Function("window", fs.readFileSync(path.join(ROOT, "content.js"), "utf8"))(win);
 const SITE = win.SITE, S = SITE.settings, D = S.domain;
 
-const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "contact"];
+const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "payment", "contact"];
 const NAV = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "reviews", "articles", "contact"];
+const PARTNERS = SITE.partners || [];
 const ARTICLES = SITE.articles || [];
 const LANDINGS = SITE.landings || [];
 const landIn = (lang) => LANDINGS.filter((l) => l[lang]);
@@ -64,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "contact"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "contact"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -80,6 +81,22 @@ function footer(lang) {
   </div>
   <div class="wrap small muted">© ${new Date().getFullYear()} ${esc(T.ui.rights)}</div>
 </footer>`;
+}
+
+function partnersBand(lang) {
+  if (!PARTNERS.length) return "";
+  const T = SITE[lang];
+  const items = PARTNERS.map((p) => {
+    const hasLogo = p.logo && fs.existsSync(path.join(ROOT, "images", p.logo));
+    const mark = hasLogo
+      ? `<img class="pt-logo" src="${asset(lang, "images/" + p.logo)}" alt="${esc(p.name)}" loading="lazy">`
+      : `<span class="pt-name">${esc(p.name)}</span>`;
+    return `<li class="pt"><a href="${p.url}" target="_blank" rel="noopener">${mark}<span class="pt-text">${esc(p[lang] || "")}</span></a></li>`;
+  }).join("");
+  return `<section class="sec sand"><div class="wrap">
+  <h2>${esc(T.ui.partnersTitle)}</h2><p class="lead-sm">${esc(T.ui.partnersLead)}</p>
+  <ul class="partners">${items}</ul>
+</div></section>`;
 }
 
 function ctaBand(lang, title, text) {
@@ -237,6 +254,7 @@ const BODY = {
 <div class="areas">${H.areasGroups.map((a) => `<div><h3>${esc(a.title)}</h3><p>${esc(a.places)}</p></div>`).join("")}</div></div></section>
 
 ${artIn(lang).length ? `<section class="sec"><div class="wrap"><h2>${esc(T.nav.articles)}</h2>${articleCards(lang, artIn(lang))}</div></section>` : ""}
+${partnersBand(lang)}
 ${faqBlock(lang)}
 ${ctaBand(lang, H.ctaTitle, H.ctaText)}`;
   },
@@ -278,6 +296,24 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
     return `${pageHead(lang, P, "adults")}
 <section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
 <section class="sec sand"><div class="wrap narrow story"><h2>${esc(P.bachTitle)}</h2>${P.bach.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>
+${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
+  },
+
+  payment(lang) {
+    const T = SITE[lang], P = T.payment;
+    const block = (title, paras) => `<div><h2>${esc(title)}</h2>${paras.map((p) => `<p>${esc(p)}</p>`).join("")}</div>`;
+    return `${pageHead(lang, P, "")}
+<section class="sec"><div class="wrap narrow story">${block(P.howTitle, P.how)}</div></section>
+<section class="sec sand"><div class="wrap two">
+  ${block(P.currencyTitle, P.currency)}
+  ${block(P.depositTitle, P.deposit)}
+</div></section>
+<section class="sec"><div class="wrap narrow story">
+  <h2>${esc(P.plansTitle)}</h2><p>${esc(P.plansText)}</p>
+  <h2>${esc(P.cancelTitle)}</h2>${P.cancel.map((p) => `<p>${esc(p)}</p>`).join("")}
+  <h2>${esc(P.questionsTitle)}</h2><p>${esc(P.questionsText)}</p>
+</div></section>
+${partnersBand(lang)}
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
 
