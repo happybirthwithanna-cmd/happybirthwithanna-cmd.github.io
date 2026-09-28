@@ -13,7 +13,7 @@ const win = {};
 new Function("window", fs.readFileSync(path.join(ROOT, "content.js"), "utf8"))(win);
 const SITE = win.SITE, S = SITE.settings, D = S.domain;
 
-const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "payment", "contact"];
+const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "payment", "privacy", "contact"];
 const NAV = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "reviews", "articles", "contact"];
 const PARTNERS = SITE.partners || [];
 const ARTICLES = SITE.articles || [];
@@ -65,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "contact"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -296,6 +296,22 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
     return `${pageHead(lang, P, "adults")}
 <section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
 <section class="sec sand"><div class="wrap narrow story"><h2>${esc(P.bachTitle)}</h2>${P.bach.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>
+${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
+  },
+
+  privacy(lang) {
+    const T = SITE[lang], P = T.privacy;
+    const secs = P.sections.map((x) => `<section class="doc-sec">
+  <h2>${esc(x.title)}</h2>
+  ${(x.paras || []).map((p) => `<p>${esc(p)}</p>`).join("")}
+  ${x.list ? `<ul class="doc-list">${x.list.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}
+  ${(x.after || []).map((p) => `<p>${esc(p)}</p>`).join("")}
+</section>`).join("");
+    return `${pageHead(lang, P, "")}
+<section class="sec"><div class="wrap narrow doc">
+  <p class="small muted doc-date">${esc(P.updated)}</p>
+  ${secs}
+</div></section>
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
 

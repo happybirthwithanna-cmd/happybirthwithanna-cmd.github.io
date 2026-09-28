@@ -51,7 +51,7 @@ window.SITE = {
 
     nav: {
       home: "Home", pregnancy: "Pregnancy", postnatal: "After birth", children: "Children",
-      adults: "Adults", about: "About", team: "Team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas", payment: "Payment"
+      adults: "Adults", about: "About", team: "Team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas", payment: "Payment", privacy: "Privacy"
     },
 
     meta: {
@@ -63,6 +63,7 @@ window.SITE = {
     about: { title: "About Anna Pifko – Doula UK Mentor, Kent & London", description: "Doula since 2016, Doula UK mentor, mother of three, baby massage instructor and Bach practitioner, supporting families in English and Russian." },
       team: { title: "Trusted Pregnancy & Postnatal Specialists | Kent & London", description: "Osteopath, psychologist, homeopath, rehabilitation therapist and midwives Anna Pifko recommends to families — with client discounts." },
       reviews: { title: "Doula Reviews Kent & London | Happy Birth with Anna", description: "Real reviews from families Anna supported through hospital births, home births, postnatal recovery and baby massage in Kent and London." },
+      privacy: { title: "Privacy Notice | Happy Birth with Anna", description: "What information Anna Pifko holds about clients, why, who else sees it, how long it is kept and how to ask for a copy or its deletion." },
       payment: { title: "Payment Options | Happy Birth with Anna", description: "How to pay for doula support: secure Revolut payment links, card or bank transfer, deposit and balance, instalments, and your cancellation rights." },
       mentoring: { title: "Doula UK Mentor | Mentoring for New Doulas", description: "Doula UK recognised mentoring for birth and postnatal doulas: debriefs, reflection and the recognition process. £300 birth, £300 postnatal, £600 both." },
       contact: { title: "Contact a Doula in Kent & Medway | Free Consultation", description: "Book a free 45-minute online meeting with doula Anna Pifko, or message on WhatsApp or Telegram. Kent, Medway and London." }
@@ -385,6 +386,92 @@ window.SITE = {
       ctaText: "Book a free 45-minute meeting. There is no charge and no obligation to book anything afterwards."
     },
 
+    privacy: {
+      eyebrow: "Privacy",
+      h1: "Privacy notice",
+      lead: "What information I hold about you, why I hold it, who else can see it and what you can ask me to do with it. Written to be read, not to be skipped.",
+      updated: "Last updated: 28 September 2026",
+      sections: [
+        { title: "Who is responsible for your information",
+          paras: [
+            "I am Anna Pifko, a self-employed doula trading as Happy Birth with Anna. I decide how your information is used, which in data protection law makes me the data controller.",
+            "You can reach me at anna@happybirth-doula.co.uk or on +44 7392 042469. I work from Lordswood, Chatham, Kent; my full postal address is available on request."
+          ] },
+        { title: "What I collect",
+          paras: [
+            "When you first get in touch I hold only what you give me: your name, the way you prefer to be contacted, and whatever you tell me about your situation.",
+            "If we go on to work together I will also hold your due date or your baby’s birth date, your birth preferences, the notes I make during our sessions, and the details of your booking and payments.",
+            "Much of this is health information — your pregnancy, your birth, how your body and mind are recovering, and sometimes past experiences that affect how you feel about giving birth. Data protection law treats health information as a special category that deserves stronger protection, and I treat it that way."
+          ] },
+        { title: "Why I am allowed to hold it",
+          paras: [
+            "For your contact details, booking and payment records, my lawful basis is that I need them to provide the service we agreed and to meet my obligations as a business.",
+            "For health information, my lawful basis is your explicit consent. I will ask for that consent clearly, you can withdraw it at any time, and withdrawing it will never affect the support you receive.",
+            "Where the law requires me to keep records — tax records, for example — my basis is legal obligation."
+          ] },
+        { title: "Who else can see it",
+          paras: [
+            "I do not sell your information and I do not share it for marketing. A small number of companies handle parts of it because I use their services to run my practice:"
+          ],
+          list: [
+            "Calendly — the times and details of the meetings you book with me.",
+            "Revolut — your name and the amount, when I send you a payment link or an invoice.",
+            "Google Workspace — my email, which is where written correspondence with you lives.",
+            "WhatsApp and Telegram, if you choose to message me there. Those conversations sit on their systems under their own terms.",
+            "GitHub Pages, which hosts this website. Like any web server it records visits, including IP addresses, in its own logs. I cannot see those logs and I hold no analytics of my own.",
+            "My insurer and my professional body, Doula UK, but only if a complaint or a claim were ever made."
+          ],
+          after: [
+            "I also take part in professional supervision and mentoring, where difficult situations are discussed to keep my practice safe. Nothing shared there identifies you.",
+            "If your employer or health insurer reimburses doula support, the invoice you give them comes from you, not from me. I do not send your information to them."
+          ] },
+        { title: "Photographs",
+          paras: [
+            "I never photograph you, your baby or your birth without asking first, and I never use a photograph publicly without your separate written permission. Saying no changes nothing about your care, and you can change your mind later and ask me to take a photograph down."
+          ] },
+        { title: "How long I keep it",
+          paras: [
+            "Enquiries that do not lead to work are deleted within twelve months.",
+            "Where I have supported you through a birth, I keep my notes for twenty-five years, in line with the retention period the NHS applies to maternity records. This is because a child can bring a claim about their own birth long after it happened, and those notes may be the only account of what took place.",
+            "Financial records are kept for six years, as HMRC requires.",
+            "After those periods the records are securely deleted."
+          ] },
+        { title: "Where your information is held",
+          paras: [
+            "My notes and correspondence are stored in the United Kingdom and the European Union. Some of the companies listed above are based outside the UK; where that is the case, transfers are covered by the safeguards those companies are required to have in place, such as the UK International Data Transfer Agreement."
+          ] },
+        { title: "Cookies",
+          paras: [
+            "This website sets no cookies. There is no analytics, no advertising and no tracking of any kind, and nothing is loaded from an outside company when you open a page — the typeface is served from this site. Links to Calendly, WhatsApp, Telegram and Instagram open on those companies’ own sites, where their own privacy terms apply."
+          ] },
+        { title: "Your rights",
+          paras: [
+            "You can ask me at any time to:"
+          ],
+          list: [
+            "show you a copy of everything I hold about you",
+            "correct anything that is wrong",
+            "delete what I hold, unless I am legally required to keep it",
+            "stop using it in a particular way, or pause my use of it while a concern is sorted out",
+            "send it to you, or to someone else, in a portable form",
+            "withdraw your consent to my holding health information about you"
+          ],
+          after: [
+            "Write to anna@happybirth-doula.co.uk and I will respond within one month. There is no charge."
+          ] },
+        { title: "If you are unhappy",
+          paras: [
+            "Please tell me first — most things are quickly put right. If you would rather not, or if my answer does not satisfy you, you can complain to the Information Commissioner’s Office at ico.org.uk or on 0303 123 1113. You can go to them directly at any point; you do not need to come to me first."
+          ] },
+        { title: "Changes to this notice",
+          paras: [
+            "If I change how I handle your information I will update this page and change the date at the top. If the change is significant and affects people I am currently working with, I will tell them directly."
+          ] }
+      ],
+      ctaTitle: "Anything here you would like explained?",
+      ctaText: "Ask me. It is your information, and you are entitled to understand exactly what happens to it."
+    },
+
     contact: {
       eyebrow: "Contact",
       h1: "Contact a doula in Kent & Medway",
@@ -444,7 +531,7 @@ window.SITE = {
 
     nav: {
       home: "Главная", pregnancy: "Беременность", postnatal: "После родов", children: "Детям",
-      adults: "Взрослым", about: "Обо мне", team: "Специалисты", reviews: "Отзывы", contact: "Контакты", mentoring: "Доулам", payment: "Оплата"
+      adults: "Взрослым", about: "Обо мне", team: "Специалисты", reviews: "Отзывы", contact: "Контакты", mentoring: "Доулам", payment: "Оплата", privacy: "Конфиденциальность"
     },
 
     meta: {
@@ -456,6 +543,7 @@ window.SITE = {
     about: { title: "Анна Пифко — доула и ментор Doula UK, Англия", description: "Доула с 2016 года, ментор Doula UK, мама троих детей, инструктор детского массажа и практик цветов Баха. Поддержка на русском языке." },
       team: { title: "Проверенные специалисты для беременных — Англия", description: "Остеопат, психолог, гомеопат, реабилитолог и акушерки, которых рекомендует Анна Пифко, — со скидками для клиентов." },
       reviews: { title: "Отзывы о доуле Анне Пифко — Кент и Лондон", description: "Настоящие отзывы семей о родах в роддоме и дома, восстановлении после родов и детском массаже с доулой Анной Пифко." },
+      privacy: { title: "Политика конфиденциальности — Анна Пифко", description: "Какие данные хранит доула Анна Пифко, зачем, кто ещё их видит, сколько они хранятся и как запросить копию или удаление." },
       payment: { title: "Способы оплаты — Анна Пифко, доула", description: "Как оплатить сопровождение доулы: защищённые ссылки Revolut, карта или банковский перевод, предоплата и остаток, оплата частями, права при отмене." },
       mentoring: { title: "Ментор Doula UK — менторство для новых доул", description: "Менторство Doula UK для доул в родах и послеродовых: дебрифинг, рефлексия и путь к признанию. £300 роды, £300 послеродовое, £600 оба." },
       contact: { title: "Связаться с доулой — бесплатная консультация", description: "Запишись на бесплатную онлайн-встречу на 45 минут с доулой Анной Пифко или напиши в WhatsApp или Telegram. Кент, Медуэй, Лондон." }
@@ -776,6 +864,92 @@ window.SITE = {
       questionsText: "Стоимость важна, и обсуждать её не неловко. Приноси этот вопрос на бесплатную консультацию — поговорим честно.",
       ctaTitle: "Ещё думаешь?",
       ctaText: "Запишись на бесплатную встречу на 45 минут. Она ничего не стоит и ни к чему не обязывает."
+    },
+
+    privacy: {
+      eyebrow: "Конфиденциальность",
+      h1: "Политика конфиденциальности",
+      lead: "Какие данные о тебе я храню, зачем, кто ещё может их видеть и что ты вправе попросить меня с ними сделать. Написано так, чтобы это можно было прочитать, а не пролистать.",
+      updated: "Последнее обновление: 28 сентября 2026 года",
+      sections: [
+        { title: "Кто отвечает за твои данные",
+          paras: [
+            "Меня зовут Анна Пифко, я самозанятая доула, работаю под названием Happy Birth with Anna. Я решаю, как используются твои данные, — по законодательству о защите данных это делает меня контролёром данных.",
+            "Со мной можно связаться: anna@happybirth-doula.co.uk или +44 7392 042469. Я работаю из Лордсвуда, Чатем, Кент; полный почтовый адрес предоставлю по запросу."
+          ] },
+        { title: "Какие данные я собираю",
+          paras: [
+            "При первом обращении у меня есть только то, что ты сообщаешь сама: имя, удобный способ связи и то, что ты рассказываешь о своей ситуации.",
+            "Если мы начинаем работать вместе, добавляются предполагаемая дата родов или дата рождения ребёнка, твои пожелания к родам, мои заметки после встреч, а также данные о записи и оплатах.",
+            "Многое из этого — информация о здоровье: беременность, роды, восстановление тела и психики, иногда прошлый опыт, влияющий на отношение к родам. Закон относит данные о здоровье к особой категории, требующей усиленной защиты, и я обращаюсь с ними именно так."
+          ] },
+        { title: "На каком основании я их храню",
+          paras: [
+            "Контактные данные, записи о бронировании и оплатах нужны мне для оказания услуги, о которой мы договорились, и для выполнения обязанностей как бизнеса — это моё правовое основание.",
+            "Для информации о здоровье основанием является твоё явное согласие. Я прошу его прямо, ты можешь отозвать его в любой момент, и отзыв никогда не повлияет на поддержку, которую ты получаешь.",
+            "Там, где хранение записей требует закон — например, налоговая отчётность, — основанием служит юридическая обязанность."
+          ] },
+        { title: "Кто ещё может их видеть",
+          paras: [
+            "Я не продаю твои данные и не передаю их для рекламы. Небольшое число компаний обрабатывает часть данных, потому что я пользуюсь их сервисами в работе:"
+          ],
+          list: [
+            "Calendly — время и детали встреч, которые ты бронируешь.",
+            "Revolut — имя и сумма, когда я отправляю ссылку на оплату или счёт.",
+            "Google Workspace — моя почта, где хранится письменная переписка с тобой.",
+            "WhatsApp и Telegram, если ты пишешь мне туда. Эти переписки хранятся в их системах на их условиях.",
+            "GitHub Pages — хостинг этого сайта. Как любой веб-сервер, он фиксирует посещения, включая IP-адреса, в собственных логах. Доступа к этим логам у меня нет, и никакой своей аналитики я не веду.",
+            "Моя страховая компания и профессиональная ассоциация Doula UK — но только если когда-либо будет подана жалоба или претензия."
+          ],
+          after: [
+            "Я также участвую в профессиональной супервизии и менторстве, где разбираются сложные ситуации, чтобы моя практика оставалась безопасной. Ничто из сказанного там тебя не идентифицирует.",
+            "Если работодатель или страховая компенсируют услуги доулы, счёт им подаёшь ты, а не я. Твои данные я им не отправляю."
+          ] },
+        { title: "Фотографии",
+          paras: [
+            "Я никогда не фотографирую тебя, ребёнка или роды, не спросив заранее, и никогда не публикую фотографию без отдельного письменного разрешения. Отказ ни на что не влияет, а решение можно изменить позже и попросить меня снять фотографию."
+          ] },
+        { title: "Сколько я храню данные",
+          paras: [
+            "Обращения, не перешедшие в работу, удаляются в течение двенадцати месяцев.",
+            "Если я сопровождала твои роды, заметки хранятся двадцать пять лет — столько же, сколько NHS хранит родовые записи. Причина в том, что ребёнок может заявить претензию, связанную с собственным рождением, спустя много лет, и эти заметки могут оказаться единственным описанием произошедшего.",
+            "Финансовые документы хранятся шесть лет — этого требует налоговая служба HMRC.",
+            "По истечении этих сроков записи надёжно удаляются."
+          ] },
+        { title: "Где хранятся данные",
+          paras: [
+            "Мои заметки и переписка хранятся в Великобритании и Европейском союзе. Часть перечисленных компаний находится за пределами Великобритании; в этих случаях передача данных защищена мерами, которые такие компании обязаны применять, — например, британским соглашением о международной передаче данных (IDTA)."
+          ] },
+        { title: "Файлы cookie",
+          paras: [
+            "Этот сайт не использует файлы cookie. Нет ни аналитики, ни рекламы, ни какого-либо отслеживания, и при открытии страницы ничего не загружается со сторонних серверов — шрифт отдаётся с этого же сайта. Ссылки на Calendly, WhatsApp, Telegram и Instagram открываются на сайтах этих компаний, где действуют их собственные правила."
+          ] },
+        { title: "Твои права",
+          paras: [
+            "Ты можешь в любой момент попросить меня:"
+          ],
+          list: [
+            "показать копию всего, что я о тебе храню",
+            "исправить неточности",
+            "удалить хранящиеся данные, если закон не обязывает меня их сохранять",
+            "прекратить использовать их определённым образом или приостановить использование на время разбирательства",
+            "передать данные тебе или другому лицу в переносимом формате",
+            "отозвать согласие на хранение информации о здоровье"
+          ],
+          after: [
+            "Напиши на anna@happybirth-doula.co.uk — я отвечу в течение одного месяца. Это бесплатно."
+          ] },
+        { title: "Если что-то не устраивает",
+          paras: [
+            "Сначала скажи мне — чаще всего вопрос решается быстро. Если не хочешь или мой ответ тебя не устроил, можно подать жалобу в Управление комиссара по информации (ICO): ico.org.uk или 0303 123 1113. Обратиться туда можно на любом этапе — сначала писать мне не обязательно."
+          ] },
+        { title: "Изменения в этом документе",
+          paras: [
+            "Если порядок работы с данными изменится, я обновлю эту страницу и дату вверху. О существенных изменениях, затрагивающих тех, с кем я работаю сейчас, я сообщу лично."
+          ] }
+      ],
+      ctaTitle: "Хочешь что-то уточнить?",
+      ctaText: "Спрашивай. Это твои данные, и ты имеешь полное право понимать, что с ними происходит."
     },
 
     contact: {
