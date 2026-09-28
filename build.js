@@ -373,10 +373,16 @@ ${ctaBand(lang, T.home.ctaTitle, T.home.ctaText)}`;
 
   contact(lang) {
     const T = SITE[lang], P = T.contact;
-    const cal = S.calendly + "?hide_gdpr_banner=1&background_color=ffffff&primary_color=1f2a44";
     return `${pageHead(lang, P)}
 <section class="sec tight"><div class="wrap contact-grid">
-  <div class="cal"><h2>${esc(P.calendarTitle)}</h2><iframe src="${cal}" title="Calendly" loading="lazy"></iframe></div>
+  <div class="cal"><h2>${esc(P.calendarTitle)}</h2>
+    <div class="cal-card">
+      <p class="cal-lead">${esc(P.calendarText)}</p>
+      <a class="btn btn-clay" href="${S.calendly}" target="_blank" rel="noopener">${esc(T.ui.book)}</a>
+      <p class="small muted cal-note">${esc(P.calendarNote)}</p>
+    </div>
+    <h3>${esc(P.addressTitle)}</h3><p>${esc(P.addressText)}</p><p class="small muted">${esc(P.termsText)}</p>
+  </div>
   <aside>
     <h2>${esc(P.waysTitle)}</h2>
     <ul class="ways">
@@ -386,7 +392,6 @@ ${ctaBand(lang, T.home.ctaTitle, T.home.ctaText)}`;
       <li><a class="way" href="mailto:${S.email}"><b>Email</b><span>${esc(S.email)}</span></a></li>
       <li><a class="way ig" href="https://www.instagram.com/${S.instagram}/" target="_blank" rel="noopener"><b>Instagram</b><span>@${esc(S.instagram)}</span></a></li>
     </ul>
-    <h3>${esc(P.addressTitle)}</h3><p>${esc(P.addressText)}</p><p class="small muted">${esc(P.termsText)}</p>
   </aside>
 </div></section>`;
   }
