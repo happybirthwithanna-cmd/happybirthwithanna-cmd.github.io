@@ -15,7 +15,6 @@ window.SITE = {
     instagram: "happybirth_doula_anna",
     email: "anna@happybirth-doula.co.uk",
     calendly: "https://calendly.com/anna-1081/online-introductory-meeting",
-    clinic: "https://www.anatherapies.com/",
     town: "Lordswood, Chatham, Kent",
     postcode: "ME5 7QW",
     googleReview: "",                        // link to leave a Google review (from Google Business Profile)
@@ -58,7 +57,7 @@ window.SITE = {
       pregnancy: { title: "Birth Doula Packages & Antenatal Courses | Kent & London", description: "Birth support from £1,800, online antenatal courses and monthly doula support for parents in Kent, Medway and London. Book a free consultation." },
       postnatal: { title: "Postnatal Doula Kent & Medway | From £30/hour", description: "Postnatal doula care at home from £30/hour, the bone closing ceremony, breastfeeding support and parenting courses in Kent, Medway and London." },
       children: { title: "Baby Massage Course & Sling Support in Kent", description: "Group baby massage course (6 sessions, £50) with a certified instructor, sling wearing support and Bach therapy for children in Kent and Medway." },
-      adults: { title: "Bach Flower Therapy & Rebozo Massage | Gravesend, Kent", description: "Bach flower remedy consultations (£60) and rebozo massage (£65) — online or at the Gravesend clinic, Kent. With doula Anna Pifko." },
+      adults: { title: "Bach Flower Therapy Online | Kent & Worldwide", description: "Bach flower remedy consultations online with doula Anna Pifko: £60 for a first 90-minute session, £35 for follow-ups. Available anywhere." },
     about: { title: "About Anna Pifko – Doula UK Mentor, Kent & London", description: "Doula since 2016, Doula UK mentor, mother of three, baby massage instructor and Bach practitioner, supporting families in English and Russian." },
       team: { title: "Trusted Pregnancy & Postnatal Specialists | Kent & London", description: "Osteopath, psychologist, homeopath, rehabilitation therapist and midwives Anna Pifko recommends to families — with client discounts." },
       reviews: { title: "Doula Reviews Kent & London | Happy Birth with Anna", description: "Real reviews from families Anna supported through hospital births, home births, postnatal recovery and baby massage in Kent and London." },
@@ -141,7 +140,7 @@ window.SITE = {
         { page: "pregnancy", title: "Pregnancy & birth", text: "Birth support packages, antenatal courses, monthly support through pregnancy and a free first meeting.", from: "birth from £1,800" },
         { page: "postnatal", title: "After birth", text: "A postnatal doula at home, the bone closing ceremony and breastfeeding support.", from: "from £30 an hour" },
         { page: "children", title: "Babies & children", text: "Baby massage courses, sling support and Bach therapy for children.", from: "from £50" },
-        { page: "adults", title: "For you", text: "Bach flower therapy and rebozo massage, online or at the Gravesend clinic.", from: "from £35" }
+        { page: "adults", title: "For you", text: "Bach flower therapy online, for the times when feelings are running high.", from: "from £35" }
       ],
 
       storyTitle: "“Everyone gets through it somehow” — why that is not a plan",
@@ -224,12 +223,12 @@ window.SITE = {
     children: {
       eyebrow: "Children · Kent & online",
       h1: "Baby massage, sling support & Bach therapy for children",
-      lead: "Practical, hands-on support for babies and young children with a baby massage instructor certified by the IAIM, in person in Kent or online.",
+      lead: "Practical, hands-on support for babies and young children with a baby massage instructor certified by the IAIM, online or in person in Kent.",
       servicesTitle: "For babies and children",
       services: [
         { tag: "Course", name: "Group baby massage course", price: "£50", who: ["Babies from six weeks old", "First-time parents, and parents going it alone"], includes: ["Six one-hour sessions, online or in person", "Printed instructions to keep", "A small bottle of massage oil to take home"] },
         { tag: "Workshop", name: "Sling and carrier support", price: "", who: ["Any parent choosing a sling, or learning to use one safely"], includes: ["One hour online, choosing your sling and learning to tie and wear it comfortably"] },
-        { tag: "Wellbeing", name: "Bach therapy for children", price: "£60", clinic: true, who: ["Parents looking for gentle support with a child’s feelings and transitions"], includes: ["A 90-minute consultation", "Seven days of follow-up support by message"] }
+        { tag: "Wellbeing", name: "Bach therapy for children", price: "£60", who: ["Parents looking for gentle support with a child’s feelings and transitions"], includes: ["A 90-minute consultation", "Seven days of follow-up support by message"] }
       ],
       whyTitle: "Why baby massage?",
       why: [
@@ -243,24 +242,19 @@ window.SITE = {
     },
 
     adults: {
-      eyebrow: "Adults · Gravesend clinic & online",
-      h1: "Bach flower therapy & rebozo massage for adults",
+      eyebrow: "Adults · online",
+      h1: "Bach flower therapy for adults, online",
       lead: "Gentle support for your own nervous system — whether or not you are pregnant, and whether birth was last month or a decade ago.",
       servicesTitle: "Sessions",
       services: [
         { tag: "Wellbeing", name: "Bach therapy — first consultation", price: "£60", who: ["Anyone going through a period of strong or unsettling emotion", "Open to all adults, whether or not you have children"], includes: ["A 90-minute consultation", "A 30 ml composition of Bach flower remedies", "A feelings chart and two self-help techniques to take away"] },
-        { tag: "Wellbeing", name: "Bach therapy — follow-up", price: "£35", who: ["Clients continuing with their remedy"], includes: ["A 60-minute session", "A review of how things have shifted, and an adjusted composition"] },
-        { tag: "Massage", name: "Rebozo massage", price: "£65", clinic: true, who: ["Tiredness or stress that has settled in the body", "Adults aged 16 and over"], includes: ["A 60-minute massage using a traditional shawl and gentle rocking, from head to toe"] }
+        { tag: "Wellbeing", name: "Bach therapy — follow-up", price: "£35", who: ["Clients continuing with their remedy"], includes: ["A 60-minute session", "A review of how things have shifted, and an adjusted composition"] }
       ],
       bachTitle: "What is Bach flower therapy?",
       bach: [
         "Bach flower therapy uses 38 flower essences, chosen according to how a person is feeling rather than to any physical symptom. It is a complementary approach: gentle, and used alongside medical care rather than instead of it.",
         "We begin with an unhurried, non-judgemental conversation about what you are carrying at the moment. I then prepare a composition of essences, usually taken for two weeks before we meet again."
       ],
-      rebozoTitle: "What is a rebozo massage?",
-      rebozo: ["A gentle technique using a traditional Mexican shawl, built on rocking and rhythmic movement. Most people describe the feeling as being held and steadied. Over an hour the whole body is worked through, from head to toe, and you stay fully clothed throughout."],
-      clinicTitle: "In-person appointments in Gravesend",
-      clinicText: "Bach flower therapy and rebozo massage can be booked in person at ANA Therapies, Milton Road Business Park, Gravesend, Kent. The clinic also has a practice in Meopham.",
       ctaTitle: "Would you rather talk it through first?",
       ctaText: "Book a free 45-minute online meeting, or send me a message on WhatsApp or Telegram."
     },
@@ -417,7 +411,7 @@ window.SITE = {
       pregnancy: { title: "Сопровождение родов в Англии — доула Анна Пифко", description: "Сопровождение родов от £1 800, онлайн-курсы подготовки к родам и ежемесячная поддержка доулы на русском языке. Кент, Медуэй, Лондон." },
       postnatal: { title: "Послеродовая доула в Кенте и Лондоне — от £30 в час", description: "Послеродовая доула от £30 в час, обряд закрытия костей, консультации по грудному вскармливанию и курсы для родителей на русском языке." },
       children: { title: "Детский массаж и слингоконсультация в Кенте", description: "Групповой курс детского массажа (6 занятий, £50) с сертифицированным инструктором, слингоконсультация и терапия Баха для детей. Кент." },
-      adults: { title: "Терапия цветами Баха и массаж ребозо — Кент", description: "Консультации по цветам Баха (£60) и массаж ребозо (£65) — онлайн или в клинике в Грейвсенде, Кент. Доула Анна Пифко." },
+      adults: { title: "Терапия цветами Баха онлайн — Анна Пифко", description: "Консультации по цветам Баха онлайн с доулой Анной Пифко: £60 за первую встречу 90 минут, £35 за повторную. Из любой точки мира." },
     about: { title: "Анна Пифко — доула и ментор Doula UK, Англия", description: "Доула с 2016 года, ментор Doula UK, мама троих детей, инструктор детского массажа и практик цветов Баха. Поддержка на русском языке." },
       team: { title: "Проверенные специалисты для беременных — Англия", description: "Остеопат, психолог, гомеопат, реабилитолог и акушерки, которых рекомендует Анна Пифко, — со скидками для клиентов." },
       reviews: { title: "Отзывы о доуле Анне Пифко — Кент и Лондон", description: "Настоящие отзывы семей о родах в роддоме и дома, восстановлении после родов и детском массаже с доулой Анной Пифко." },
@@ -500,7 +494,7 @@ window.SITE = {
         { page: "pregnancy", title: "Беременность и роды", text: "Пакеты сопровождения родов, курсы подготовки, ежемесячная поддержка во время беременности и бесплатная первая встреча.", from: "сопровождение родов — от £1 800" },
         { page: "postnatal", title: "После родов", text: "Послеродовая доула у тебя дома, обряд закрытия костей и помощь с грудным вскармливанием.", from: "от £30 в час" },
         { page: "children", title: "Малышам и детям", text: "Курсы детского массажа, слингоконсультации и терапия Баха для детей.", from: "от £50" },
-        { page: "adults", title: "Тебе самой", text: "Терапия цветами Баха и массаж ребозо — онлайн или в клинике в Грейвсенде.", from: "от £35" }
+        { page: "adults", title: "Тебе самой", text: "Терапия цветами Баха онлайн — когда чувств слишком много.", from: "от £35" }
       ],
 
       storyTitle: "«Все как-то рожают» — почему это не план",
@@ -588,7 +582,7 @@ window.SITE = {
       services: [
         { tag: "Курс", name: "Групповой курс детского массажа", price: "£50", who: ["Малышам с шести недель", "Тем, кто становится родителями впервые, и мамам, которые справляются в одиночку"], includes: ["Шесть занятий по часу, онлайн или лично", "Печатная инструкция, которая останется у тебя", "Флакон массажного масла с собой"] },
         { tag: "Консультация", name: "Слингоконсультация", price: "", who: ["Всем, кто выбирает слинг или учится носить малыша безопасно"], includes: ["Час онлайн: выбор слинга, намотки и удобное ношение"] },
-        { tag: "Эмоции", name: "Терапия Баха для детей", price: "£60", clinic: true, who: ["Родителям, которые ищут мягкую поддержку для ребёнка в период перемен и сильных переживаний"], includes: ["Консультация 90 минут", "Семь дней поддержки в переписке после"] }
+        { tag: "Эмоции", name: "Терапия Баха для детей", price: "£60", who: ["Родителям, которые ищут мягкую поддержку для ребёнка в период перемен и сильных переживаний"], includes: ["Консультация 90 минут", "Семь дней поддержки в переписке после"] }
       ],
       whyTitle: "Зачем детский массаж?",
       why: [
@@ -602,24 +596,19 @@ window.SITE = {
     },
 
     adults: {
-      eyebrow: "Взрослым · клиника в Грейвсенде и онлайн",
-      h1: "Терапия цветами Баха и массаж ребозо для взрослых",
+      eyebrow: "Взрослым · онлайн",
+      h1: "Терапия цветами Баха для взрослых, онлайн",
       lead: "Мягкая поддержка для твоей нервной системы — независимо от того, беременна ты или нет и были ли роды месяц назад или десять лет назад.",
       servicesTitle: "Сеансы",
       services: [
         { tag: "Эмоции", name: "Терапия Баха — первая консультация", price: "£60", who: ["Тем, кто проходит через период сильных или непростых чувств", "Взрослым — независимо от того, есть ли дети"], includes: ["Консультация 90 минут", "Композиция цветов Баха, 30 мл", "Карта чувств и две техники самопомощи с собой"] },
-        { tag: "Эмоции", name: "Терапия Баха — повторная консультация", price: "£35", who: ["Тем, кто продолжает принимать композицию"], includes: ["Сеанс 60 минут", "Разбор того, что изменилось, и скорректированная композиция"] },
-        { tag: "Массаж", name: "Массаж ребозо", price: "£65", clinic: true, who: ["Тем, у кого усталость и стресс осели в теле", "Взрослым от 16 лет"], includes: ["Массаж 60 минут традиционным платком и мягким покачиванием, с головы до ног"] }
+        { tag: "Эмоции", name: "Терапия Баха — повторная консультация", price: "£35", who: ["Тем, кто продолжает принимать композицию"], includes: ["Сеанс 60 минут", "Разбор того, что изменилось, и скорректированная композиция"] }
       ],
       bachTitle: "Что такое терапия цветами Баха?",
       bach: [
         "Терапия Баха использует 38 цветочных эссенций, которые подбираются по состоянию человека, а не по физическим симптомам. Это мягкий комплементарный метод: он применяется вместе с медицинской помощью, а не вместо неё.",
         "Мы начинаем с неспешного разговора о том, с чем ты сейчас живёшь, — без оценок и советов. Затем я составляю композицию эссенций: обычно её принимают две недели, до следующей встречи."
       ],
-      rebozoTitle: "Что такое массаж ребозо?",
-      rebozo: ["Мягкая техника с традиционным мексиканским платком, построенная на покачивании и ритмичных движениях. Чаще всего это описывают как ощущение, будто тебя держат и возвращают опору. За час прорабатывается всё тело, с головы до ног, и ты остаёшься в одежде."],
-      clinicTitle: "Очные сеансы в Грейвсенде",
-      clinicText: "Записаться на терапию Баха или массаж ребозо лично можно в клинике ANA Therapies, Milton Road Business Park, Грейвсенд, Кент. У клиники также есть практика в Мипеме (Meopham).",
       ctaTitle: "Хочешь сначала поговорить?",
       ctaText: "Запишись на бесплатную онлайн-встречу на 45 минут или напиши мне в WhatsApp или Telegram."
     },

@@ -277,11 +277,7 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
     const T = SITE[lang], P = T.adults;
     return `${pageHead(lang, P, "adults")}
 <section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
-<section class="sec sand"><div class="wrap two">
-  <div><h2>${esc(P.bachTitle)}</h2>${P.bach.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
-  <div><h2>${esc(P.rebozoTitle)}</h2>${P.rebozo.map((p) => `<p>${esc(p)}</p>`).join("")}
-  <div class="clinic"><h3>${esc(P.clinicTitle)}</h3><p>${esc(P.clinicText)}</p><a class="btn btn-clay btn-sm" href="${S.clinic}" target="_blank" rel="noopener">${esc(T.ui.bookClinic)}</a></div></div>
-</div></section>
+<section class="sec sand"><div class="wrap narrow story"><h2>${esc(P.bachTitle)}</h2>${P.bach.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
 
