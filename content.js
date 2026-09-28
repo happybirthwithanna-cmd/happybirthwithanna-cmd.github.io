@@ -15,7 +15,7 @@ window.SITE = {
     instagram: "happybirth_doula_anna",
     email: "anna@happybirth-doula.co.uk",
     calendly: "https://calendly.com/anna-1081/online-introductory-meeting",
-    clinic: "https://www.fresha.com/a/ana-therapies-gravesend-gravesend-milton-road-business-park-128-milton-road-224bixtx",
+    clinic: "https://www.anatherapies.com/",
     town: "Lordswood, Chatham, Kent",
     postcode: "ME5 7QW",
     googleReview: "",                        // link to leave a Google review (from Google Business Profile)
@@ -260,7 +260,7 @@ window.SITE = {
       rebozoTitle: "What is a rebozo massage?",
       rebozo: ["A gentle technique using a traditional Mexican shawl, built on rocking and rhythmic movement. Most people describe the feeling as being held and steadied. Over an hour the whole body is worked through, from head to toe, and you stay fully clothed throughout."],
       clinicTitle: "In-person appointments in Gravesend",
-      clinicText: "Bach flower therapy and rebozo massage can be booked in person at Ana Therapies, Milton Road Business Park, Gravesend, Kent.",
+      clinicText: "Bach flower therapy and rebozo massage can be booked in person at ANA Therapies, Milton Road Business Park, Gravesend, Kent. The clinic also has a practice in Meopham.",
       ctaTitle: "Would you rather talk it through first?",
       ctaText: "Book a free 45-minute online meeting, or send me a message on WhatsApp or Telegram."
     },
@@ -619,7 +619,7 @@ window.SITE = {
       rebozoTitle: "Что такое массаж ребозо?",
       rebozo: ["Мягкая техника с традиционным мексиканским платком, построенная на покачивании и ритмичных движениях. Чаще всего это описывают как ощущение, будто тебя держат и возвращают опору. За час прорабатывается всё тело, с головы до ног, и ты остаёшься в одежде."],
       clinicTitle: "Очные сеансы в Грейвсенде",
-      clinicText: "Записаться на терапию Баха или массаж ребозо лично можно в клинике Ana Therapies, Milton Road Business Park, Грейвсенд, Кент.",
+      clinicText: "Записаться на терапию Баха или массаж ребозо лично можно в клинике ANA Therapies, Milton Road Business Park, Грейвсенд, Кент. У клиники также есть практика в Мипеме (Meopham).",
       ctaTitle: "Хочешь сначала поговорить?",
       ctaText: "Запишись на бесплатную онлайн-встречу на 45 минут или напиши мне в WhatsApp или Telegram."
     },
