@@ -48,8 +48,8 @@ window.SITE = {
     },
 
     nav: {
-      home: "Home", pregnancy: "Pregnancy & birth", postnatal: "After birth", children: "Children",
-      adults: "Adults", about: "About Anna", team: "Trusted team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas"
+      home: "Home", pregnancy: "Pregnancy", postnatal: "After birth", children: "Children",
+      adults: "Adults", about: "About", team: "Team", reviews: "Reviews", contact: "Contact", mentoring: "For doulas"
     },
 
     meta: {
@@ -402,7 +402,7 @@ window.SITE = {
     },
 
     nav: {
-      home: "Главная", pregnancy: "Беременность и роды", postnatal: "После родов", children: "Детям",
+      home: "Главная", pregnancy: "Беременность", postnatal: "После родов", children: "Детям",
       adults: "Взрослым", about: "Обо мне", team: "Специалисты", reviews: "Отзывы", contact: "Контакты", mentoring: "Доулам"
     },
 

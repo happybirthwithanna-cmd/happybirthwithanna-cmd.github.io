@@ -56,8 +56,12 @@ p{margin:0 0 1em}
 .nav a:hover,.nav a[aria-current="page"]{border-color:var(--ink)}
 .lang{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--sage-d);text-decoration:none;border:1.5px solid var(--sage);border-radius:999px;padding:5px 11px}
 .menu-btn{display:none;font:inherit;font-weight:700;background:none;border:1.5px solid var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer;color:var(--ink)}
-@media (max-width:1340px){
+@media (max-width:1560px) and (min-width:1191px){ .hide-sm{display:none} }
+@media (max-width:1340px){ .nav{gap:13px;font-size:14px} .bar{gap:12px} }
+@media (max-width:1180px){ .nav{gap:11px;font-size:13.5px} .brand-mark{width:40px} .brand-name{font-size:20px} }
+@media (max-width:1190px){
   .menu-btn{display:inline-block}
+  .nav{font-size:15px}
   .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 20px 16px}
   .nav.open{display:flex}
   .nav a{padding:12px 0;border-bottom:1px solid var(--line)}
