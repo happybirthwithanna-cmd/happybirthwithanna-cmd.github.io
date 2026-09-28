@@ -472,8 +472,7 @@ ${alts.length > 1 ? `<link rel="alternate" hreflang="en-GB" href="${absUrl("en",
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="${asset(lang, "images/logo-mark-128.png")}" type="image/png">
 <link rel="apple-touch-icon" href="${asset(lang, "icon.png")}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="${asset(lang, "fonts/jost-" + (lang === "ru" ? "cyrillic" : "latin") + "-400-normal.woff2")}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${asset(lang, "style.css")}?v=${VER}">
 ${o.noindex ? "" : jsonLd(lang, page, o)}
 ${S.goatcounter ? `<script data-goatcounter="https://${S.goatcounter}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>` : ""}
@@ -513,6 +512,10 @@ for (const f of ["style.css", "site.js", "CNAME", "share.jpg", "icon.png", "favi
 if (fs.existsSync(path.join(ROOT, "images"))) {
   fs.mkdirSync(path.join(OUT, "images"), { recursive: true });
   for (const f of fs.readdirSync(path.join(ROOT, "images"))) if (/\.(jpe?g|webp|png)$/i.test(f)) fs.copyFileSync(path.join(ROOT, "images", f), path.join(OUT, "images", f));
+}
+if (fs.existsSync(path.join(ROOT, "fonts"))) {
+  fs.mkdirSync(path.join(OUT, "fonts"), { recursive: true });
+  for (const f of fs.readdirSync(path.join(ROOT, "fonts"))) if (/\.woff2?$/i.test(f)) fs.copyFileSync(path.join(ROOT, "fonts", f), path.join(OUT, "fonts", f));
 }
 // search engine verification files
 for (const f of fs.readdirSync(ROOT)) if (/^(google[0-9a-z]+\.html|yandex_[0-9a-z]+\.html|BingSiteAuth\.xml)$/i.test(f)) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
