@@ -1509,11 +1509,11 @@ window.SITE.intakeForm = [
 ];
 
 window.SITE.en.nav.intake = "New client form";
-window.SITE.en.meta.intake = { title: "New Client Form | Happy Birth with Anna", description: "Tell Anna about yourself, your care and any previous pregnancies before your first meeting." };
+window.SITE.en.meta.intake = { title: "New Client Form | Happy Birth with Anna", description: "Client form for families who have booked a consultation or paid a deposit: personal details, care provider and previous pregnancies." };
 window.SITE.en.intake = {
   eyebrow: "New client form",
   h1: "Tell me about you",
-  lead: "This helps me prepare for our first meeting, so we can spend the time on what matters to you. It takes about ten minutes.",
+  lead: "For families who have booked a consultation or paid their deposit. Your answers give me the background I need to support you safely. It takes about ten minutes.",
   intro: "Questions marked * are needed.",
   disclosureTitle: "Your information",
   disclosure: [
@@ -1563,7 +1563,7 @@ window.SITE.en.intake = {
     "Multiples": { l: "Have you given birth to twins or more?", o: ["No", "Yes, twins", "Yes, triplets or more"] },
     "Length of previous labours": { l: "Roughly how long did your previous labours last?" },
     "Conditions in previous pregnancies": { l: "Did you have any of these in a previous pregnancy? Tick all that apply.", o: ["Rhesus incompatibility", "Pre-eclampsia", "High blood pressure in pregnancy", "Gestational diabetes", "Hyperemesis gravidarum", "Preterm labour", "Low birth weight", "Large baby (macrosomia)", "Polyhydramnios (too much waters)", "Oligohydramnios (too little waters)", "Placenta praevia", "Placental abruption", "Feeling faint lying on your back (vena cava compression)", "Group B Strep", "Postpartum haemorrhage", "Postnatal depression", "Genetic condition", "None of these"] },
-    "Anything else": { l: "Is there anything else you would like me to know before we meet?" }
+    "Anything else": { l: "Is there anything else you would like me to know?" }
   },
   consent: "I give my explicit consent for Anna Pifko to hold the health information in this form, so that she can support me safely. I can withdraw this consent at any time.",
   privacyLink: "Read the full privacy notice",
@@ -1576,11 +1576,11 @@ window.SITE.en.intake = {
 };
 
 window.SITE.ru.nav.intake = "Анкета клиента";
-window.SITE.ru.meta.intake = { title: "Анкета нового клиента — Анна Пифко, доула", description: "Расскажи о себе, своём наблюдении и прошлых беременностях до нашей первой встречи." };
+window.SITE.ru.meta.intake = { title: "Анкета нового клиента — Анна Пифко, доула", description: "Анкета для тех, кто записался на консультацию или внёс предоплату: личные данные, наблюдение и прошлые беременности." };
 window.SITE.ru.intake = {
   eyebrow: "Анкета нового клиента",
   h1: "Расскажи о себе",
-  lead: "Так я подготовлюсь к нашей первой встрече, и мы сможем потратить время на то, что важно именно тебе. Это займёт около десяти минут.",
+  lead: "Для семей, которые записались на консультацию или внесли предоплату. Твои ответы дают мне сведения, которые нужны, чтобы безопасно тебя поддерживать. Это займёт около десяти минут.",
   intro: "Вопросы со звёздочкой * обязательны.",
   disclosureTitle: "Твои данные",
   disclosure: [
@@ -1630,7 +1630,7 @@ window.SITE.ru.intake = {
     "Multiples": { l: "Были ли у тебя двойня или больше?", o: ["Нет", "Да, двойня", "Да, тройня или больше"] },
     "Length of previous labours": { l: "Сколько примерно длились предыдущие роды?" },
     "Conditions in previous pregnancies": { l: "Было ли что-то из этого в прошлых беременностях? Отметь всё подходящее.", o: ["Резус-конфликт", "Преэклампсия", "Повышенное давление при беременности", "Гестационный диабет", "Тяжёлый токсикоз (гиперемезис)", "Преждевременные роды", "Маленький вес ребёнка", "Крупный ребёнок (макросомия)", "Многоводие", "Маловодие", "Предлежание плаценты", "Отслойка плаценты", "Дурнота в положении на спине (синдром нижней полой вены)", "Стрептококк группы B", "Послеродовое кровотечение", "Послеродовая депрессия", "Генетическое заболевание", "Ничего из этого"] },
-    "Anything else": { l: "Есть ли что-то ещё, что мне стоит знать до нашей встречи?" }
+    "Anything else": { l: "Есть ли что-то ещё, что мне стоит знать?" }
   },
   consent: "Я даю явное согласие на то, чтобы Анна Пифко хранила информацию о здоровье из этой анкеты, чтобы безопасно меня поддерживать. Я могу отозвать это согласие в любой момент.",
   privacyLink: "Полная политика конфиденциальности",
@@ -1641,5 +1641,5 @@ window.SITE.ru.intake = {
   error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне на",
   notReady: "Анкета пока не подключена. Пожалуйста, напиши мне на"
 };
-window.SITE.en.intake.linkLabel = "Booking with me? Fill in the new client form";
-window.SITE.ru.intake.linkLabel = "Уже решила? Заполни анкету клиента";
+window.SITE.en.intake.linkLabel = "Booked a consultation or paid your deposit? Fill in the client form";
+window.SITE.ru.intake.linkLabel = "Записалась на консультацию или внесла предоплату? Заполни анкету клиента";
