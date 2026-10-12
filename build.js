@@ -129,7 +129,7 @@ function serviceCards(lang, list) {
     <p class="price">${esc(s.price || T.ui.priceOnRequest)}</p>
     ${s.who && s.who.length ? `<p class="lbl">${esc(T.ui.whoFor)}</p><ul class="dots">${s.who.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     ${s.includes && s.includes.length ? `<p class="lbl">${esc(T.ui.includes)}</p><ul class="ticks">${s.includes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
-    <div class="svc-foot"><a class="btn btn-clay btn-sm" href="${s.clinic ? S.clinic : S.calendly}" target="_blank" rel="noopener">${esc(s.clinic ? T.ui.bookClinic : T.ui.bookService)}</a></div>
+    <div class="svc-foot"><a class="btn btn-clay btn-sm" href="${S.calendly}" target="_blank" rel="noopener">${esc(T.ui.bookService)}</a>${s.payLink ? `<a class="btn btn-line btn-sm" href="${s.payLink}" target="_blank" rel="noopener">${esc(T.ui.payNow)}</a>` : ""}</div>
   </article>`).join("")}</div>`;
 }
 
@@ -322,7 +322,8 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
 <section class="sec"><div class="wrap narrow story">${block(P.howTitle, P.how)}</div></section>
 <section class="sec sand"><div class="wrap two">
   ${block(P.currencyTitle, P.currency)}
-  ${block(P.depositTitle, P.deposit)}
+  <div><h2>${esc(P.depositTitle)}</h2>${P.deposit.map((p) => `<p>${esc(p)}</p>`).join("")}
+  ${S.depositLink ? `<p class="pay-cta"><a class="btn btn-clay btn-sm" href="${S.depositLink}" target="_blank" rel="noopener">${esc(P.depositPayLabel)}</a></p>` : ""}</div>
 </div></section>
 <section class="sec"><div class="wrap narrow story">
   <h2>${esc(P.plansTitle)}</h2><p>${esc(P.plansText)}</p>

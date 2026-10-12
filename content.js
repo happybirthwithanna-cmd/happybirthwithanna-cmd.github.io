@@ -17,6 +17,7 @@ window.SITE = {
     calendly: "https://calendly.com/anna-1081/online-introductory-meeting",
     town: "Lordswood, Chatham, Kent",
     postcode: "ME5 7QW",
+    depositLink: "",                         // Revolut payment link for the birth-support deposit
     googleReview: "",                        // link to leave a Google review (from Google Business Profile)
     goatcounter: ""                          // visitor statistics code, e.g. "happybirth"
   },
@@ -28,6 +29,7 @@ window.SITE = {
       book: "Book a free consultation",
       bookShort: "Free consultation",
       bookService: "Book",
+      payNow: "Pay now",
       bookClinic: "Book at the Gravesend clinic",
       whatsapp: "WhatsApp",
       telegram: "Telegram",
@@ -373,6 +375,7 @@ window.SITE = {
         "The exact deposit, the balance and the dates they fall are set out in your service agreement, which you receive and sign before any money changes hands.",
         "Courses, single sessions and postnatal hours are usually paid in full when they are booked."
       ],
+      depositPayLabel: "Pay the deposit",
       plansTitle: "Paying in instalments",
       plansText: "If paying in one or two amounts is difficult, say so at the consultation. I would far rather arrange a schedule that works than have cost be the reason a family goes without support.",
       cancelTitle: "Changes, cancellations and refunds",
@@ -508,6 +511,7 @@ window.SITE = {
       book: "Бесплатная консультация",
       bookShort: "Записаться",
       bookService: "Записаться",
+      payNow: "Оплатить",
       bookClinic: "Записаться в клинику в Грейвсенде",
       whatsapp: "WhatsApp",
       telegram: "Telegram",
@@ -853,6 +857,7 @@ window.SITE = {
         "Точные суммы предоплаты и остатка, а также сроки их внесения прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
         "Курсы, разовые встречи и послеродовые часы обычно оплачиваются полностью при записи."
       ],
+      depositPayLabel: "Внести предоплату",
       plansTitle: "Оплата частями",
       plansText: "Если внести сумму одним или двумя платежами тяжело — скажи об этом на консультации. Мне гораздо важнее подобрать удобный график, чем оставить семью без поддержки из-за денег.",
       cancelTitle: "Изменения, отмена и возврат",
