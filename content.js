@@ -1514,7 +1514,15 @@ window.SITE.en.intake = {
   eyebrow: "New client form",
   h1: "Tell me about you",
   lead: "This helps me prepare for our first meeting, so we can spend the time on what matters to you. It takes about ten minutes.",
-  intro: "Only I see your answers: they go straight to a private file in my own account, not to a form company. Questions marked * are needed. Skip anything you would rather talk about in person.",
+  intro: "Questions marked * are needed.",
+  disclosureTitle: "Your information",
+  disclosure: [
+    "Anna Pifko, trading as Happy Birth with Anna, is responsible for the information you give in this form (the data controller under UK GDPR).",
+    "I use it only to prepare for and provide your doula support, and to contact you or your emergency contact if I need to. It is stored securely and is not shared with anyone else or used for marketing.",
+    "If we do not go on to work together, I delete it within 12 months. If we do, I keep it for the periods set out in my privacy notice.",
+    "You can ask to see, correct or delete your information at any time by writing to anna@happybirth-doula.co.uk."
+  ],
+  gdprTick: "I have read how my information will be used and agree to Anna Pifko holding my personal details for this purpose.",
   required: "needed",
   sections: {
     you: { title: "About you" },
@@ -1557,8 +1565,8 @@ window.SITE.en.intake = {
     "Conditions in previous pregnancies": { l: "Did you have any of these in a previous pregnancy? Tick all that apply.", o: ["Rhesus incompatibility", "Pre-eclampsia", "High blood pressure in pregnancy", "Gestational diabetes", "Hyperemesis gravidarum", "Preterm labour", "Low birth weight", "Large baby (macrosomia)", "Polyhydramnios (too much waters)", "Oligohydramnios (too little waters)", "Placenta praevia", "Placental abruption", "Feeling faint lying on your back (vena cava compression)", "Group B Strep", "Postpartum haemorrhage", "Postnatal depression", "Genetic condition", "None of these"] },
     "Anything else": { l: "Is there anything else you would like me to know before we meet?" }
   },
-  consent: "I agree to Anna Pifko keeping the health information I have given here so that she can support me. I can withdraw this at any time.",
-  privacyLink: "How my information is handled",
+  consent: "I give my explicit consent for Anna Pifko to hold the health information in this form, so that she can support me safely. I can withdraw this consent at any time.",
+  privacyLink: "Read the full privacy notice",
   submit: "Send to Anna",
   sending: "Sending…",
   thanksTitle: "Thank you",
@@ -1573,7 +1581,15 @@ window.SITE.ru.intake = {
   eyebrow: "Анкета нового клиента",
   h1: "Расскажи о себе",
   lead: "Так я подготовлюсь к нашей первой встрече, и мы сможем потратить время на то, что важно именно тебе. Это займёт около десяти минут.",
-  intro: "Ответы вижу только я: они попадают прямо в закрытый файл в моём аккаунте, а не в сервис для форм. Вопросы со звёздочкой * обязательны. Всё, что хочется обсудить лично, можно пропустить.",
+  intro: "Вопросы со звёздочкой * обязательны.",
+  disclosureTitle: "Твои данные",
+  disclosure: [
+    "За информацию, которую ты указываешь в этой анкете, отвечает Анна Пифко (Happy Birth with Anna) — контролёр данных по UK GDPR.",
+    "Я использую её только для подготовки и сопровождения тебя как доула, а также чтобы связаться с тобой или с твоим контактом на экстренный случай, если это понадобится. Данные хранятся надёжно, никому не передаются и не используются для рекламы.",
+    "Если мы не начнём работать вместе, я удалю их в течение 12 месяцев. Если начнём, я храню их в сроки, указанные в политике конфиденциальности.",
+    "В любой момент ты можешь попросить показать, исправить или удалить свои данные, написав на anna@happybirth-doula.co.uk."
+  ],
+  gdprTick: "Я прочитала, как будут использоваться мои данные, и согласна, чтобы Анна Пифко хранила мои персональные данные для этой цели.",
   required: "обязательно",
   sections: {
     you: { title: "О тебе" },
@@ -1616,8 +1632,8 @@ window.SITE.ru.intake = {
     "Conditions in previous pregnancies": { l: "Было ли что-то из этого в прошлых беременностях? Отметь всё подходящее.", o: ["Резус-конфликт", "Преэклампсия", "Повышенное давление при беременности", "Гестационный диабет", "Тяжёлый токсикоз (гиперемезис)", "Преждевременные роды", "Маленький вес ребёнка", "Крупный ребёнок (макросомия)", "Многоводие", "Маловодие", "Предлежание плаценты", "Отслойка плаценты", "Дурнота в положении на спине (синдром нижней полой вены)", "Стрептококк группы B", "Послеродовое кровотечение", "Послеродовая депрессия", "Генетическое заболевание", "Ничего из этого"] },
     "Anything else": { l: "Есть ли что-то ещё, что мне стоит знать до нашей встречи?" }
   },
-  consent: "Я согласна, чтобы Анна Пифко хранила указанную здесь информацию о здоровье, чтобы поддерживать меня. Я могу отозвать это согласие в любой момент.",
-  privacyLink: "Как обрабатываются мои данные",
+  consent: "Я даю явное согласие на то, чтобы Анна Пифко хранила информацию о здоровье из этой анкеты, чтобы безопасно меня поддерживать. Я могу отозвать это согласие в любой момент.",
+  privacyLink: "Полная политика конфиденциальности",
   submit: "Отправить Анне",
   sending: "Отправляю…",
   thanksTitle: "Спасибо",

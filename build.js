@@ -444,14 +444,17 @@ function intakePage(lang) {
   const mail = `<a href="mailto:${S.email}">${esc(S.email)}</a>`;
   return `${pageHead(lang, P, "")}
 <section class="sec tight"><div class="wrap narrow">
-  <p class="form-intro">${esc(P.intro)}</p>
+  <p class="form-intro small muted">${esc(P.intro)}</p>
   <form class="intake" id="intake" data-endpoint="${esc(S.intakeEndpoint || "")}" data-lang="${lang}" data-sending="${esc(P.sending)}" novalidate>
     ${secs}
     <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-    <div class="form-sec consent">
-      <label class="opt"><input type="checkbox" name="Consent to hold health information" value="Yes" required><span>${esc(P.consent)} <span class="req" aria-hidden="true">*</span></span></label>
+    <section class="form-sec consent">
+      <h2>${esc(P.disclosureTitle)}</h2>
+      ${P.disclosure.map((x) => `<p>${esc(x)}</p>`).join("")}
       <p class="small"><a href="${href(lang, lang, "privacy")}" target="_blank" rel="noopener">${esc(P.privacyLink)} →</a></p>
-    </div>
+      <label class="opt"><input type="checkbox" name="Agrees to personal data being held" value="Yes" required><span>${esc(P.gdprTick)} <span class="req" aria-hidden="true">*</span></span></label>
+      <label class="opt"><input type="checkbox" name="Explicit consent to hold health information" value="Yes" required><span>${esc(P.consent)} <span class="req" aria-hidden="true">*</span></span></label>
+    </section>
     <p class="form-msg err" id="intake-error" role="alert" hidden>${esc(P.error)} ${mail}.</p>
     <p class="form-msg err" id="intake-notready" role="alert" hidden>${esc(P.notReady)} ${mail}.</p>
     <p class="form-submit"><button class="btn btn-clay" type="submit">${esc(P.submit)}</button></p>

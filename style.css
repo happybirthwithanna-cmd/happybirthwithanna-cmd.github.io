@@ -360,7 +360,7 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .svc-foot{display:flex;flex-wrap:wrap;gap:8px}
 
 /* ---- new client form ---- */
-.form-intro{background:var(--blush);border-radius:14px;padding:18px 22px;margin:0 0 34px}
+.form-intro{margin:0 0 26px}
 .form-sec{margin-bottom:38px}
 .form-sec h2{text-align:left;font-size:clamp(22px,2.4vw,27px);margin-bottom:8px}
 .form-sec h2::after{display:none}
@@ -378,7 +378,9 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .opt,.fld .opt,.consent .opt{display:flex;align-items:flex-start;gap:10px;font-weight:400!important;font-size:16px!important;cursor:pointer;margin:0!important}
 .opt input{accent-color:var(--clay);width:19px;height:19px;margin:3px 0 0;flex:none}
 .consent{background:var(--sand);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
-.consent .small{margin:10px 0 0 29px}
+.consent p{font-size:15px;margin:0 0 10px;color:var(--muted)}
+.consent .small{margin:4px 0 18px}
+.consent .opt{margin-top:12px!important}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-msg.err{color:#8A2B2B;background:#FBEDED;border-radius:10px;padding:12px 16px}
 .form-submit{text-align:center;margin-top:10px}
