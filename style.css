@@ -358,3 +358,33 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .doc-list li{margin-bottom:9px;line-height:1.65;color:var(--muted)}
 .pay-cta{margin-top:18px}
 .svc-foot{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---- new client form ---- */
+.form-intro{background:var(--blush);border-radius:14px;padding:18px 22px;margin:0 0 34px}
+.form-sec{margin-bottom:38px}
+.form-sec h2{text-align:left;font-size:clamp(22px,2.4vw,27px);margin-bottom:8px}
+.form-sec h2::after{display:none}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin-top:16px}
+.form-grid .full{grid-column:1/-1}
+.fld{margin:0;padding:0;border:0;min-width:0}
+.fld[hidden]{display:none}
+.fld label,.fld legend{display:block;font-weight:500;font-size:15px;margin-bottom:6px;line-height:1.4;padding:0}
+.req{color:var(--clay)}
+.intake input[type=text],.intake input[type=email],.intake input[type=tel],.intake input[type=date],.intake input[type=number],.intake textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid #D9D2CE;border-radius:10px;padding:11px 14px;min-height:46px}
+.intake textarea{resize:vertical;line-height:1.5}
+.intake input:focus,.intake textarea:focus{outline:none;border-color:var(--clay);box-shadow:0 0 0 3px rgba(158,90,93,.15)}
+.opts{display:flex;flex-wrap:wrap;gap:8px 20px}
+.opts.many{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+.opt,.fld .opt,.consent .opt{display:flex;align-items:flex-start;gap:10px;font-weight:400!important;font-size:16px!important;cursor:pointer;margin:0!important}
+.opt input{accent-color:var(--clay);width:19px;height:19px;margin:3px 0 0;flex:none}
+.consent{background:var(--sand);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.consent .small{margin:10px 0 0 29px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-msg.err{color:#8A2B2B;background:#FBEDED;border-radius:10px;padding:12px 16px}
+.form-submit{text-align:center;margin-top:10px}
+.form-submit .btn[disabled]{opacity:.6;cursor:wait}
+.form-done{text-align:center;padding:40px 0}
+.form-done h2::after{display:none}
+.intake-link{margin:22px 0 6px;text-align:center}
+.intake-link .btn{white-space:normal;text-align:center}
+@media (max-width:640px){ .form-grid,.opts.many{grid-template-columns:1fr} }

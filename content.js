@@ -395,7 +395,7 @@ window.SITE = {
       eyebrow: "Privacy",
       h1: "Privacy notice",
       lead: "What information I hold about you, why I hold it, who else can see it and what you can ask me to do with it. Written to be read, not to be skipped.",
-      updated: "Last updated: 28 September 2026",
+      updated: "Last updated: 12 October 2026",
       sections: [
         { title: "Who is responsible for your information",
           paras: [
@@ -421,7 +421,7 @@ window.SITE = {
           list: [
             "Calendly — the times and details of the meetings you book with me.",
             "Revolut — your name and the amount, when I send you a payment link or an invoice.",
-            "Google Workspace — my email, which is where written correspondence with you lives.",
+            "Google — my email, which is where written correspondence with you lives, and the private spreadsheet where your answers to the new client form on this website are saved. Only I can open it.",
             "WhatsApp and Telegram, if you choose to message me there. Those conversations sit on their systems under their own terms.",
             "GitHub Pages, which hosts this website. Like any web server it records visits, including IP addresses, in its own logs. I cannot see those logs and I hold no analytics of my own.",
             "My insurer and my professional body, Doula UK, but only if a complaint or a claim were ever made."
@@ -879,7 +879,7 @@ window.SITE = {
       eyebrow: "Конфиденциальность",
       h1: "Политика конфиденциальности",
       lead: "Какие данные о тебе я храню, зачем, кто ещё может их видеть и что ты вправе попросить меня с ними сделать. Написано так, чтобы это можно было прочитать, а не пролистать.",
-      updated: "Последнее обновление: 28 сентября 2026 года",
+      updated: "Последнее обновление: 12 октября 2026 года",
       sections: [
         { title: "Кто отвечает за твои данные",
           paras: [
@@ -905,7 +905,7 @@ window.SITE = {
           list: [
             "Calendly — время и детали встреч, которые ты бронируешь.",
             "Revolut — имя и сумма, когда я отправляю ссылку на оплату или счёт.",
-            "Google Workspace — моя почта, где хранится письменная переписка с тобой.",
+            "Google — моя почта, где хранится письменная переписка с тобой, и закрытая таблица, куда сохраняются твои ответы из анкеты клиента на этом сайте. Открыть её могу только я.",
             "WhatsApp и Telegram, если ты пишешь мне туда. Эти переписки хранятся в их системах на их условиях.",
             "GitHub Pages — хостинг этого сайта. Как любой веб-сервер, он фиксирует посещения, включая IP-адреса, в собственных логах. Доступа к этим логам у меня нет, и никакой своей аналитики я не веду.",
             "Моя страховая компания и профессиональная ассоциация Doula UK — но только если когда-либо будет подана жалоба или претензия."
@@ -1461,3 +1461,169 @@ window.SITE.landings = [
     }
   }
 ];
+
+/* ======================= NEW CLIENT FORM (/intake, /ru/intake) =======================
+   The page is built from the list below. Answers are sent to a Google Sheet in Anna's
+   account through the address in settings.intakeEndpoint (see intake-form-setup.md).
+   "key" is the column heading in the Sheet, so it is the same in both languages.        */
+window.SITE.settings.intakeEndpoint = "";   // paste the Google Apps Script web-app address here
+
+window.SITE.intakeForm = [
+  { id: "you", fields: [
+    { key: "Full name", type: "text", req: 1, ac: "name" },
+    { key: "Date of birth", type: "date", ac: "bday" },
+    { key: "Estimated due date", type: "date", req: 1 },
+    { key: "Mobile", type: "tel", req: 1, ac: "tel" },
+    { key: "Email", type: "email", req: 1, ac: "email" },
+    { key: "Home address", type: "textarea", rows: 3, ac: "street-address", full: 1 },
+    { key: "Relationship status", type: "radio" },
+    { key: "Occupation", type: "text" } ] },
+  { id: "partner", fields: [
+    { key: "Partner's name", type: "text" },
+    { key: "Partner's phone", type: "tel" },
+    { key: "Partner's email", type: "email" } ] },
+  { id: "emergency", fields: [
+    { key: "Emergency contact name", type: "text" },
+    { key: "Emergency contact relationship", type: "text" },
+    { key: "Emergency contact mobile", type: "tel" },
+    { key: "Emergency contact other phone", type: "tel" } ] },
+  { id: "care", fields: [
+    { key: "Type of care provider", type: "radio" },
+    { key: "Midwife, doctor or team", type: "text" },
+    { key: "Hospital, practice or NHS trust", type: "text" },
+    { key: "Care provider phone", type: "tel" },
+    { key: "Care provider knows about doula", type: "radio" },
+    { key: "Planned place of birth", type: "radio" } ] },
+  { id: "previous", fields: [
+    { key: "First pregnancy", type: "radio", req: 1, full: 1 },
+    { key: "Children (names and ages)", type: "textarea", rows: 3, full: 1, showIf: ["First pregnancy", 1] },
+    { key: "Types of birth experienced", type: "checks", full: 1, showIf: ["First pregnancy", 1] },
+    { key: "Number of births", type: "number", showIf: ["First pregnancy", 1] },
+    { key: "Pregnancies carried to term (37+ weeks)", type: "number", showIf: ["First pregnancy", 1] },
+    { key: "Preterm births (24-37 weeks)", type: "number", showIf: ["First pregnancy", 1] },
+    { key: "Multiples", type: "radio", showIf: ["First pregnancy", 1] },
+    { key: "Length of previous labours", type: "text", full: 1, showIf: ["First pregnancy", 1] },
+    { key: "Conditions in previous pregnancies", type: "checks", full: 1, showIf: ["First pregnancy", 1] } ] },
+  { id: "else", fields: [
+    { key: "Anything else", type: "textarea", rows: 5, full: 1 } ] }
+];
+
+window.SITE.en.nav.intake = "New client form";
+window.SITE.en.meta.intake = { title: "New Client Form | Happy Birth with Anna", description: "Tell Anna about yourself, your care and any previous pregnancies before your first meeting." };
+window.SITE.en.intake = {
+  eyebrow: "New client form",
+  h1: "Tell me about you",
+  lead: "This helps me prepare for our first meeting, so we can spend the time on what matters to you. It takes about ten minutes.",
+  intro: "Only I see your answers: they go straight to a private file in my own account, not to a form company. Questions marked * are needed. Skip anything you would rather talk about in person.",
+  required: "needed",
+  sections: {
+    you: { title: "About you" },
+    partner: { title: "Your partner", note: "If you have a partner who will be involved. Leave blank if not." },
+    emergency: { title: "Emergency contact", note: "Someone I can reach if I cannot reach you, for example while you are in labour." },
+    care: { title: "Your midwife or doctor" },
+    previous: { title: "Previous pregnancies" },
+    else: { title: "Anything else" }
+  },
+  f: {
+    "Full name": { l: "Your full name" },
+    "Date of birth": { l: "Your date of birth" },
+    "Estimated due date": { l: "Estimated due date" },
+    "Mobile": { l: "Mobile number" },
+    "Email": { l: "Email" },
+    "Home address": { l: "Home address, including postcode" },
+    "Relationship status": { l: "Relationship status", o: ["Single", "Married", "In a relationship", "Divorced or separated", "Prefer not to say"] },
+    "Occupation": { l: "Occupation" },
+    "Partner's name": { l: "Partner's name" },
+    "Partner's phone": { l: "Partner's phone" },
+    "Partner's email": { l: "Partner's email" },
+    "Emergency contact name": { l: "Name" },
+    "Emergency contact relationship": { l: "Relationship to you" },
+    "Emergency contact mobile": { l: "Mobile number" },
+    "Emergency contact other phone": { l: "Other phone number" },
+    "Type of care provider": { l: "Who is looking after your pregnancy?", o: ["Midwife", "Doctor (obstetrician or GP)", "Other"] },
+    "Midwife, doctor or team": { l: "Name of your midwife, doctor or team" },
+    "Hospital, practice or NHS trust": { l: "Hospital, practice or NHS trust" },
+    "Care provider phone": { l: "Their phone number" },
+    "Care provider knows about doula": { l: "Do they know you are planning to have a doula?", o: ["Yes", "No", "Not yet"] },
+    "Planned place of birth": { l: "Where are you planning to give birth?", o: ["Home", "Hospital", "Birth centre", "Not sure yet"] },
+    "First pregnancy": { l: "Is this your first pregnancy?", o: ["Yes", "No"] },
+    "Children (names and ages)": { l: "Your children's names and ages" },
+    "Types of birth experienced": { l: "Which kinds of birth have you had? Tick all that apply.", o: ["Vaginal birth", "Caesarean", "VBAC (vaginal birth after caesarean)", "Induction for medical reasons", "Elective induction", "Home birth", "Hospital birth", "Birth centre birth", "Water birth"] },
+    "Number of births": { l: "How many times have you given birth?" },
+    "Pregnancies carried to term (37+ weeks)": { l: "How many were carried to term (37 weeks or more)?" },
+    "Preterm births (24-37 weeks)": { l: "How many were born early (between 24 and 37 weeks)?" },
+    "Multiples": { l: "Have you given birth to twins or more?", o: ["No", "Yes, twins", "Yes, triplets or more"] },
+    "Length of previous labours": { l: "Roughly how long did your previous labours last?" },
+    "Conditions in previous pregnancies": { l: "Did you have any of these in a previous pregnancy? Tick all that apply.", o: ["Rhesus incompatibility", "Pre-eclampsia", "High blood pressure in pregnancy", "Gestational diabetes", "Hyperemesis gravidarum", "Preterm labour", "Low birth weight", "Large baby (macrosomia)", "Polyhydramnios (too much waters)", "Oligohydramnios (too little waters)", "Placenta praevia", "Placental abruption", "Feeling faint lying on your back (vena cava compression)", "Group B Strep", "Postpartum haemorrhage", "Postnatal depression", "Genetic condition", "None of these"] },
+    "Anything else": { l: "Is there anything else you would like me to know before we meet?" }
+  },
+  consent: "I agree to Anna Pifko keeping the health information I have given here so that she can support me. I can withdraw this at any time.",
+  privacyLink: "How my information is handled",
+  submit: "Send to Anna",
+  sending: "Sending…",
+  thanksTitle: "Thank you",
+  thanks: "Your answers have reached me. I will be in touch soon, usually the same day.",
+  error: "Something went wrong and your answers were not sent. Please try again, or email me at",
+  notReady: "The form is not switched on yet. Please email me at"
+};
+
+window.SITE.ru.nav.intake = "Анкета клиента";
+window.SITE.ru.meta.intake = { title: "Анкета нового клиента — Анна Пифко, доула", description: "Расскажи о себе, своём наблюдении и прошлых беременностях до нашей первой встречи." };
+window.SITE.ru.intake = {
+  eyebrow: "Анкета нового клиента",
+  h1: "Расскажи о себе",
+  lead: "Так я подготовлюсь к нашей первой встрече, и мы сможем потратить время на то, что важно именно тебе. Это займёт около десяти минут.",
+  intro: "Ответы вижу только я: они попадают прямо в закрытый файл в моём аккаунте, а не в сервис для форм. Вопросы со звёздочкой * обязательны. Всё, что хочется обсудить лично, можно пропустить.",
+  required: "обязательно",
+  sections: {
+    you: { title: "О тебе" },
+    partner: { title: "Партнёр", note: "Если у тебя есть партнёр, который будет участвовать. Если нет, оставь пустым." },
+    emergency: { title: "Контакт на экстренный случай", note: "Человек, с которым я смогу связаться, если не дозвонюсь до тебя, например во время родов." },
+    care: { title: "Твоя акушерка или врач" },
+    previous: { title: "Прошлые беременности" },
+    else: { title: "Что-то ещё" }
+  },
+  f: {
+    "Full name": { l: "Имя и фамилия" },
+    "Date of birth": { l: "Дата рождения" },
+    "Estimated due date": { l: "Предполагаемая дата родов (ПДР)" },
+    "Mobile": { l: "Мобильный телефон" },
+    "Email": { l: "Email" },
+    "Home address": { l: "Домашний адрес с почтовым индексом" },
+    "Relationship status": { l: "Семейное положение", o: ["Не замужем", "Замужем", "В отношениях", "В разводе или раздельно", "Предпочитаю не указывать"] },
+    "Occupation": { l: "Род занятий" },
+    "Partner's name": { l: "Имя партнёра" },
+    "Partner's phone": { l: "Телефон партнёра" },
+    "Partner's email": { l: "Email партнёра" },
+    "Emergency contact name": { l: "Имя" },
+    "Emergency contact relationship": { l: "Кем приходится тебе" },
+    "Emergency contact mobile": { l: "Мобильный телефон" },
+    "Emergency contact other phone": { l: "Другой номер" },
+    "Type of care provider": { l: "Кто ведёт твою беременность?", o: ["Акушерка (midwife)", "Врач (акушер или GP)", "Другое"] },
+    "Midwife, doctor or team": { l: "Имя акушерки, врача или название команды" },
+    "Hospital, practice or NHS trust": { l: "Больница, клиника или NHS trust" },
+    "Care provider phone": { l: "Их телефон" },
+    "Care provider knows about doula": { l: "Они знают, что у тебя будет доула?", o: ["Да", "Нет", "Пока нет"] },
+    "Planned place of birth": { l: "Где ты планируешь рожать?", o: ["Дома", "В больнице", "В родильном центре", "Пока не решила"] },
+    "First pregnancy": { l: "Это твоя первая беременность?", o: ["Да", "Нет"] },
+    "Children (names and ages)": { l: "Имена и возраст твоих детей" },
+    "Types of birth experienced": { l: "Какие роды у тебя были? Отметь всё подходящее.", o: ["Естественные роды", "Кесарево сечение", "Естественные роды после кесарева (VBAC)", "Индукция по медицинским показаниям", "Плановая индукция", "Роды дома", "Роды в больнице", "Роды в родильном центре", "Роды в воду"] },
+    "Number of births": { l: "Сколько раз ты рожала?" },
+    "Pregnancies carried to term (37+ weeks)": { l: "Сколько беременностей было доношено (37 недель и больше)?" },
+    "Preterm births (24-37 weeks)": { l: "Сколько детей родились раньше срока (между 24 и 37 неделями)?" },
+    "Multiples": { l: "Были ли у тебя двойня или больше?", o: ["Нет", "Да, двойня", "Да, тройня или больше"] },
+    "Length of previous labours": { l: "Сколько примерно длились предыдущие роды?" },
+    "Conditions in previous pregnancies": { l: "Было ли что-то из этого в прошлых беременностях? Отметь всё подходящее.", o: ["Резус-конфликт", "Преэклампсия", "Повышенное давление при беременности", "Гестационный диабет", "Тяжёлый токсикоз (гиперемезис)", "Преждевременные роды", "Маленький вес ребёнка", "Крупный ребёнок (макросомия)", "Многоводие", "Маловодие", "Предлежание плаценты", "Отслойка плаценты", "Дурнота в положении на спине (синдром нижней полой вены)", "Стрептококк группы B", "Послеродовое кровотечение", "Послеродовая депрессия", "Генетическое заболевание", "Ничего из этого"] },
+    "Anything else": { l: "Есть ли что-то ещё, что мне стоит знать до нашей встречи?" }
+  },
+  consent: "Я согласна, чтобы Анна Пифко хранила указанную здесь информацию о здоровье, чтобы поддерживать меня. Я могу отозвать это согласие в любой момент.",
+  privacyLink: "Как обрабатываются мои данные",
+  submit: "Отправить Анне",
+  sending: "Отправляю…",
+  thanksTitle: "Спасибо",
+  thanks: "Твои ответы у меня. Я скоро свяжусь с тобой, обычно в тот же день.",
+  error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне на",
+  notReady: "Анкета пока не подключена. Пожалуйста, напиши мне на"
+};
+window.SITE.en.intake.linkLabel = "Booking with me? Fill in the new client form";
+window.SITE.ru.intake.linkLabel = "Уже решила? Заполни анкету клиента";
