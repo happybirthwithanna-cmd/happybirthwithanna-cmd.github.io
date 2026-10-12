@@ -74,15 +74,11 @@ function ok() {
    home-made script; it is your own code running in your own account.
 5. Copy the **Web app URL** (it starts `https://script.google.com/macros/s/`).
 
-## 4. Connect it to the website
+## 4. Connect it to the website ✓ done
 
-Send the Web app URL to Claude, or paste it yourself into `content.js`:
-
-```javascript
-window.SITE.settings.intakeEndpoint = "https://script.google.com/macros/s/....../exec";
-```
-
-Until this is filled in, the form shows a message asking people to email you instead.
+Nothing to do here: Claude has already put your Web app URL into the website
+(12 October 2026). You only need this step again if you ever make a brand-new
+deployment and get a different URL. In that case, send the new URL to Claude.
 
 ## 5. Test
 
