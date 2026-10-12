@@ -20,46 +20,7 @@ You do this once. It takes about ten minutes.
 2. Delete everything in the editor and paste the whole script below.
 3. Press the save icon.
 
-```javascript
-// Receives the new client form from happybirth-doula.co.uk and saves each one as a row.
-const NOTIFY = "anna@happybirth-doula.co.uk";   // who gets the "new form" email
-
-function doPost(e) {
-  const lock = LockService.getScriptLock();
-  lock.waitLock(20000);
-  try {
-    const data = JSON.parse(e.postData.contents);
-    if (data.website) return ok();                          // spam robot
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-    data["Received"] = new Date();
-
-    // headings: add any new question as a new column, never reorder old ones
-    let headers = sheet.getLastColumn() ? sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0] : [];
-    if (!headers.length) headers = ["Received"];
-    Object.keys(data).forEach(k => { if (headers.indexOf(k) === -1) headers.push(k); });
-    sheet.getRange(1, 1, 1, headers.length).setValues([headers]).setFontWeight("bold");
-    sheet.setFrozenRows(1);
-
-    const row = headers.map(h => {
-      const v = data[h] == null ? "" : data[h];
-      return typeof v === "string" && /^[=+\-@]/.test(v) ? "'" + v : v;   // stop formulas being run
-    });
-    sheet.appendRow(row);
-
-    MailApp.sendEmail(NOTIFY, "New client form: " + (data["Full name"] || "unnamed"),
-      "A new client form has arrived from " + (data["Full name"] || "someone") +
-      " (due " + (data["Estimated due date"] || "?") + ").\n\nOpen the Sheet to read it:\n" +
-      SpreadsheetApp.getActiveSpreadsheet().getUrl());
-    return ok();
-  } finally {
-    lock.releaseLock();
-  }
-}
-
-function ok() {
-  return ContentService.createTextOutput("ok");
-}
-```
+Copy the whole of **intake-sheet-script.gs** (it's in the same folder as this guide) and paste it in.
 
 ## 3. Publish it
 
@@ -93,3 +54,22 @@ appear in the Sheet and the email should arrive. Delete the test row afterwards.
   notice promises.
 - If you ever change the script, use **Deploy → Manage deployments → Edit → New version**
   so the web address stays the same.
+
+## Making the Sheet easier to read (added 12 Oct)
+
+The script now keeps two tabs:
+
+- **Client card**: choose a name from the dropdown at the top and that client's answers
+  appear as a tidy list under headings (About you, Partner, Emergency contact, Midwife or
+  doctor, Previous pregnancies, Consent). It opens on the newest client automatically.
+- **Answers**: one row per client, newest at the top, name and received date kept in view
+  while you scroll sideways, dates shown as dd/mm/yyyy.
+
+To switch it on (once):
+
+1. Open the Sheet → **Extensions → Apps Script**.
+2. Select everything in the editor, delete it, paste the whole of **intake-sheet-script.gs**, and save.
+3. In the toolbar, choose **setupSheet** from the function dropdown and press **Run**.
+   If Google asks for permission again, allow it. Your existing answers are kept and reordered.
+4. **Deploy → Manage deployments → pencil (Edit) → Version: New version → Deploy.**
+   The web address stays the same.
