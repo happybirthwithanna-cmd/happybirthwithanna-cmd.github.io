@@ -96,7 +96,7 @@ window.SITE = {
       h1: "Doula support in Kent, Medway & London",
       tagline: "Breathe in your power. Breathe out your fear.",
       lead: "I’m Anna — a doula since 2016, Doula UK mentor and mother of three. I support families through pregnancy, birth and the first weeks after, in English and Russian.",
-      trust: ["Red Tent-trained doula", "BSc (Hons) Psychology & Child Development", "Published research", "Carrot approved", "Doula UK-recognised mentor", "Doula since 2016", "Mother of three — 15 years’ experience", "English & Русский"],
+      trust: ["Red Tent-trained doula", "BSc (Hons) Psychology & Child Development", "Published research", "Doula UK-recognised mentor", "Doula since 2016", "Mother of three — 15 years’ experience", "English & Русский"],
       photoAlt: "Anna Pifko, doula in Kent and London",
 
       whoTitle: "Is a doula right for you?",
@@ -304,7 +304,7 @@ window.SITE = {
       experienceTitle: "Experience",
       experience: ["Supporting families since 2016", "Mother of three, fifteen years of parenting", "Home, birth centre, hospital and caesarean births", "Twin pregnancies at home and in hospital", "Births in more than one country", "Working in English and Russian"],
       qualTitle: "Qualifications",
-      qual: ["BSc (Hons) Psychology with Child Development, University of East London", "Author of published research in psychology", "Carrot approved", "Red Tent doula training (2016)", "NVQ Level 3 in Health and Social Care", "Certified baby massage instructor, IAIM (2019)", "Doula UK recognised mentor", "Trauma-informed care and safeguarding training"],
+      qual: ["BSc (Hons) Psychology with Child Development, University of East London", "Author of published research in psychology", "Red Tent doula training (2016)", "NVQ Level 3 in Health and Social Care", "Certified baby massage instructor, IAIM (2019)", "Doula UK recognised mentor", "Trauma-informed care and safeguarding training"],
       trainingTitle: "Training",
       training: [
         { year: "2016", text: "Red Tent Doula Course" },
@@ -365,7 +365,7 @@ window.SITE = {
       currencyTitle: "Currency and receipts",
       currency: [
         "All prices are quoted and charged in pounds sterling (GBP).",
-        "You receive a written invoice before each payment and a receipt after it. Keep these — some employers and health insurers, including Carrot, will reimburse doula support against them."
+        "You receive a written invoice before each payment and a receipt after it. Keep these — some employers and health insurers will reimburse doula support against them."
       ],
       depositTitle: "Deposit and balance",
       deposit: [
@@ -576,7 +576,7 @@ window.SITE = {
       h1: "Русскоязычная доула в Кенте и Лондоне",
       tagline: "Вдохни силу. Выдохни страх.",
       lead: "Меня зовут Анна. Я доула с 2016 года, признанный ментор Doula UK и мама троих детей. Поддерживаю семьи во время беременности, родов и в первые недели после — на русском и английском.",
-      trust: ["Обучение Red Tent", "BSc (Hons): психология и детское развитие", "Научные публикации", "Carrot approved", "Признанный ментор Doula UK", "Доула с 2016 года", "Мама троих детей — 15 лет материнства", "Русский и английский"],
+      trust: ["Обучение Red Tent", "BSc (Hons): психология и детское развитие", "Научные публикации", "Признанный ментор Doula UK", "Доула с 2016 года", "Мама троих детей — 15 лет материнства", "Русский и английский"],
       photoAlt: "Анна Пифко, доула в Кенте и Лондоне",
 
       whoTitle: "Подойдёт ли тебе доула?",
@@ -784,7 +784,7 @@ window.SITE = {
       experienceTitle: "Опыт",
       experience: ["Поддерживаю семьи с 2016 года", "Мама троих детей, пятнадцать лет материнства", "Роды дома, в родильном центре, в больнице и кесарево сечение", "Многоплодные беременности дома и в больнице", "Роды в разных странах", "Работаю на русском и английском"],
       qualTitle: "Образование",
-      qual: ["BSc (Hons) Психология и детское развитие, University of East London", "Автор научных публикаций по психологии", "Carrot approved", "Обучение доул Red Tent (2016)", "NVQ Level 3 Health and Social Care", "Сертифицированный инструктор детского массажа, IAIM (2019)", "Признанный ментор Doula UK", "Обучение работе с учётом травматического опыта и safeguarding"],
+      qual: ["BSc (Hons) Психология и детское развитие, University of East London", "Автор научных публикаций по психологии", "Обучение доул Red Tent (2016)", "NVQ Level 3 Health and Social Care", "Сертифицированный инструктор детского массажа, IAIM (2019)", "Признанный ментор Doula UK", "Обучение работе с учётом травматического опыта и safeguarding"],
       trainingTitle: "Обучение",
       training: [
         { year: "2016", text: "Курс доул Red Tent" },
@@ -845,7 +845,7 @@ window.SITE = {
       currencyTitle: "Валюта и документы",
       currency: [
         "Все цены указываются и списываются в фунтах стерлингов (GBP).",
-        "Перед каждой оплатой ты получаешь счёт, после — подтверждение об оплате. Их стоит сохранять: некоторые работодатели и страховые компании, включая Carrot, компенсируют услуги доулы по этим документам."
+        "Перед каждой оплатой ты получаешь счёт, после — подтверждение об оплате. Их стоит сохранять: некоторые работодатели и страховые компании компенсируют услуги доулы по этим документам."
       ],
       depositTitle: "Предоплата и остаток",
       deposit: [
@@ -1000,10 +1000,6 @@ window.SITE.partners = [
   { name: "Red Tent Doulas", url: "https://redtentdoulas.co.uk/", logo: "",
     en: "Where I trained as a doula.",
     ru: "Здесь я училась на доулу." },
-
-  { name: "Carrot", url: "https://www.get-carrot.com/", logo: "",
-    en: "Carrot approved. If your employer offers Carrot benefits, doula support with me may be reimbursed.",
-    ru: "Carrot approved. Если работодатель предоставляет программу Carrot, сопровождение доулы может быть компенсировано." },
 
   { name: "IAIM", url: "https://www.iaim.org.uk/", logo: "",
     en: "International Association of Infant Massage — my baby massage instructor qualification.",

@@ -263,7 +263,7 @@ ${ctaBand(lang, H.ctaTitle, H.ctaText)}`;
     const T = SITE[lang], P = T.pregnancy;
     return `${pageHead(lang, P, "pregnancy")}
 <section class="sec tight"><div class="wrap">${stats(P.stats, "stats-row")}</div></section>
-<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}${P.carrotNote ? `<p class="small muted note-under carrot">${esc(P.carrotNote)}</p>` : ""}</div></section>
+<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
 <section class="sec sand"><div class="wrap narrow"><h2>${esc(P.curriculumTitle)}</h2><ul class="ticks cols2">${P.curriculum.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></section>
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
