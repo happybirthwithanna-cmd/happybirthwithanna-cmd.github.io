@@ -1466,7 +1466,7 @@ window.SITE.landings = [
    The page is built from the list below. Answers are sent to a Google Sheet in Anna's
    account through the address in settings.intakeEndpoint (see intake-form-setup.md).
    "key" is the column heading in the Sheet, so it is the same in both languages.        */
-window.SITE.settings.intakeEndpoint = "";   // paste the Google Apps Script web-app address here
+window.SITE.settings.intakeEndpoint = "https://script.google.com/macros/s/AKfycbx3pHwq5mdsu7w--ZUjukppuVX1exHzGxqQToYrM914XaJnWra2rcezItQTr5sj9aNs/exec";   // paste the Google Apps Script web-app address here
 
 window.SITE.intakeForm = [
   { id: "you", fields: [
