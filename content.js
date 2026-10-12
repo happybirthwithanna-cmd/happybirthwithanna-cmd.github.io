@@ -55,8 +55,8 @@ window.SITE = {
     },
 
     meta: {
-      home: { title: "Doula in Kent, Medway & London | Happy Birth with Anna", description: "Birth and postnatal doula in Chatham, Kent & Medway, also covering London. English and Russian. Birth support from £1,800. Free 45-minute consultation." },
-      pregnancy: { title: "Birth Doula Packages & Antenatal Courses | Kent & London", description: "Birth support from £1,800, online antenatal courses and monthly doula support for parents in Kent, Medway and London. Book a free consultation." },
+      home: { title: "Doula in Kent, Medway & London | Happy Birth with Anna", description: "Birth and postnatal doula in Chatham, Kent & Medway, also covering London. English and Russian. Birth support from £2,100. Free 45-minute consultation." },
+      pregnancy: { title: "Birth Doula Packages & Antenatal Courses | Kent & London", description: "Birth support from £2,100, online antenatal courses and monthly doula support for parents in Kent, Medway and London. Book a free consultation." },
       postnatal: { title: "Postnatal Doula Kent & Medway | From £30/hour", description: "Postnatal doula care at home from £30/hour, the bone closing ceremony, breastfeeding support and parenting courses in Kent, Medway and London." },
       children: { title: "Baby Massage Course & Sling Support in Kent", description: "Group baby massage course (6 sessions, £50) with a certified instructor, sling wearing support and Bach therapy for children in Kent and Medway." },
       adults: { title: "Bach Flower Therapy Online | Kent & Worldwide", description: "Bach flower remedy consultations online with doula Anna Pifko: £60 for a first 90-minute session, £35 for follow-ups. Available anywhere." },
@@ -141,7 +141,7 @@ window.SITE = {
       ],
       servicesTitle: "How I can help",
       services: [
-        { page: "pregnancy", title: "Pregnancy & birth", text: "Birth support packages, antenatal courses, monthly support through pregnancy and a free first meeting.", from: "birth from £1,800" },
+        { page: "pregnancy", title: "Pregnancy & birth", text: "Birth support packages, antenatal courses, monthly support through pregnancy and a free first meeting.", from: "birth from £2,100" },
         { page: "postnatal", title: "After birth", text: "A postnatal doula at home, the bone closing ceremony and breastfeeding support.", from: "from £30 an hour" },
         { page: "children", title: "Babies & children", text: "Baby massage courses, sling support and Bach therapy for children.", from: "from £50" },
         { page: "adults", title: "For you", text: "Bach flower therapy online, for the times when feelings are running high.", from: "from £35" }
@@ -490,7 +490,7 @@ window.SITE = {
       items: [
         { q: "What does a doula actually do?", a: "A doula provides continuous emotional, physical and informational support through pregnancy, birth and the weeks afterwards. I help you prepare, stay with you throughout labour with massage, breathing, positions, rebozo and aromatherapy, help you put your wishes across clearly, and support your recovery once your baby is here." },
         { q: "Does a doula replace my midwife?", a: "No. Your midwife and doctors are responsible for the clinical side of your care. A doula carries out no clinical tasks at all: I do not perform examinations, monitor your baby or give medical advice. The two roles sit alongside one another, and most midwives are glad of a well-prepared doula in the room." },
-        { q: "How much does a doula cost in Kent?", a: "Birth support starts at £1,800, depending on what is included. Postnatal support is £30 an hour with a minimum of four hours per visit, monthly support through pregnancy is £150 a month, and the first consultation is free. If cost is the obstacle, do say so: Doula UK also runs an Access Fund for families in financial hardship." },
+        { q: "How much does a doula cost in Kent?", a: "Birth support starts at £2,100, depending on what is included. Postnatal support is £30 an hour with a minimum of four hours per visit, monthly support through pregnancy is £150 a month, and the first consultation is free. If cost is the obstacle, do say so: Doula UK also runs an Access Fund for families in financial hardship." },
         { q: "Which areas do you cover?", a: "I am based in Lordswood, Chatham, and work in person within about 55 miles: Medway, Maidstone, Gravesend, Dartford, Sittingbourne, Canterbury, Ashford, Sevenoaks and London. Courses and consultations are available online anywhere in the world." },
         { q: "Do you support caesarean and home births?", a: "Yes. I support births at home, in birth centres and in hospital, planned and unplanned caesareans, induced labours, VBAC and twin pregnancies. A caesarean birth deserves just as much preparation and support as any other." },
         { q: "Can I have support in Russian?", a: "Yes. I work in both English and Russian, which many families find invaluable when medical terminology in English is hard to follow, or when the wider family speaks Russian." },
@@ -535,8 +535,8 @@ window.SITE = {
     },
 
     meta: {
-      home: { title: "Русскоязычная доула в Кенте и Лондоне — Анна Пифко", description: "Доула в Кенте, Медуэе и Лондоне: подготовка к родам, роды и поддержка после родов на русском. Роды от £1 800. Бесплатная консультация 45 минут." },
-      pregnancy: { title: "Сопровождение родов в Англии — доула Анна Пифко", description: "Сопровождение родов от £1 800, онлайн-курсы подготовки к родам и ежемесячная поддержка доулы на русском языке. Кент, Медуэй, Лондон." },
+      home: { title: "Русскоязычная доула в Кенте и Лондоне — Анна Пифко", description: "Доула в Кенте, Медуэе и Лондоне: подготовка к родам, роды и поддержка после родов на русском. Роды от £2 100. Бесплатная консультация 45 минут." },
+      pregnancy: { title: "Сопровождение родов в Англии — доула Анна Пифко", description: "Сопровождение родов от £2 100, онлайн-курсы подготовки к родам и ежемесячная поддержка доулы на русском языке. Кент, Медуэй, Лондон." },
       postnatal: { title: "Послеродовая доула в Кенте и Лондоне — от £30 в час", description: "Послеродовая доула от £30 в час, обряд закрытия костей, консультации по грудному вскармливанию и курсы для родителей на русском языке." },
       children: { title: "Детский массаж и слингоконсультация в Кенте", description: "Групповой курс детского массажа (6 занятий, £50) с сертифицированным инструктором, слингоконсультация и терапия Баха для детей. Кент." },
       adults: { title: "Терапия цветами Баха онлайн — Анна Пифко", description: "Консультации по цветам Баха онлайн с доулой Анной Пифко: £60 за первую встречу 90 минут, £35 за повторную. Из любой точки мира." },
@@ -621,7 +621,7 @@ window.SITE = {
       ],
       servicesTitle: "Чем я могу помочь",
       services: [
-        { page: "pregnancy", title: "Беременность и роды", text: "Пакеты сопровождения родов, курсы подготовки, ежемесячная поддержка во время беременности и бесплатная первая встреча.", from: "сопровождение родов — от £1 800" },
+        { page: "pregnancy", title: "Беременность и роды", text: "Пакеты сопровождения родов, курсы подготовки, ежемесячная поддержка во время беременности и бесплатная первая встреча.", from: "сопровождение родов — от £2 100" },
         { page: "postnatal", title: "После родов", text: "Послеродовая доула у тебя дома, обряд закрытия костей и помощь с грудным вскармливанием.", from: "от £30 в час" },
         { page: "children", title: "Малышам и детям", text: "Курсы детского массажа, слингоконсультации и терапия Баха для детей.", from: "от £50" },
         { page: "adults", title: "Тебе самой", text: "Терапия цветами Баха онлайн — когда чувств слишком много.", from: "от £35" }
@@ -970,7 +970,7 @@ window.SITE = {
       items: [
         { q: "Чем на самом деле занимается доула?", a: "Доула даёт непрерывную эмоциональную, физическую и информационную поддержку во время беременности, в родах и в первые недели после них. Я помогаю подготовиться, остаюсь рядом на протяжении всех родов — массаж, дыхание, позы, ребозо, ароматерапия, — помогаю ясно донести твои пожелания до медиков и поддерживаю тебя в восстановлении." },
         { q: "Доула заменяет акушерку?", a: "Нет. За клиническую часть отвечают акушерки и врачи. Доула не выполняет никаких медицинских манипуляций: я не провожу осмотров, не слушаю сердцебиение малыша и не даю медицинских рекомендаций. Это две разные роли, которые работают бок о бок, и большинство акушерок рады, когда в родзале есть подготовленная доула." },
-        { q: "Сколько стоит доула в Англии?", a: "Сопровождение родов — от £1 800, в зависимости от состава. Послеродовая доула — £30 в час, минимум четыре часа за визит. Ежемесячная поддержка во время беременности — £150 в месяц, первая консультация бесплатная. Если дело именно в деньгах — скажи об этом: у Doula UK есть Access Fund для семей в трудной финансовой ситуации." },
+        { q: "Сколько стоит доула в Англии?", a: "Сопровождение родов — от £2 100, в зависимости от состава. Послеродовая доула — £30 в час, минимум четыре часа за визит. Ежемесячная поддержка во время беременности — £150 в месяц, первая консультация бесплатная. Если дело именно в деньгах — скажи об этом: у Doula UK есть Access Fund для семей в трудной финансовой ситуации." },
         { q: "Где ты работаешь?", a: "Я живу в Лордсвуде (Чатем) и приезжаю к семьям в радиусе около 55 миль: Медуэй, Мейдстон, Грейвсенд, Дартфорд, Ситтингборн, Кентербери, Эшфорд, Севеноукс и Лондон. Курсы и консультации — также онлайн, из любой страны." },
         { q: "Ты сопровождаешь кесарево и домашние роды?", a: "Да. Роды дома, в родильном центре и в больнице, плановое и экстренное кесарево, стимуляцию, естественные роды после кесарева (VBAC) и двойни. Кесарево заслуживает такой же подготовки и поддержки, как любые другие роды." },
         { q: "Можно ли поддержку на русском?", a: "Да. Я работаю на русском и английском. Это особенно помогает, когда медицинские термины на английском даются тяжело или когда семья говорит по-русски." },
@@ -1088,7 +1088,7 @@ window.SITE.articles = [
         "## What you are paying for",
         "Being on call means keeping a phone on day and night for several weeks, staying close to home and having childcare arranged at a moment’s notice. A birth can last many hours, occasionally days. The fee covers all of this, along with the preparation beforehand and the support afterwards.",
         "## My prices",
-        "- Birth support: from £1,800",
+        "- Birth support: from £2,100",
         "- Postnatal doula: £30 an hour (minimum 4 hours a visit)",
         "- Monthly support in pregnancy: £150 a month",
         "- First consultation: free, 45 minutes online",
@@ -1112,7 +1112,7 @@ window.SITE.articles = [
         "## За что ты платишь",
         "Быть «на связи» — значит несколько недель держать телефон включённым днём и ночью, не уезжать далеко и иметь няню для своих детей наготове. Роды могут длиться много часов. Всё это, плюс подготовка, сами роды и поддержка после, — входит в стоимость.",
         "## Мои цены",
-        "- Сопровождение родов: от £1 800",
+        "- Сопровождение родов: от £2 100",
         "- Послеродовая доула: £30 в час (минимум 4 часа за визит)",
         "- Ежемесячная поддержка во время беременности: £150 в месяц",
         "- Первая консультация: бесплатно, 45 минут онлайн",
@@ -1191,8 +1191,8 @@ window.SITE.landings = [
     slug: "birth-doula-kent-medway",
     date: "2026-09-28",
     en: {
-      metaTitle: "Birth Doula in Kent & Medway · From £1,800",
-      description: "Birth doula in Chatham, Medway and across Kent: continuous support in labour at home, in a birth centre or in hospital. From £1,800. Free 45-minute consultation.",
+      metaTitle: "Birth Doula in Kent & Medway · From £2,100",
+      description: "Birth doula in Chatham, Medway and across Kent: continuous support in labour at home, in a birth centre or in hospital. From £2,100. Free 45-minute consultation.",
       h1: "Birth doula in Kent and Medway",
       lead: "Continuous, unhurried support through labour and birth — at home, in a birth centre or at Medway Maritime, Tunbridge Wells and the other hospitals across Kent.",
       intro: [
@@ -1223,7 +1223,7 @@ window.SITE.landings = [
         "London: south-east London, Bromley, Bexley, Greenwich, and central London for births."
       ],
       priceTitle: "Price",
-      priceText: "Birth support starts from £1,800 and rises with what is included: antenatal course, postnatal visits, or both. The first consultation is free and there is no obligation.",
+      priceText: "Birth support starts from £2,100 and rises with what is included: antenatal course, postnatal visits, or both. The first consultation is free and there is no obligation.",
       faq: [
         { q: "When should I book?", a: "The second trimester is ideal, as it leaves time to prepare together. I have also been called during labour and it still made a difference, so it is never too late to ask." },
         { q: "Do you work with NHS midwives?", a: "Yes, and gladly. I carry out no clinical tasks: your midwife looks after the medical side while I look after you." },
@@ -1233,8 +1233,8 @@ window.SITE.landings = [
       ctaText: "Book a free 45-minute online meeting. No obligation to go further."
     },
     ru: {
-      metaTitle: "Доула на роды в Кенте и Медуэе · от £1 800",
-      description: "Русскоязычная доула на роды в Чатеме, Медуэе и по всему Кенту: непрерывная поддержка в родах дома, в родильном центре или в больнице. От £1 800.",
+      metaTitle: "Доула на роды в Кенте и Медуэе · от £2 100",
+      description: "Русскоязычная доула на роды в Чатеме, Медуэе и по всему Кенту: непрерывная поддержка в родах дома, в родильном центре или в больнице. От £2 100.",
       h1: "Доула на роды в Кенте и Медуэе",
       lead: "Непрерывная спокойная поддержка в родах — дома, в родильном центре или в больницах Кента: Medway Maritime, Tunbridge Wells и других.",
       intro: [
@@ -1265,7 +1265,7 @@ window.SITE.landings = [
         "Лондон: юго-восток Лондона, Бромли, Бексли, Гринвич и центр Лондона на роды."
       ],
       priceTitle: "Стоимость",
-      priceText: "Сопровождение родов — от £1 800, дальше зависит от состава: курс подготовки, послеродовые визиты или и то и другое. Первая консультация бесплатна и ни к чему не обязывает.",
+      priceText: "Сопровождение родов — от £2 100, дальше зависит от состава: курс подготовки, послеродовые визиты или и то и другое. Первая консультация бесплатна и ни к чему не обязывает.",
       faq: [
         { q: "Когда бронировать?", a: "Идеально во втором триместре: остаётся время подготовиться вместе. Ко мне обращались и в самих родах — и даже тогда это меняло многое, так что поздно не бывает." },
         { q: "Ты работаешь вместе с акушерками NHS?", a: "Да, и с радостью. Я не выполняю никаких медицинских манипуляций: акушерка отвечает за медицинскую часть, а я — за тебя." },
@@ -1311,7 +1311,7 @@ window.SITE.landings = [
         "The first meeting is free and can be in whichever language is easier for you."
       ],
       priceTitle: "Price",
-      priceText: "Birth support from £1,800. Postnatal support £30 an hour. Monthly support through pregnancy £150 a month. First consultation free.",
+      priceText: "Birth support from £2,100. Postnatal support £30 an hour. Monthly support through pregnancy £150 a month. First consultation free.",
       faq: [
         { q: "Do you translate at appointments?", a: "I am not an interpreter and I do not replace one for formal consent. What I do is make sure you understand your options beforehand and that your questions get asked and answered." },
         { q: "Can my husband join in English?", a: "Of course. I move between the two languages as the room needs." },
@@ -1353,7 +1353,7 @@ window.SITE.landings = [
         "Первая встреча бесплатна и может пройти на том языке, который тебе удобнее."
       ],
       priceTitle: "Стоимость",
-      priceText: "Сопровождение родов — от £1 800. Послеродовая поддержка — £30 в час. Ежемесячная поддержка во время беременности — £150. Первая консультация бесплатна.",
+      priceText: "Сопровождение родов — от £2 100. Послеродовая поддержка — £30 в час. Ежемесячная поддержка во время беременности — £150. Первая консультация бесплатна.",
       faq: [
         { q: "Ты переводишь на приёмах?", a: "Я не переводчик и не заменяю его там, где нужно официальное согласие. Моя задача — чтобы ты заранее понимала свои варианты и чтобы твои вопросы были заданы и услышаны." },
         { q: "Муж может участвовать на английском?", a: "Конечно. Я перехожу с языка на язык по ситуации." },
