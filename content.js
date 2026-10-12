@@ -373,8 +373,8 @@ window.SITE = {
       ],
       depositTitle: "Deposit and balance",
       deposit: [
-        "For birth support, a deposit secures your date and takes me off the market for the weeks around it. The balance is due before your baby is due.",
-        "The exact deposit, the balance and the dates they fall are set out in your service agreement, which you receive and sign before any money changes hands.",
+        "For birth support, a deposit of £800 secures your date and takes me off the market for the weeks around it. The balance is due before your baby is due.",
+        "The balance, and the dates both payments fall due, are set out in your service agreement, which you receive and sign before any money changes hands.",
         "Courses, single sessions and postnatal hours are usually paid in full when they are booked."
       ],
       depositPayLabel: "Pay the deposit",
@@ -857,8 +857,8 @@ window.SITE = {
       ],
       depositTitle: "Предоплата и остаток",
       deposit: [
-        "При сопровождении родов предоплата закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Остаток вносится до предполагаемой даты родов.",
-        "Точные суммы предоплаты и остатка, а также сроки их внесения прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
+        "При сопровождении родов предоплата £800 закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Остаток вносится до предполагаемой даты родов.",
+        "Сумма остатка и сроки обоих платежей прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
         "Курсы, разовые встречи и послеродовые часы обычно оплачиваются полностью при записи."
       ],
       depositPayLabel: "Внести предоплату",
