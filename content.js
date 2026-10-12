@@ -373,7 +373,7 @@ window.SITE = {
       ],
       depositTitle: "Deposit and balance",
       deposit: [
-        "For birth support, a deposit of £800 secures your date and takes me off the market for the weeks around it. The balance is due before your baby is due.",
+        "For birth support, a deposit of half the package fee secures your date and takes me off the market for the weeks around it. The deposit is non-refundable, because once your dates are reserved I turn other families away. The balance is due before your baby is due.",
         "The balance, and the dates both payments fall due, are set out in your service agreement, which you receive and sign before any money changes hands.",
         "Courses, single sessions and postnatal hours are usually paid in full when they are booked."
       ],
@@ -857,7 +857,7 @@ window.SITE = {
       ],
       depositTitle: "Предоплата и остаток",
       deposit: [
-        "При сопровождении родов предоплата £800 закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Остаток вносится до предполагаемой даты родов.",
+        "При сопровождении родов предоплата в размере половины стоимости пакета закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Предоплата не возвращается, потому что, зарезервировав твои даты, я отказываю другим семьям. Остаток вносится до предполагаемой даты родов.",
         "Сумма остатка и сроки обоих платежей прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
         "Курсы, разовые встречи и послеродовые часы обычно оплачиваются полностью при записи."
       ],
