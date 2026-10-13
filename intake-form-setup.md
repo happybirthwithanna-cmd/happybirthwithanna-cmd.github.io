@@ -73,3 +73,25 @@ To switch it on (once):
    If Google asks for permission again, allow it. Your existing answers are kept and reordered.
 4. **Deploy → Manage deployments → pencil (Edit) → Version: New version → Deploy.**
    The web address stays the same.
+
+## Consultation form (added 13 Oct)
+
+A second, shorter form lives at happybirth-doula.co.uk/consultation (and /ru/consultation).
+It asks what the person wants to achieve from the consultation, how they will know it
+helped, and how close they feel to that goal now (0 to 10). Answers go to a
+**Consultations** tab in the same Sheet, and you get an email titled "Consultation form: name".
+
+To switch it on, do the same three things once more:
+
+1. **Extensions → Apps Script**, replace everything with the latest **intake-sheet-script.gs**, save.
+2. Choose **setupSheet** → **Run** (this creates the Consultations tab).
+3. **Deploy → Manage deployments → pencil → Version: New version → Deploy.**
+
+Then, in **Calendly**, add the link to the confirmation: open the consultation event →
+**Booking page options → Confirmation page → "Display confirmation page"**, and in the
+custom message write: "Before we meet, please tell me what you'd like from our
+consultation: https://happybirth-doula.co.uk/consultation". Calendly's reminder emails
+can carry the same link (Workflows).
+
+The new client form (/intake) is now for families who have paid their deposit: send them
+that link with your deposit confirmation.

@@ -2,11 +2,13 @@
 // and keeps the Sheet easy to read.
 //   "Answers" tab     – one row per client, newest at the top
 //   "Client card" tab – pick a name, read their answers top to bottom
+//   "Consultations" tab – answers from the shorter consultation form, newest at the top
 // After pasting: run setupSheet once, then Deploy → Manage deployments → Edit → New version.
 
 const NOTIFY = "anna@happybirth-doula.co.uk";   // who gets the "new form" email
 const ANSWERS = "Answers";
 const CARD = "Client card";
+const CONSULTS = "Consultations";
 const BLUSH = "#F5EEEB";
 
 const SECTIONS = [
@@ -16,12 +18,16 @@ const SECTIONS = [
   ["Midwife or doctor", ["Type of care provider", "Midwife, doctor or team", "Hospital, practice or NHS trust", "Care provider phone", "Care provider knows about doula", "Planned place of birth"]],
   ["Previous pregnancies", ["First pregnancy", "Children (names and ages)", "Types of birth experienced", "Number of births", "Pregnancies carried to term (37+ weeks)", "Preterm births (24-37 weeks)", "Multiples", "Length of previous labours", "Conditions in previous pregnancies"]],
   ["Anything else", ["Anything else"]],
-  ["Consent and form details", ["Agrees to personal data being held", "Explicit consent to hold health information", "Received", "Language"]]
+  ["Consent and form details", ["Agrees to personal data being held", "Explicit consent to hold health information", "Received", "Language", "Form"]]
 ];
 const FIRST = ["Received", "Full name", "Estimated due date"];
 const ORDER = FIRST.concat(SECTIONS.flatMap(s => s[1]).filter(k => FIRST.indexOf(k) === -1));
-const DATES = ["Date of birth", "Estimated due date"];
-const WIDE = ["Home address", "Children (names and ages)", "Types of birth experienced", "Conditions in previous pregnancies", "Anything else"];
+const CONSULT_ORDER = ["Received", "Full name", "Consultation topic", "Goal for this consultation", "How you will know it helped",
+  "Closeness to goal now (0-10)", "Due date or baby's date of birth", "First baby", "Anything to know beforehand",
+  "Email", "Phone", "Preferred contact", "Preferred language", "How they heard about Anna",
+  "Consent to hold this information", "Language", "Form"];
+const DATES = ["Date of birth", "Estimated due date", "Due date or baby's date of birth"];
+const WIDE = ["Goal for this consultation", "How you will know it helped", "Anything to know beforehand", "Home address", "Children (names and ages)", "Types of birth experienced", "Conditions in previous pregnancies", "Anything else"];
 
 // ---------- receiving a form ----------
 function doPost(e) {
@@ -31,11 +37,19 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     if (data.website) return ok();                                  // spam robot
     data["Received"] = new Date();
-    const sh = answersSheet();
-    const h = ensureHeaders(sh, Object.keys(data));
+    const consult = data["Form"] === "Consultation";
+    const sh = consult ? consultSheet() : answersSheet();
+    const h = ensureHeaders(sh, Object.keys(data), consult ? CONSULT_ORDER : ORDER);
     sh.insertRowBefore(2);                                          // newest at the top
     sh.getRange(2, 1, 1, h.length).setValues([h.map(k => toCell(k, data[k]))]);
     formatRows(sh, 2, 1, h);
+    if (consult) {
+      MailApp.sendEmail(NOTIFY, "Consultation form: " + (data["Full name"] || "unnamed"),
+        (data["Full name"] || "Someone") + " has filled in the consultation form (" +
+        (data["Consultation topic"] || "topic not given") + ").\n\nOpen the Consultations tab to read it:\n" +
+        SpreadsheetApp.getActiveSpreadsheet().getUrl());
+      return ok();
+    }
     const card = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(CARD);
     if (card) card.getRange("B1").setValue(data["Full name"] || "");   // card opens on the newest client
 
@@ -76,6 +90,14 @@ function setupSheet() {
   h.forEach((k, i) => sh.setColumnWidth(i + 1, k === "Received" ? 130 : WIDE.indexOf(k) > -1 ? 300 : 170));
 
   buildCard(ss, sh);
+
+  // Consultations tab
+  const cs = consultSheet();
+  if (!cs.getLastRow()) ensureHeaders(cs, [], CONSULT_ORDER);
+  cs.setFrozenRows(1); cs.setFrozenColumns(2); cs.setRowHeight(1, 48);
+  const ch = cs.getRange(1, 1, 1, cs.getLastColumn()).getValues()[0];
+  ch.forEach((k, i) => cs.setColumnWidth(i + 1, k === "Received" ? 130 : WIDE.indexOf(k) > -1 ? 300 : 170));
+
   ss.setActiveSheet(ss.getSheetByName(CARD));
 }
 
@@ -120,13 +142,18 @@ function buildCard(ss, answers) {
 function answersSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sh = ss.getSheetByName(ANSWERS);
-  if (!sh) { sh = ss.getSheets().filter(s => s.getName() !== CARD)[0] || ss.insertSheet(); sh.setName(ANSWERS); }
+  if (!sh) { sh = ss.getSheets().filter(s => [CARD, CONSULTS].indexOf(s.getName()) === -1)[0] || ss.insertSheet(); sh.setName(ANSWERS); }
   return sh;
 }
 
-function ensureHeaders(sh, keys) {
+function consultSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  return ss.getSheetByName(CONSULTS) || ss.insertSheet(CONSULTS);
+}
+
+function ensureHeaders(sh, keys, order) {
   let h = sh.getLastColumn() ? sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0].filter(String) : [];
-  if (!h.length) h = ORDER.slice();
+  if (!h.length) h = (order || ORDER).slice();
   keys.forEach(k => { if (k !== "website" && h.indexOf(k) === -1) h.push(k); });
   sh.getRange(1, 1, 1, h.length).setValues([h]).setFontWeight("bold").setBackground(BLUSH).setWrap(true);
   return h;

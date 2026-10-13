@@ -421,7 +421,7 @@ window.SITE = {
           list: [
             "Calendly — the times and details of the meetings you book with me.",
             "Revolut — your name and the amount, when I send you a payment link or an invoice.",
-            "Google — my email, which is where written correspondence with you lives, and the private spreadsheet where your answers to the new client form on this website are saved. Only I can open it.",
+            "Google — my email, which is where written correspondence with you lives, and the private spreadsheet where your answers to the forms on this website are saved. Only I can open it.",
             "WhatsApp and Telegram, if you choose to message me there. Those conversations sit on their systems under their own terms.",
             "GitHub Pages, which hosts this website. Like any web server it records visits, including IP addresses, in its own logs. I cannot see those logs and I hold no analytics of my own.",
             "My insurer and my professional body, Doula UK, but only if a complaint or a claim were ever made."
@@ -905,7 +905,7 @@ window.SITE = {
           list: [
             "Calendly — время и детали встреч, которые ты бронируешь.",
             "Revolut — имя и сумма, когда я отправляю ссылку на оплату или счёт.",
-            "Google — моя почта, где хранится письменная переписка с тобой, и закрытая таблица, куда сохраняются твои ответы из анкеты клиента на этом сайте. Открыть её могу только я.",
+            "Google — моя почта, где хранится письменная переписка с тобой, и закрытая таблица, куда сохраняются твои ответы из анкет на этом сайте. Открыть её могу только я.",
             "WhatsApp и Telegram, если ты пишешь мне туда. Эти переписки хранятся в их системах на их условиях.",
             "GitHub Pages — хостинг этого сайта. Как любой веб-сервер, он фиксирует посещения, включая IP-адреса, в собственных логах. Доступа к этим логам у меня нет, и никакой своей аналитики я не веду.",
             "Моя страховая компания и профессиональная ассоциация Doula UK — но только если когда-либо будет подана жалоба или претензия."
@@ -1509,11 +1509,11 @@ window.SITE.intakeForm = [
 ];
 
 window.SITE.en.nav.intake = "New client form";
-window.SITE.en.meta.intake = { title: "New Client Form | Happy Birth with Anna", description: "Client form for families who have booked a consultation or paid a deposit: personal details, care provider and previous pregnancies." };
+window.SITE.en.meta.intake = { title: "New Client Form | Happy Birth with Anna", description: "Client form for families who have paid a deposit: personal details, care provider and previous pregnancies." };
 window.SITE.en.intake = {
   eyebrow: "New client form",
   h1: "Tell me about you",
-  lead: "For families who have booked a consultation or paid their deposit. Your answers give me the background I need to support you safely. It takes about ten minutes.",
+  lead: "For families who have paid their deposit. Your answers give me the background I need to support you safely. It takes about ten minutes.",
   intro: "Questions marked * are needed.",
   disclosureTitle: "Your information",
   disclosure: [
@@ -1576,11 +1576,11 @@ window.SITE.en.intake = {
 };
 
 window.SITE.ru.nav.intake = "Анкета клиента";
-window.SITE.ru.meta.intake = { title: "Анкета нового клиента — Анна Пифко, доула", description: "Анкета для тех, кто записался на консультацию или внёс предоплату: личные данные, наблюдение и прошлые беременности." };
+window.SITE.ru.meta.intake = { title: "Анкета нового клиента — Анна Пифко, доула", description: "Анкета для тех, кто внёс предоплату: личные данные, наблюдение и прошлые беременности." };
 window.SITE.ru.intake = {
   eyebrow: "Анкета нового клиента",
   h1: "Расскажи о себе",
-  lead: "Для семей, которые записались на консультацию или внесли предоплату. Твои ответы дают мне сведения, которые нужны, чтобы безопасно тебя поддерживать. Это займёт около десяти минут.",
+  lead: "Для семей, которые внесли предоплату. Твои ответы дают мне сведения, которые нужны, чтобы безопасно тебя поддерживать. Это займёт около десяти минут.",
   intro: "Вопросы со звёздочкой * обязательны.",
   disclosureTitle: "Твои данные",
   disclosure: [
@@ -1641,5 +1641,120 @@ window.SITE.ru.intake = {
   error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне на",
   notReady: "Анкета пока не подключена. Пожалуйста, напиши мне на"
 };
-window.SITE.en.intake.linkLabel = "Booked a consultation or paid your deposit? Fill in the client form";
-window.SITE.ru.intake.linkLabel = "Записалась на консультацию или внесла предоплату? Заполни анкету клиента";
+window.SITE.en.intake.linkLabel = "Paid your deposit? Fill in the client form";
+window.SITE.ru.intake.linkLabel = "Внесла предоплату? Заполни анкету клиента";
+
+/* ======================= CONSULTATION FORM (/consultation, /ru/consultation) =======================
+   Short form for anyone who has booked a free consultation. Same Google script as the
+   client form; answers land in the "Consultations" tab. "key" = column heading.            */
+window.SITE.consultForm = [
+  { id: "you", fields: [
+    { key: "Full name", type: "text", req: 1, ac: "name" },
+    { key: "Email", type: "email", req: 1, ac: "email" },
+    { key: "Phone", type: "tel", ac: "tel" },
+    { key: "Preferred contact", type: "radio" },
+    { key: "Preferred language", type: "radio" } ] },
+  { id: "topic", fields: [
+    { key: "Consultation topic", type: "radio", req: 1, full: 1 },
+    { key: "Due date or baby's date of birth", type: "date", showIf: ["Consultation topic", [0, 1, 2, 6]] },
+    { key: "First baby", type: "radio", showIf: ["Consultation topic", [0, 1, 2, 6]] } ] },
+  { id: "goal", fields: [
+    { key: "Goal for this consultation", type: "textarea", rows: 4, req: 1, full: 1 },
+    { key: "How you will know it helped", type: "textarea", rows: 3, full: 1 },
+    { key: "Closeness to goal now (0-10)", type: "number", max: 10, req: 1 } ] },
+  { id: "else", fields: [
+    { key: "Anything to know beforehand", type: "textarea", rows: 3, full: 1 },
+    { key: "How they heard about Anna", type: "radio", full: 1 } ] }
+];
+
+window.SITE.en.nav.consultation = "Consultation form";
+window.SITE.en.meta.consultation = { title: "Before Your Consultation | Happy Birth with Anna", description: "A short form for anyone who has booked a free consultation: what you want to achieve from our meeting." };
+window.SITE.en.consult = {
+  eyebrow: "Before your consultation",
+  h1: "What would you like from our meeting?",
+  lead: "For anyone who has booked a free consultation. Your answers let me prepare, so we spend the time on exactly what you want to achieve. It takes about five minutes.",
+  intro: "Questions marked * are needed.",
+  linkLabel: "Booked a consultation? Tell me what you'd like from it",
+  sections: {
+    you: { title: "About you" },
+    topic: { title: "What it's about" },
+    goal: { title: "Your goal for the consultation", note: "The clearer the goal, the more useful our time together. At the end of the meeting we will look back at it together." },
+    else: { title: "Anything else" }
+  },
+  f: {
+    "Full name": { l: "Your name" },
+    "Email": { l: "Email" },
+    "Phone": { l: "Phone" },
+    "Preferred contact": { l: "How do you prefer to be contacted?", o: ["WhatsApp", "Telegram", "Email", "Phone call"] },
+    "Preferred language": { l: "Which language would you like to speak in?", o: ["English", "Russian"] },
+    "Consultation topic": { l: "What would you like to talk about?", o: ["Birth support", "Postnatal support", "Antenatal or parenting course", "Support for a child", "Support for an adult", "Doula mentoring", "Not sure yet"] },
+    "Due date or baby's date of birth": { l: "Due date, or your baby's date of birth" },
+    "First baby": { l: "Is this your first baby?", o: ["Yes", "No"] },
+    "Goal for this consultation": { l: "What would you like to have achieved or solved by the end of our consultation?", h: "Be as concrete as you can. For example: “decide whether a doula is right for us”, “know my options for birth after a caesarean”, “have a plan for the first two weeks at home”." },
+    "How you will know it helped": { l: "How will you know the consultation has helped?", h: "What will be different for you afterwards? For example: “I'll know which package suits us”, “I'll have three questions ready for my midwife”." },
+    "Closeness to goal now (0-10)": { l: "On a scale of 0 to 10, how close do you feel to that goal right now?", h: "0 = nowhere near, 10 = already there" },
+    "Anything to know beforehand": { l: "Is there anything you are worried about, or would like me to know before we meet?" },
+    "How they heard about Anna": { l: "How did you hear about me?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Friend or family", "Other"] }
+  },
+  disclosureTitle: "Your information",
+  disclosure: [
+    "Anna Pifko, trading as Happy Birth with Anna, is responsible for the information you give in this form (the data controller under UK GDPR).",
+    "I use it only to prepare for our consultation and to contact you about it. It is stored securely and is not shared with anyone else or used for marketing.",
+    "If we do not go on to work together, I delete it within 12 months.",
+    "You can ask to see, correct or delete your information at any time by writing to anna@happybirth-doula.co.uk."
+  ],
+  ticks: [{ name: "Consent to hold this information", text: "I agree to Anna Pifko holding the information I have given here, including anything about my or my child's health, to prepare for our consultation. I can withdraw this at any time." }],
+  privacyLink: "Read the full privacy notice",
+  submit: "Send to Anna",
+  sending: "Sending…",
+  thanksTitle: "Thank you",
+  thanks: "I have your answers and will read them before we meet. See you soon.",
+  error: "Something went wrong and your answers were not sent. Please try again, or email me at",
+  notReady: "The form is not switched on yet. Please email me at"
+};
+
+window.SITE.ru.nav.consultation = "Анкета перед консультацией";
+window.SITE.ru.meta.consultation = { title: "Перед консультацией — Анна Пифко, доула", description: "Короткая анкета для тех, кто записался на бесплатную консультацию: чего ты хочешь достичь на нашей встрече." };
+window.SITE.ru.consult = {
+  eyebrow: "Перед консультацией",
+  h1: "Чего ты хочешь от нашей встречи?",
+  lead: "Для тех, кто записался на бесплатную консультацию. Твои ответы помогут мне подготовиться, чтобы мы потратили время именно на то, чего ты хочешь достичь. Это займёт около пяти минут.",
+  intro: "Вопросы со звёздочкой * обязательны.",
+  linkLabel: "Записалась на консультацию? Расскажи, чего ты от неё ждёшь",
+  sections: {
+    you: { title: "О тебе" },
+    topic: { title: "О чём консультация" },
+    goal: { title: "Твой запрос на консультацию", note: "Чем яснее запрос, тем полезнее наше время. В конце встречи мы вместе к нему вернёмся." },
+    else: { title: "Что-то ещё" }
+  },
+  f: {
+    "Full name": { l: "Твоё имя" },
+    "Email": { l: "Email" },
+    "Phone": { l: "Телефон" },
+    "Preferred contact": { l: "Как с тобой удобнее связаться?", o: ["WhatsApp", "Telegram", "Email", "Звонок"] },
+    "Preferred language": { l: "На каком языке тебе удобнее говорить?", o: ["Английский", "Русский"] },
+    "Consultation topic": { l: "О чём ты хочешь поговорить?", o: ["Сопровождение родов", "Послеродовая поддержка", "Курс подготовки к родам или родительству", "Поддержка ребёнка", "Поддержка взрослого", "Наставничество для доул", "Пока не знаю"] },
+    "Due date or baby's date of birth": { l: "ПДР или дата рождения малыша" },
+    "First baby": { l: "Это твой первый ребёнок?", o: ["Да", "Нет"] },
+    "Goal for this consultation": { l: "Чего ты хочешь достичь или какой вопрос решить к концу нашей консультации?", h: "Постарайся сформулировать конкретно. Например: «решить, нужна ли нам доула», «понять свои варианты родов после кесарева», «составить план на первые две недели дома»." },
+    "How you will know it helped": { l: "Как ты поймёшь, что консультация помогла?", h: "Что изменится для тебя после неё? Например: «буду знать, какой пакет нам подходит», «у меня будут три вопроса для акушерки»." },
+    "Closeness to goal now (0-10)": { l: "По шкале от 0 до 10, насколько ты сейчас близка к этой цели?", h: "0 — совсем далеко, 10 — уже достигнута" },
+    "Anything to know beforehand": { l: "Есть ли что-то, что тебя тревожит или что мне стоит знать до встречи?" },
+    "How they heard about Anna": { l: "Как ты обо мне узнала?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Друзья или родные", "Другое"] }
+  },
+  disclosureTitle: "Твои данные",
+  disclosure: [
+    "За информацию, которую ты указываешь в этой анкете, отвечает Анна Пифко (Happy Birth with Anna) — контролёр данных по UK GDPR.",
+    "Я использую её только для подготовки к нашей консультации и чтобы связаться с тобой по её поводу. Данные хранятся надёжно, никому не передаются и не используются для рекламы.",
+    "Если мы не начнём работать вместе, я удалю их в течение 12 месяцев.",
+    "В любой момент ты можешь попросить показать, исправить или удалить свои данные, написав на anna@happybirth-doula.co.uk."
+  ],
+  ticks: [{ name: "Consent to hold this information", text: "Я согласна, чтобы Анна Пифко хранила указанную здесь информацию, включая сведения о моём здоровье или здоровье ребёнка, для подготовки к консультации. Я могу отозвать это согласие в любой момент." }],
+  privacyLink: "Полная политика конфиденциальности",
+  submit: "Отправить Анне",
+  sending: "Отправляю…",
+  thanksTitle: "Спасибо",
+  thanks: "Твои ответы у меня, я прочитаю их перед встречей. До скорой встречи!",
+  error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне на",
+  notReady: "Анкета пока не подключена. Пожалуйста, напиши мне на"
+};

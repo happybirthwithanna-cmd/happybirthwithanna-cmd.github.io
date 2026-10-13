@@ -12,7 +12,7 @@
   function toggle(){
     f.querySelectorAll("[data-show-name]").forEach(function(el){
       var c = f.querySelector('input[name="' + el.getAttribute("data-show-name") + '"]:checked');
-      el.hidden = !(c && c.value === el.getAttribute("data-show-value"));
+      el.hidden = !(c && el.getAttribute("data-show-value").split("|").indexOf(c.value) > -1);
     });
   }
   f.addEventListener("change", toggle); toggle();
@@ -23,7 +23,7 @@
     var ep = f.getAttribute("data-endpoint");
     if (!ep) { $("intake-notready").hidden = false; return; }
     if (f.website && f.website.value) return;              // filled in by a spam robot
-    var data = { "Language": f.getAttribute("data-lang") }, fd = new FormData(f);
+    var data = { "Form": f.getAttribute("data-form"), "Language": f.getAttribute("data-lang") }, fd = new FormData(f);
     fd.forEach(function(v, k){
       if (k === "website") return;
       var el = f.querySelector('[name="' + k + '"]'), box = el && el.closest("[data-show-name]");

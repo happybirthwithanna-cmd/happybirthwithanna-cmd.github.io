@@ -390,3 +390,5 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .intake-link{margin:22px 0 6px;text-align:center}
 .intake-link .btn{white-space:normal;text-align:center}
 @media (max-width:640px){ .form-grid,.opts.many{grid-template-columns:1fr} }
+
+.hint{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:3px;line-height:1.45}

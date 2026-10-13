@@ -65,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -398,6 +398,7 @@ ${ctaBand(lang, T.home.ctaTitle, T.home.ctaText)}`;
       <a class="btn btn-clay" href="${S.calendly}" target="_blank" rel="noopener">${esc(T.ui.book)}</a>
       <p class="small muted cal-note">${esc(P.calendarNote)}</p>
     </div>
+    ${SITE.consultForm ? `<p class="intake-link"><a class="btn btn-line btn-sm" href="${href(lang, lang, "consultation")}">${esc(T.consult.linkLabel)}</a></p>` : ""}
     ${SITE.intakeForm ? `<p class="intake-link"><a class="btn btn-line btn-sm" href="${href(lang, lang, "intake")}">${esc(T.intake.linkLabel)}</a></p>` : ""}
     <h3>${esc(P.addressTitle)}</h3><p>${esc(P.addressText)}</p><p class="small muted">${esc(P.termsText)}</p>
   </div>
@@ -416,26 +417,27 @@ ${ctaBand(lang, T.home.ctaTitle, T.home.ctaText)}`;
 };
 
 /* ---------- new client form ---------- */
-function intakePage(lang) {
-  const T = SITE[lang], P = T.intake, F = SITE.intakeForm || [];
+function formPage(lang, F, P, formName) {
+  const T = SITE[lang];
   let n = 0;
   const id = () => "f" + (++n);
   const star = (f) => (f.req ? ` <span class="req" aria-hidden="true">*</span>` : "");
   const field = (f) => {
     const L = P.f[f.key], name = esc(f.key), req = f.req ? " required" : "";
     let show = "";
-    if (f.showIf) show = ` data-show-name="${esc(f.showIf[0])}" data-show-value="${esc(P.f[f.showIf[0]].o[f.showIf[1]])}" hidden`;
+    if (f.showIf) show = ` data-show-name="${esc(f.showIf[0])}" data-show-value="${esc([].concat(f.showIf[1]).map((i) => P.f[f.showIf[0]].o[i]).join("|"))}" hidden`;
+    const hint = L.h ? `<span class="hint">${esc(L.h)}</span>` : "";
     const cls = `fld${f.full ? " full" : ""}`;
     if (f.type === "radio" || f.type === "checks") {
       const t = f.type === "radio" ? "radio" : "checkbox";
       const opts = L.o.map((o) => `<label class="opt"><input type="${t}" name="${name}" value="${esc(o)}"${f.type === "radio" ? req : ""}><span>${esc(o)}</span></label>`).join("");
-      return `<fieldset class="${cls}"${show}><legend>${esc(L.l)}${star(f)}</legend><div class="opts${L.o.length > 4 ? " many" : ""}">${opts}</div></fieldset>`;
+      return `<fieldset class="${cls}"${show}><legend>${esc(L.l)}${star(f)}${hint}</legend><div class="opts${L.o.length > 4 ? " many" : ""}">${opts}</div></fieldset>`;
     }
     const i = id(), ac = f.ac ? ` autocomplete="${f.ac}"` : "";
     const input = f.type === "textarea"
       ? `<textarea id="${i}" name="${name}" rows="${f.rows || 3}"${ac}${req}></textarea>`
-      : `<input id="${i}" name="${name}" type="${f.type}"${f.type === "number" ? ' min="0" max="20" inputmode="numeric"' : ""}${ac}${req}>`;
-    return `<div class="${cls}"${show}><label for="${i}">${esc(L.l)}${star(f)}</label>${input}</div>`;
+      : `<input id="${i}" name="${name}" type="${f.type}"${f.type === "number" ? ` min="0" max="${f.max || 20}" inputmode="numeric"` : ""}${ac}${req}>`;
+    return `<div class="${cls}"${show}><label for="${i}">${esc(L.l)}${star(f)}${hint}</label>${input}</div>`;
   };
   const secs = F.map((sec) => {
     const S2 = P.sections[sec.id];
@@ -445,15 +447,14 @@ function intakePage(lang) {
   return `${pageHead(lang, P, "")}
 <section class="sec tight"><div class="wrap narrow">
   <p class="form-intro small muted">${esc(P.intro)}</p>
-  <form class="intake" id="intake" data-endpoint="${esc(S.intakeEndpoint || "")}" data-lang="${lang}" data-sending="${esc(P.sending)}" novalidate>
+  <form class="intake" id="intake" data-endpoint="${esc(S.intakeEndpoint || "")}" data-lang="${lang}" data-form="${formName}" data-sending="${esc(P.sending)}" novalidate>
     ${secs}
     <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
     <section class="form-sec consent">
       <h2>${esc(P.disclosureTitle)}</h2>
       ${P.disclosure.map((x) => `<p>${esc(x)}</p>`).join("")}
       <p class="small"><a href="${href(lang, lang, "privacy")}" target="_blank" rel="noopener">${esc(P.privacyLink)} →</a></p>
-      <label class="opt"><input type="checkbox" name="Agrees to personal data being held" value="Yes" required><span>${esc(P.gdprTick)} <span class="req" aria-hidden="true">*</span></span></label>
-      <label class="opt"><input type="checkbox" name="Explicit consent to hold health information" value="Yes" required><span>${esc(P.consent)} <span class="req" aria-hidden="true">*</span></span></label>
+      ${(P.ticks || [{ name: "Agrees to personal data being held", text: P.gdprTick }, { name: "Explicit consent to hold health information", text: P.consent }]).map((t) => `<label class="opt"><input type="checkbox" name="${esc(t.name)}" value="Yes" required><span>${esc(t.text)} <span class="req" aria-hidden="true">*</span></span></label>`).join("\n      ")}
     </section>
     <p class="form-msg err" id="intake-error" role="alert" hidden>${esc(P.error)} ${mail}.</p>
     <p class="form-msg err" id="intake-notready" role="alert" hidden>${esc(P.notReady)} ${mail}.</p>
@@ -572,7 +573,8 @@ for (const e of ENTRIES) {
 }
 // new client form: reachable from the contact page and footer, kept out of search results
 if (SITE.intakeForm) for (const lang of ["en", "ru"]) {
-  fs.writeFileSync(path.join(OUT, lang === "ru" ? "ru" : "", "intake.html"), render(lang, "intake", { noindex: true, body: intakePage(lang) }));
+  fs.writeFileSync(path.join(OUT, lang === "ru" ? "ru" : "", "intake.html"), render(lang, "intake", { noindex: true, body: formPage(lang, SITE.intakeForm, SITE[lang].intake, "Client") }));
+  if (SITE.consultForm) fs.writeFileSync(path.join(OUT, lang === "ru" ? "ru" : "", "consultation.html"), render(lang, "consultation", { noindex: true, body: formPage(lang, SITE.consultForm, SITE[lang].consult, "Consultation") }));
 }
 // page shown for addresses that don't exist
 fs.writeFileSync(path.join(OUT, "404.html"), render("en", "home", { noindex: true, meta: { title: "Page not found | Happy Birth with Anna", description: "This page doesn’t exist." },
