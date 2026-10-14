@@ -372,7 +372,7 @@ window.SITE = {
       depositTitle: "Deposit and balance",
       deposit: [
         "For birth support, a non-refundable deposit of 50% of the total fee reserves your due date in my diary. It is due when you sign the agreement.",
-        "The remaining 50% is paid in two parts: 25% of the total fee at our first antenatal meeting and 25% after our second.",
+        "The remaining 50% is paid in two parts: 25% of the total fee at our first antenatal meeting and 25% at our second.",
         "Courses are paid in full when they are booked. Appointments are paid in full at least 24 hours before we meet."
       ],
       depositPayLabel: "Pay the deposit",
@@ -862,7 +862,7 @@ window.SITE = {
       depositTitle: "Предоплата и остаток",
       deposit: [
         "При сопровождении родов невозвратная предоплата в размере 50% от общей стоимости закрепляет за тобой дату родов в моём календаре. Она вносится при подписании договора.",
-        "Оставшиеся 50% вносятся двумя частями: 25% от общей стоимости на нашей первой встрече до родов и 25% после второй.",
+        "Оставшиеся 50% вносятся двумя частями: 25% от общей стоимости на нашей первой встрече до родов и 25% на второй.",
         "Курсы оплачиваются полностью при записи. Встречи оплачиваются полностью не позднее чем за 24 часа до начала."
       ],
       depositPayLabel: "Внести предоплату",
