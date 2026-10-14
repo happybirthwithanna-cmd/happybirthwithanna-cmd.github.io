@@ -328,7 +328,7 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
 <section class="sec"><div class="wrap narrow story">
   <h2>${esc(P.plansTitle)}</h2><p>${esc(P.plansText)}</p>
   <h2>${esc(P.cancelTitle)}</h2>${P.cancel.map((p) => `<p>${esc(p)}</p>`).join("")}
-  <h2>${esc(P.questionsTitle)}</h2><p>${esc(P.questionsText)}</p>
+  <h2>${esc(P.questionsTitle)}</h2><p>${esc(P.questionsText)}</p>${P.questionsLink ? `<p><a href="https://doula.org.uk/access-fund/who-is-eligible" target="_blank" rel="noopener">${esc(P.questionsLink)} →</a></p>` : ""}
 </div></section>
 ${partnersBand(lang)}
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;

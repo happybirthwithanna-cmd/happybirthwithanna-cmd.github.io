@@ -390,8 +390,9 @@ window.SITE = {
         "If I am ever unavailable, I arrange a backup doula for you, and you are also free to choose your own.",
         "Your statutory rights as a consumer are not affected."
       ],
-      questionsTitle: "Questions about money are welcome",
-      questionsText: "Cost matters, and asking about it is not awkward. Bring it to the free consultation and we will be straightforward with each other.",
+      questionsTitle: "Reduced-fee places",
+      questionsText: "I offer a small number of reduced-fee places for families who would like my support but cannot afford the full fee. To be considered, you need to meet one of the Doula UK Access Fund criteria. If you do, please contact me and I will consider your request.",
+      questionsLink: "See the Doula UK Access Fund criteria",
       ctaTitle: "Still deciding?",
       ctaText: "Book a free 45-minute meeting. There is no charge and no obligation to book anything afterwards."
     },
@@ -879,8 +880,9 @@ window.SITE = {
         "Если я когда-нибудь буду недоступна, я организую для тебя доулу на замену, а ты также можешь выбрать её сама.",
         "Твои права потребителя, установленные законом, не ограничиваются."
       ],
-      questionsTitle: "О деньгах спрашивать нормально",
-      questionsText: "Стоимость важна, и обсуждать её не неловко. Приноси этот вопрос на бесплатную консультацию — поговорим честно.",
+      questionsTitle: "Места по сниженной цене",
+      questionsText: "У меня есть небольшое число мест по сниженной цене для семей, которым нужна моя поддержка, но полная стоимость им не по силам. Чтобы я могла рассмотреть заявку, нужно соответствовать одному из критериев Access Fund Doula UK. Если это про тебя, напиши мне, и я рассмотрю твою просьбу.",
+      questionsLink: "Критерии Access Fund Doula UK (на английском)",
       ctaTitle: "Ещё думаешь?",
       ctaText: "Запишись на бесплатную встречу на 45 минут. Она ничего не стоит и ни к чему не обязывает."
     },
