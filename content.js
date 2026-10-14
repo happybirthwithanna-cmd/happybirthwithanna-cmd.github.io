@@ -66,7 +66,7 @@ window.SITE = {
       team: { title: "Trusted Pregnancy & Postnatal Specialists | Kent & London", description: "Osteopath, psychologist, homeopath, rehabilitation therapist and midwives Anna Pifko recommends to families — with client discounts." },
       reviews: { title: "Doula Reviews Kent & London | Happy Birth with Anna", description: "Real reviews from families Anna supported through hospital births, home births, postnatal recovery and baby massage in Kent and London." },
       privacy: { title: "Privacy Notice | Happy Birth with Anna", description: "What information Anna Pifko holds about clients, why, who else sees it, how long it is kept and how to ask for a copy or its deletion." },
-      payment: { title: "Payment Options | Happy Birth with Anna", description: "How to pay for doula support: secure Revolut payment links, card or bank transfer, deposit and balance, instalments, and your cancellation rights." },
+      payment: { title: "Payment Options | Happy Birth with Anna", description: "How to pay for doula support: payment methods, deposit and balance, instalments and cancellation policy." },
       mentoring: { title: "Doula UK Mentor | Mentoring for New Doulas", description: "Doula UK recognised mentoring for birth and postnatal doulas: debriefs, reflection and the recognition process. £300 birth, £300 postnatal, £600 both." },
       contact: { title: "Contact a Doula in Kent & Medway | Free Consultation", description: "Book a free 45-minute online meeting with doula Anna Pifko, or message on WhatsApp or Telegram. Kent, Medway and London." }
     },
@@ -362,9 +362,7 @@ window.SITE = {
       lead: "How payment works, what secures your date and when the balance is due. If anything here is unclear, please ask before you book — nothing is agreed until it is agreed in writing.",
       howTitle: "How to pay",
       how: [
-        "I send a secure payment link from my Revolut business account, by email or by message. You open the link and pay the way that suits you — debit or credit card, Apple Pay, Google Pay, or a bank transfer.",
-        "You do not need a Revolut account to use the link, and there is no booking fee or card surcharge. The price you are quoted is the amount you pay.",
-        "If you would rather pay by direct bank transfer, tell me and I will send the account details separately. I never ask for card details by phone, email or message, and you should never send them to me."
+        "All payment methods are accepted: card, Apple Pay, Google Pay and bank transfer. I do not accept cash."
       ],
       currencyTitle: "Currency and receipts",
       currency: [
@@ -373,8 +371,8 @@ window.SITE = {
       ],
       depositTitle: "Deposit and balance",
       deposit: [
-        "For birth support, a deposit of half the package fee secures your date and takes me off the market for the weeks around it. The deposit is non-refundable, because once your dates are reserved I turn other families away. The balance is due before your baby is due.",
-        "The balance, and the dates both payments fall due, are set out in your service agreement, which you receive and sign before any money changes hands.",
+        "For birth support, a non-refundable deposit of 50% of the total fee reserves your due date in my diary. It is due when you sign the agreement.",
+        "The balance is due at our second antenatal meeting.",
         "Courses are paid in full when they are booked. Appointments are paid in full at least 24 hours before we meet."
       ],
       depositPayLabel: "Pay the deposit",
@@ -382,11 +380,15 @@ window.SITE = {
       plansText: "If paying in one or two amounts is difficult, say so at the consultation. I would far rather arrange a schedule that works than have cost be the reason a family goes without support.",
       cancelTitle: "Changes, cancellations and refunds",
       cancel: [
-        "For appointments (single sessions, paid consultations and postnatal visits), payment is due in full at least 24 hours before we meet.",
+        "Appointments (single sessions, paid consultations and postnatal visits) are paid in full at least 24 hours before we meet.",
         "Need to change the time? Rescheduling is free. Just let me know as early as you can and we will find a new time.",
         "If you cancel an appointment, 50% of the payment is refunded. If I have to cancel, you receive a full refund.",
-        "Birth support works differently. What happens if you cancel, if I am unable to attend, or if your plans change is written into the service agreement in plain language, and I will talk you through it before you sign.",
-        "Your statutory rights as a consumer are not affected by anything on this page or in the agreement."
+        "Birth support: if you cancel more than 4 weeks before your due date, 50% of the total fee is refunded. Between 4 and 2 weeks before your due date, 25% is refunded. Less than 2 weeks before, there is no refund.",
+        "Antenatal classes are not refunded if cancelled.",
+        "If your pregnancy ends in loss (not including stillbirth), £800 is refunded.",
+        "If I do not come when you call me and miss your birth, there is no charge for my services. If the birth is missed because I was not called, the full fee applies.",
+        "If I am ever unavailable, I arrange a backup doula for you, and you are also free to choose your own.",
+        "Your statutory rights as a consumer are not affected."
       ],
       questionsTitle: "Questions about money are welcome",
       questionsText: "Cost matters, and asking about it is not awkward. Bring it to the free consultation and we will be straightforward with each other.",
@@ -490,7 +492,7 @@ window.SITE = {
       waysTitle: "Or get in touch",
       addressTitle: "Where I’m based",
       addressText: "Lordswood, Chatham, Kent — about 35 miles from central London. I travel to families within roughly 55 miles, including London.",
-      termsText: "You are welcome to read the full service agreement before committing to anything."
+      termsText: "Prices, deposits and the cancellation policy are all on the Payment page."
     },
 
     faq: {
@@ -553,7 +555,7 @@ window.SITE = {
       team: { title: "Проверенные специалисты для беременных — Англия", description: "Остеопат, психолог, гомеопат, реабилитолог и акушерки, которых рекомендует Анна Пифко, — со скидками для клиентов." },
       reviews: { title: "Отзывы о доуле Анне Пифко — Кент и Лондон", description: "Настоящие отзывы семей о родах в роддоме и дома, восстановлении после родов и детском массаже с доулой Анной Пифко." },
       privacy: { title: "Политика конфиденциальности — Анна Пифко", description: "Какие данные хранит доула Анна Пифко, зачем, кто ещё их видит, сколько они хранятся и как запросить копию или удаление." },
-      payment: { title: "Способы оплаты — Анна Пифко, доула", description: "Как оплатить сопровождение доулы: защищённые ссылки Revolut, карта или банковский перевод, предоплата и остаток, оплата частями, права при отмене." },
+      payment: { title: "Способы оплаты — Анна Пифко, доула", description: "Как оплатить услуги доулы: способы оплаты, предоплата и остаток, оплата частями и условия отмены." },
       mentoring: { title: "Ментор Doula UK — менторство для новых доул", description: "Менторство Doula UK для доул в родах и послеродовых: дебрифинг, рефлексия и путь к признанию. £300 роды, £300 послеродовое, £600 оба." },
       contact: { title: "Связаться с доулой — бесплатная консультация", description: "Запишись на бесплатную онлайн-встречу на 45 минут с доулой Анной Пифко или напиши в WhatsApp или Telegram. Кент, Медуэй, Лондон." }
     },
@@ -849,9 +851,7 @@ window.SITE = {
       lead: "Как проходит оплата, что закрепляет за тобой дату и когда вносится остаток. Если что-то здесь непонятно — спроси до записи: договорённость вступает в силу только после письменного согласования.",
       howTitle: "Как оплатить",
       how: [
-        "Я отправляю защищённую ссылку на оплату со своего бизнес-счёта Revolut — по электронной почте или в мессенджере. Ты открываешь ссылку и платишь удобным способом: дебетовой или кредитной картой, через Apple Pay, Google Pay либо банковским переводом.",
-        "Счёт в Revolut для этого не нужен. Комиссии за бронирование и надбавки за оплату картой нет: ты платишь ровно ту сумму, которая была названа.",
-        "Если удобнее обычный банковский перевод — скажи, и я пришлю реквизиты отдельно. Данные карты я никогда не запрашиваю ни по телефону, ни в письмах, ни в сообщениях, и присылать их мне не нужно."
+        "Принимаю все способы оплаты: карту, Apple Pay, Google Pay и банковский перевод. Наличные не принимаю."
       ],
       currencyTitle: "Валюта и документы",
       currency: [
@@ -860,8 +860,8 @@ window.SITE = {
       ],
       depositTitle: "Предоплата и остаток",
       deposit: [
-        "При сопровождении родов предоплата в размере половины стоимости пакета закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Предоплата не возвращается, потому что, зарезервировав твои даты, я отказываю другим семьям. Остаток вносится до предполагаемой даты родов.",
-        "Сумма остатка и сроки обоих платежей прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
+        "При сопровождении родов невозвратная предоплата в размере 50% от общей стоимости закрепляет за тобой дату родов в моём календаре. Она вносится при подписании договора.",
+        "Остаток вносится на нашей второй встрече до родов.",
         "Курсы оплачиваются полностью при записи. Встречи оплачиваются полностью не позднее чем за 24 часа до начала."
       ],
       depositPayLabel: "Внести предоплату",
@@ -872,8 +872,12 @@ window.SITE = {
         "Встречи (разовые сессии, платные консультации и послеродовые визиты) оплачиваются полностью не позднее чем за 24 часа до начала.",
         "Нужно перенести время? Перенос бесплатный. Просто сообщи мне как можно раньше, и мы подберём новое время.",
         "Если ты отменяешь встречу, возвращается 50% оплаты. Если встречу отменяю я, ты получаешь полный возврат.",
-        "Сопровождение родов устроено иначе. Что происходит при отмене с твоей стороны, при моей невозможности приехать или при изменении планов, написано в договоре простым языком, и перед подписанием я всё объясню.",
-        "Ничто на этой странице и в договоре не ограничивает твои права потребителя, установленные законом."
+        "Сопровождение родов: при отмене больше чем за 4 недели до ПДР возвращается 50% от общей стоимости. От 4 до 2 недель до ПДР возвращается 25%. Меньше чем за 2 недели возврата нет.",
+        "Курсы подготовки к родам при отмене не возвращаются.",
+        "Если беременность завершилась потерей (кроме мертворождения), возвращается £800.",
+        "Если я не приехала, когда ты меня позвала, и пропустила роды, мои услуги не оплачиваются. Если роды пропущены, потому что меня не позвали, оплачивается полная стоимость.",
+        "Если я когда-нибудь буду недоступна, я организую для тебя доулу на замену, а ты также можешь выбрать её сама.",
+        "Твои права потребителя, установленные законом, не ограничиваются."
       ],
       questionsTitle: "О деньгах спрашивать нормально",
       questionsText: "Стоимость важна, и обсуждать её не неловко. Приноси этот вопрос на бесплатную консультацию — поговорим честно.",
@@ -977,7 +981,7 @@ window.SITE = {
       waysTitle: "Или напиши мне",
       addressTitle: "Где я нахожусь",
       addressText: "Лордсвуд, Чатем, Кент — сразу за M25. Выезжаю к семьям в радиусе около 55 миль, включая Лондон.",
-      termsText: "Договор на услуги можно прочитать заранее — до того, как что-то решать."
+      termsText: "Цены, предоплата и условия отмены — на странице «Оплата»."
     },
 
     faq: {
