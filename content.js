@@ -1668,7 +1668,7 @@ window.SITE.consultForm = [
   { id: "booking", fields: [
     { key: "Meeting type", type: "radio", req: 1, full: 1 },
     { key: "Payment details", type: "payinfo", full: 1, showIf: ["Meeting type", [1, 2, 3, 4, 5, 6, 7, 8, 9]] },
-    { key: "Payment made", type: "tick", req: 1, needsBank: 1, full: 1, showIf: ["Meeting type", [1, 2, 3, 4, 5, 6, 7, 8, 9]] } ] },
+    { key: "Payment made", type: "tick", req: 1, full: 1, showIf: ["Meeting type", [1, 2, 3, 4, 5, 6, 7, 8, 9]] } ] },
   { id: "you", fields: [
     { key: "Full name", type: "text", req: 1, ac: "name" },
     { key: "Email", type: "email", req: 1, ac: "email" },
