@@ -1707,9 +1707,9 @@ window.SITE.en.consult = {
     goal: { title: "Your goal for the consultation", note: "The clearer the goal, the more useful our time together. At the end of the meeting we will look back at it together." },
     else: { title: "Anything else" }
   },
-  pay: { due: "Payment for this meeting is due in full at least 24 hours before we meet. Please pay by bank transfer:", name: "Account name", sort: "Sort code", acc: "Account number", ref: "Reference", refText: "Your full name", later: "I will send you the payment details after you book.", dueLater: "Payment for this meeting is due in full at least 24 hours before we meet.", policy: "Rescheduling is free. If you cancel, 50% is refunded; if I cancel, you receive a full refund." },
+  pay: { due: "Payment of the price we agreed is due in full at least 24 hours before we meet. Please pay by bank transfer:", name: "Account name", sort: "Sort code", acc: "Account number", ref: "Reference", refText: "Your full name", later: "I will send you the payment details after you book.", dueLater: "Payment of the price we agreed is due in full at least 24 hours before we meet.", policy: "Rescheduling is free. If you cancel, 50% is refunded; if I cancel, you receive a full refund." },
   f: {
-    "Meeting type": { l: "Which meeting have you booked?", o: ["Free introductory meeting (45 minutes)", "Breastfeeding consultation (£50)", "Postnatal doula visit (£30 an hour, minimum 4 hours)", "Parent coaching session (£50)", "Bach therapy, first consultation (£60)", "Bach therapy, follow-up (£35)", "Bach therapy for children (£60)", "Sling and carrier consultation", "Extended consultation (by donation)", "Other"] },
+    "Meeting type": { l: "Which meeting have you booked?", o: ["Free introductory meeting (45 minutes)", "Breastfeeding consultation", "Postnatal doula visit", "Parent coaching session", "Bach therapy, first consultation", "Bach therapy, follow-up", "Bach therapy for children", "Sling and carrier consultation", "Extended consultation (by donation)", "Other"] },
     "Payment details": { l: "Payment" },
     "Payment made": { l: "I have made the payment." },
     "Full name": { l: "Your name" },
@@ -1758,9 +1758,9 @@ window.SITE.ru.consult = {
     goal: { title: "Твой запрос на консультацию", note: "Чем яснее запрос, тем полезнее наше время. В конце встречи мы вместе к нему вернёмся." },
     else: { title: "Что-то ещё" }
   },
-  pay: { due: "Оплата вносится полностью не позднее чем за 24 часа до встречи. Пожалуйста, оплати банковским переводом:", name: "Получатель", sort: "Sort code", acc: "Номер счёта", ref: "Назначение платежа", refText: "Твои имя и фамилия", later: "Реквизиты для оплаты я пришлю после записи.", dueLater: "Оплата за эту встречу вносится полностью не позднее чем за 24 часа до начала.", policy: "Перенос бесплатный. При отмене с твоей стороны возвращается 50%, при отмене с моей — полная сумма." },
+  pay: { due: "Оплата согласованной суммы вносится полностью не позднее чем за 24 часа до встречи. Пожалуйста, оплати банковским переводом:", name: "Получатель", sort: "Sort code", acc: "Номер счёта", ref: "Назначение платежа", refText: "Твои имя и фамилия", later: "Реквизиты для оплаты я пришлю после записи.", dueLater: "Оплата согласованной суммы вносится полностью не позднее чем за 24 часа до встречи.", policy: "Перенос бесплатный. При отмене с твоей стороны возвращается 50%, при отмене с моей — полная сумма." },
   f: {
-    "Meeting type": { l: "На какую встречу ты записалась?", o: ["Бесплатная знакомственная встреча (45 минут)", "Консультация по грудному вскармливанию (£50)", "Визит послеродовой доулы (£30 в час, минимум 4 часа)", "Коуч-консультация для родителей (£50)", "Терапия Баха, первая консультация (£60)", "Терапия Баха, повторная консультация (£35)", "Терапия Баха для детей (£60)", "Слингоконсультация", "Консультация за добровольный взнос", "Другое"] },
+    "Meeting type": { l: "На какую встречу ты записалась?", o: ["Бесплатная знакомственная встреча (45 минут)", "Консультация по грудному вскармливанию", "Визит послеродовой доулы", "Коуч-консультация для родителей", "Терапия Баха, первая консультация", "Терапия Баха, повторная консультация", "Терапия Баха для детей", "Слингоконсультация", "Консультация за добровольный взнос", "Другое"] },
     "Payment details": { l: "Оплата" },
     "Payment made": { l: "Я внесла оплату." },
     "Full name": { l: "Твоё имя" },
