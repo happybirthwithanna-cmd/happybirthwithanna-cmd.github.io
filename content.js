@@ -375,14 +375,17 @@ window.SITE = {
       deposit: [
         "For birth support, a deposit of half the package fee secures your date and takes me off the market for the weeks around it. The deposit is non-refundable, because once your dates are reserved I turn other families away. The balance is due before your baby is due.",
         "The balance, and the dates both payments fall due, are set out in your service agreement, which you receive and sign before any money changes hands.",
-        "Courses, single sessions and postnatal hours are usually paid in full when they are booked."
+        "Courses are paid in full when they are booked. Appointments are paid in full at least 24 hours before we meet."
       ],
       depositPayLabel: "Pay the deposit",
       plansTitle: "Paying in instalments",
       plansText: "If paying in one or two amounts is difficult, say so at the consultation. I would far rather arrange a schedule that works than have cost be the reason a family goes without support.",
       cancelTitle: "Changes, cancellations and refunds",
       cancel: [
-        "Birth is unpredictable, and so is life. What happens if you cancel, if I am unable to attend, or if your plans change is written into the service agreement in plain language, and I will talk you through it before you sign.",
+        "For appointments (single sessions, paid consultations and postnatal visits), payment is due in full at least 24 hours before we meet.",
+        "Need to change the time? Rescheduling is free. Just let me know as early as you can and we will find a new time.",
+        "If you cancel an appointment, 50% of the payment is refunded. If I have to cancel, you receive a full refund.",
+        "Birth support works differently. What happens if you cancel, if I am unable to attend, or if your plans change is written into the service agreement in plain language, and I will talk you through it before you sign.",
         "Your statutory rights as a consumer are not affected by anything on this page or in the agreement."
       ],
       questionsTitle: "Questions about money are welcome",
@@ -859,14 +862,17 @@ window.SITE = {
       deposit: [
         "При сопровождении родов предоплата в размере половины стоимости пакета закрепляет за тобой дату: на недели вокруг неё я больше никого не беру. Предоплата не возвращается, потому что, зарезервировав твои даты, я отказываю другим семьям. Остаток вносится до предполагаемой даты родов.",
         "Сумма остатка и сроки обоих платежей прописаны в договоре, который ты получаешь и подписываешь до любой оплаты.",
-        "Курсы, разовые встречи и послеродовые часы обычно оплачиваются полностью при записи."
+        "Курсы оплачиваются полностью при записи. Встречи оплачиваются полностью не позднее чем за 24 часа до начала."
       ],
       depositPayLabel: "Внести предоплату",
       plansTitle: "Оплата частями",
       plansText: "Если внести сумму одним или двумя платежами тяжело — скажи об этом на консультации. Мне гораздо важнее подобрать удобный график, чем оставить семью без поддержки из-за денег.",
       cancelTitle: "Изменения, отмена и возврат",
       cancel: [
-        "Роды непредсказуемы, и жизнь тоже. Что происходит при отмене с твоей стороны, при моей невозможности приехать или при изменении планов, написано в договоре простым языком, и перед подписанием я всё объясню.",
+        "Встречи (разовые сессии, платные консультации и послеродовые визиты) оплачиваются полностью не позднее чем за 24 часа до начала.",
+        "Нужно перенести время? Перенос бесплатный. Просто сообщи мне как можно раньше, и мы подберём новое время.",
+        "Если ты отменяешь встречу, возвращается 50% оплаты. Если встречу отменяю я, ты получаешь полный возврат.",
+        "Сопровождение родов устроено иначе. Что происходит при отмене с твоей стороны, при моей невозможности приехать или при изменении планов, написано в договоре простым языком, и перед подписанием я всё объясню.",
         "Ничто на этой странице и в договоре не ограничивает твои права потребителя, установленные законом."
       ],
       questionsTitle: "О деньгах спрашивать нормально",
