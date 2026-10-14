@@ -392,3 +392,9 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 @media (max-width:640px){ .form-grid,.opts.many{grid-template-columns:1fr} }
 
 .hint{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:3px;line-height:1.45}
+.payinfo{background:var(--blush);border-radius:14px;padding:18px 22px}
+.payinfo p{margin:0 0 8px}
+.pay-head{font-weight:500;font-size:17px}
+.bank{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin:10px 0 12px}
+.bank dt{color:var(--muted)}
+.bank dd{margin:0;font-weight:500}

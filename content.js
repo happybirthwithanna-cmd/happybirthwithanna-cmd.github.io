@@ -1659,7 +1659,16 @@ window.SITE.ru.intake.linkLabel = "Внесла предоплату? Запол
 /* ======================= CONSULTATION FORM (/consultation, /ru/consultation) =======================
    Short form for anyone who has booked a free consultation. Same Google script as the
    client form; answers land in the "Consultations" tab. "key" = column heading.            */
+// Bank details shown on the consultation form when someone picks "Paid consultation".
+// Leave blank to show "I will send you the payment details" instead.
+window.SITE.settings.bank = { name: "", sortCode: "", account: "" };
+window.SITE.settings.consultPrice = "";   // e.g. "£60 (60 minutes)"
+
 window.SITE.consultForm = [
+  { id: "booking", fields: [
+    { key: "Meeting type", type: "radio", req: 1, full: 1 },
+    { key: "Payment details", type: "payinfo", full: 1, showIf: ["Meeting type", [1, 2, 3, 4, 5, 6, 7, 8, 9]] },
+    { key: "Payment made", type: "tick", req: 1, needsBank: 1, full: 1, showIf: ["Meeting type", [1, 2, 3, 4, 5, 6, 7, 8, 9]] } ] },
   { id: "you", fields: [
     { key: "Full name", type: "text", req: 1, ac: "name" },
     { key: "Email", type: "email", req: 1, ac: "email" },
@@ -1667,9 +1676,13 @@ window.SITE.consultForm = [
     { key: "Preferred contact", type: "radio" },
     { key: "Preferred language", type: "radio" } ] },
   { id: "topic", fields: [
-    { key: "Consultation topic", type: "radio", req: 1, full: 1 },
+    // asked only for the free introductory meeting (paid meetings already say what they are about)
+    { key: "Consultation topic", type: "radio", req: 1, full: 1, showIf: ["Meeting type", 0] },
     { key: "Due date or baby's date of birth", type: "date", showIf: ["Consultation topic", [0, 1, 2, 6]] },
-    { key: "First baby", type: "radio", showIf: ["Consultation topic", [0, 1, 2, 6]] } ] },
+    { key: "First baby", type: "radio", showIf: ["Consultation topic", [0, 1, 2, 6]] },
+    // same two questions for breastfeeding, postnatal and parent coaching meetings
+    { key: "Due date or baby's date of birth", type: "date", showIf: ["Meeting type", [1, 2, 3]] },
+    { key: "First baby", type: "radio", showIf: ["Meeting type", [1, 2, 3]] } ] },
   { id: "goal", fields: [
     { key: "Goal for this consultation", type: "textarea", rows: 4, req: 1, full: 1 },
     { key: "How you will know it helped", type: "textarea", rows: 3, full: 1 },
@@ -1680,20 +1693,25 @@ window.SITE.consultForm = [
 ];
 
 window.SITE.en.nav.consultation = "Consultation form";
-window.SITE.en.meta.consultation = { title: "Before Your Consultation | Happy Birth with Anna", description: "A short form for anyone who has booked a free consultation: what you want to achieve from our meeting." };
+window.SITE.en.meta.consultation = { title: "Before Your Consultation | Happy Birth with Anna", description: "A short form for anyone who has booked a meeting with Anna: what you want to achieve from it." };
 window.SITE.en.consult = {
   eyebrow: "Before your consultation",
   h1: "What would you like from our meeting?",
-  lead: "For anyone who has booked a free consultation. Your answers let me prepare, so we spend the time on exactly what you want to achieve. It takes about five minutes.",
+  lead: "For anyone who has booked a meeting with me. Your answers let me prepare, so we spend the time on exactly what you want to achieve. It takes about five minutes.",
   intro: "Questions marked * are needed.",
   linkLabel: "Booked a consultation? Tell me what you'd like from it",
   sections: {
+    booking: { title: "Your booking" },
     you: { title: "About you" },
     topic: { title: "What it's about" },
     goal: { title: "Your goal for the consultation", note: "The clearer the goal, the more useful our time together. At the end of the meeting we will look back at it together." },
     else: { title: "Anything else" }
   },
+  pay: { due: "Payment for this meeting is due in full at least 24 hours before we meet. Please pay by bank transfer:", name: "Account name", sort: "Sort code", acc: "Account number", ref: "Reference", refText: "Your full name", later: "I will send you the payment details after you book.", dueLater: "Payment for this meeting is due in full at least 24 hours before we meet.", policy: "Rescheduling is free. If you cancel, 50% is refunded; if I cancel, you receive a full refund." },
   f: {
+    "Meeting type": { l: "Which meeting have you booked?", o: ["Free introductory meeting (45 minutes)", "Breastfeeding consultation (£50)", "Postnatal doula visit (£30 an hour, minimum 4 hours)", "Parent coaching session (£50)", "Bach therapy, first consultation (£60)", "Bach therapy, follow-up (£35)", "Bach therapy for children (£60)", "Sling and carrier consultation", "Extended consultation (by donation)", "Other"] },
+    "Payment details": { l: "Payment" },
+    "Payment made": { l: "I have made the payment." },
     "Full name": { l: "Your name" },
     "Email": { l: "Email" },
     "Phone": { l: "Phone" },
@@ -1726,20 +1744,25 @@ window.SITE.en.consult = {
 };
 
 window.SITE.ru.nav.consultation = "Анкета перед консультацией";
-window.SITE.ru.meta.consultation = { title: "Перед консультацией — Анна Пифко, доула", description: "Короткая анкета для тех, кто записался на бесплатную консультацию: чего ты хочешь достичь на нашей встрече." };
+window.SITE.ru.meta.consultation = { title: "Перед консультацией — Анна Пифко, доула", description: "Короткая анкета для тех, кто записался на встречу с Анной: чего ты хочешь от неё достичь." };
 window.SITE.ru.consult = {
   eyebrow: "Перед консультацией",
   h1: "Чего ты хочешь от нашей встречи?",
-  lead: "Для тех, кто записался на бесплатную консультацию. Твои ответы помогут мне подготовиться, чтобы мы потратили время именно на то, чего ты хочешь достичь. Это займёт около пяти минут.",
+  lead: "Для тех, кто записался ко мне на встречу. Твои ответы помогут мне подготовиться, чтобы мы потратили время именно на то, чего ты хочешь достичь. Это займёт около пяти минут.",
   intro: "Вопросы со звёздочкой * обязательны.",
   linkLabel: "Записалась на консультацию? Расскажи, чего ты от неё ждёшь",
   sections: {
+    booking: { title: "Твоя запись" },
     you: { title: "О тебе" },
     topic: { title: "О чём консультация" },
     goal: { title: "Твой запрос на консультацию", note: "Чем яснее запрос, тем полезнее наше время. В конце встречи мы вместе к нему вернёмся." },
     else: { title: "Что-то ещё" }
   },
+  pay: { due: "Оплата вносится полностью не позднее чем за 24 часа до встречи. Пожалуйста, оплати банковским переводом:", name: "Получатель", sort: "Sort code", acc: "Номер счёта", ref: "Назначение платежа", refText: "Твои имя и фамилия", later: "Реквизиты для оплаты я пришлю после записи.", dueLater: "Оплата за эту встречу вносится полностью не позднее чем за 24 часа до начала.", policy: "Перенос бесплатный. При отмене с твоей стороны возвращается 50%, при отмене с моей — полная сумма." },
   f: {
+    "Meeting type": { l: "На какую встречу ты записалась?", o: ["Бесплатная знакомственная встреча (45 минут)", "Консультация по грудному вскармливанию (£50)", "Визит послеродовой доулы (£30 в час, минимум 4 часа)", "Коуч-консультация для родителей (£50)", "Терапия Баха, первая консультация (£60)", "Терапия Баха, повторная консультация (£35)", "Терапия Баха для детей (£60)", "Слингоконсультация", "Консультация за добровольный взнос", "Другое"] },
+    "Payment details": { l: "Оплата" },
+    "Payment made": { l: "Я внесла оплату." },
     "Full name": { l: "Твоё имя" },
     "Email": { l: "Email" },
     "Phone": { l: "Телефон" },

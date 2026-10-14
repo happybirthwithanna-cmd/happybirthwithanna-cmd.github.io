@@ -428,6 +428,21 @@ function formPage(lang, F, P, formName) {
     if (f.showIf) show = ` data-show-name="${esc(f.showIf[0])}" data-show-value="${esc([].concat(f.showIf[1]).map((i) => P.f[f.showIf[0]].o[i]).join("|"))}" hidden`;
     const hint = L.h ? `<span class="hint">${esc(L.h)}</span>` : "";
     const cls = `fld${f.full ? " full" : ""}`;
+    if (f.type === "payinfo") {
+      const B = S.bank || {}, hasBank = B.sortCode && B.account;
+      const rows = hasBank ? `<dl class="bank">
+        <dt>${esc(P.pay.name)}</dt><dd>${esc(B.name)}</dd>
+        <dt>${esc(P.pay.sort)}</dt><dd>${esc(B.sortCode)}</dd>
+        <dt>${esc(P.pay.acc)}</dt><dd>${esc(B.account)}</dd>
+        <dt>${esc(P.pay.ref)}</dt><dd>${esc(P.pay.refText)}</dd></dl>` : `<p>${esc(P.pay.later)}</p>`;
+      return `<div class="${cls} payinfo"${show}><p class="pay-head">${esc(L.l)}</p>
+        ${S.consultPrice ? `<p class="pay-price">${esc(P.pay.price)}: <b>${esc(S.consultPrice)}</b></p>` : ""}
+        <p>${esc(hasBank ? P.pay.due : P.pay.dueLater)}</p>${rows}<p class="small muted">${esc(P.pay.policy)}</p></div>`;
+    }
+    if (f.type === "tick") {
+      if (f.needsBank && !((S.bank || {}).sortCode && (S.bank || {}).account)) return "";
+      return `<div class="${cls}"${show}><label class="opt"><input type="checkbox" name="${name}" value="Yes"${req}><span>${esc(L.l)}${star(f)}</span></label></div>`;
+    }
     if (f.type === "radio" || f.type === "checks") {
       const t = f.type === "radio" ? "radio" : "checkbox";
       const opts = L.o.map((o) => `<label class="opt"><input type="${t}" name="${name}" value="${esc(o)}"${f.type === "radio" ? req : ""}><span>${esc(o)}</span></label>`).join("");

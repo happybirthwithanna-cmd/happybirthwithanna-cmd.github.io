@@ -11,8 +11,13 @@
   var $ = function(id){ return document.getElementById(id); };
   function toggle(){
     f.querySelectorAll("[data-show-name]").forEach(function(el){
-      var c = f.querySelector('input[name="' + el.getAttribute("data-show-name") + '"]:checked');
+      var c = f.querySelector('input[name="' + el.getAttribute("data-show-name") + '"]:checked:not(:disabled)');
       el.hidden = !(c && el.getAttribute("data-show-value").split("|").indexOf(c.value) > -1);
+      el.querySelectorAll("input,textarea,select").forEach(function(i){ i.disabled = el.hidden; });   // hidden questions are never required
+    });
+    f.querySelectorAll(".form-sec").forEach(function(sec){            // hide a section when all its questions are hidden
+      var flds = sec.querySelectorAll(".fld"); if (!flds.length) return;
+      sec.hidden = Array.prototype.every.call(flds, function(x){ return x.hidden; });
     });
   }
   f.addEventListener("change", toggle); toggle();
