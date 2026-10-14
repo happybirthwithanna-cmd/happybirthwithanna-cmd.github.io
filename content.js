@@ -1690,8 +1690,8 @@ window.SITE.en.consult = {
     "Consultation topic": { l: "What would you like to talk about?", o: ["Birth support", "Postnatal support", "Antenatal or parenting course", "Support for a child", "Support for an adult", "Doula mentoring", "Not sure yet"] },
     "Due date or baby's date of birth": { l: "Due date, or your baby's date of birth" },
     "First baby": { l: "Is this your first baby?", o: ["Yes", "No"] },
-    "Goal for this consultation": { l: "What would you like to have achieved or solved by the end of our consultation?", h: "Be as concrete as you can. For example: “decide whether a doula is right for us”, “know my options for birth after a caesarean”, “have a plan for the first two weeks at home”." },
-    "How you will know it helped": { l: "How will you know the consultation has helped?", h: "What will be different for you afterwards? For example: “I'll know which package suits us”, “I'll have three questions ready for my midwife”." },
+    "Goal for this consultation": { l: "What would you like to have achieved or solved by the end of our consultation?", h: "Be as concrete as you can. For example: “breastfeeding without pain”, “a bedtime routine that helps my baby settle”, “knowing how to calm my baby when she cries”, “feeling ready for labour and knowing what helps me cope”." },
+    "How you will know it helped": { l: "How will you know the consultation has helped?", h: "What will be different in your everyday life? For example: “feeds no longer hurt”, “my baby falls asleep within 20 minutes at bedtime”, “I can get some sleep between night feeds”, “I feel calm, not frightened, when I think about labour”." },
     "Closeness to goal now (0-10)": { l: "On a scale of 0 to 10, how close do you feel to that goal right now?", h: "0 = nowhere near, 10 = already there" },
     "Anything to know beforehand": { l: "Is there anything you are worried about, or would like me to know before we meet?" },
     "How they heard about Anna": { l: "How did you hear about me?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Friend or family", "Other"] }
@@ -1736,8 +1736,8 @@ window.SITE.ru.consult = {
     "Consultation topic": { l: "О чём ты хочешь поговорить?", o: ["Сопровождение родов", "Послеродовая поддержка", "Курс подготовки к родам или родительству", "Поддержка ребёнка", "Поддержка взрослого", "Наставничество для доул", "Пока не знаю"] },
     "Due date or baby's date of birth": { l: "ПДР или дата рождения малыша" },
     "First baby": { l: "Это твой первый ребёнок?", o: ["Да", "Нет"] },
-    "Goal for this consultation": { l: "Чего ты хочешь достичь или какой вопрос решить к концу нашей консультации?", h: "Постарайся сформулировать конкретно. Например: «решить, нужна ли нам доула», «понять свои варианты родов после кесарева», «составить план на первые две недели дома»." },
-    "How you will know it helped": { l: "Как ты поймёшь, что консультация помогла?", h: "Что изменится для тебя после неё? Например: «буду знать, какой пакет нам подходит», «у меня будут три вопроса для акушерки»." },
+    "Goal for this consultation": { l: "Чего ты хочешь достичь или какой вопрос решить к концу нашей консультации?", h: "Постарайся сформулировать конкретно. Например: «кормить грудью без боли», «наладить ритуал укладывания, чтобы малыш легче засыпал», «понимать, как успокоить малыша, когда он плачет», «чувствовать себя готовой к родам и знать, что мне помогает»." },
+    "How you will know it helped": { l: "Как ты поймёшь, что консультация помогла?", h: "Что изменится в твоей повседневной жизни? Например: «кормление больше не болезненное», «малыш засыпает вечером за 20 минут», «я успеваю поспать между ночными кормлениями», «я думаю о родах спокойно, без страха»." },
     "Closeness to goal now (0-10)": { l: "По шкале от 0 до 10, насколько ты сейчас близка к этой цели?", h: "0 — совсем далеко, 10 — уже достигнута" },
     "Anything to know beforehand": { l: "Есть ли что-то, что тебя тревожит или что мне стоит знать до встречи?" },
     "How they heard about Anna": { l: "Как ты обо мне узнала?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Друзья или родные", "Другое"] }
