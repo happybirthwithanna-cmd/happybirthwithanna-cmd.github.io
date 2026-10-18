@@ -4,6 +4,13 @@
     var open = n.classList.toggle("open"); b.setAttribute("aria-expanded", open ? "true" : "false");
   });
 })();
+// send answers to the Google Sheet script; succeeds only if the script replies "ok"
+window.hbSend = function(url, data){
+  return fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(data) })
+    .then(function(r){ return r.text(); })
+    .then(function(t){ if (String(t).trim() !== "ok") throw new Error("not saved"); });
+};
+
 // new client form
 (function(){
   var f = document.getElementById("intake");
@@ -38,7 +45,7 @@
     });
     var btn = f.querySelector('button[type="submit"]'), label = btn.textContent;
     btn.disabled = true; btn.textContent = f.getAttribute("data-sending");
-    fetch(ep, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(data) })
+    window.hbSend(ep, data)
       .then(function(){ f.hidden = true; $("intake-done").hidden = false; $("intake-done").focus(); window.scrollTo(0, $("intake-done").offsetTop - 120); })
       .catch(function(){ $("intake-error").hidden = false; btn.disabled = false; btn.textContent = label; });
   });
@@ -135,7 +142,7 @@
       "Noticed": lastResult.notes.join("\n"), "Consent to hold this information": "Yes" };
     visible().forEach(function(q){ if (ans[q.id] !== undefined) data[q.label] = T.q[q.id].o[ans[q.id]]; });
     var btn = f.querySelector('button[type="submit"]'), label = btn.textContent; btn.disabled = true; btn.textContent = T.lead.sending;
-    fetch(D.links.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(data) })
+    window.hbSend(D.links.endpoint, data)
       .then(function(){ f.outerHTML = '<div class="bfq-sent"><div class="bfq-badge" aria-hidden="true">' + svg("heart", 44) + "</div><p>" + esc(T.lead.thanks) + "</p></div>"; })
       .catch(function(){ err.hidden = false; btn.disabled = false; btn.textContent = label; });
   });
