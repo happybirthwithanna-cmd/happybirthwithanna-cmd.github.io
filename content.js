@@ -1831,8 +1831,8 @@ window.SITE.en.bfc = {
   goodToKnow: "Good to know",
   q: {
     age: { q: "How old is your baby?", o: ["0 to 2 days", "3 to 4 days", "5 to 6 days", "1 to 4 weeks", "1 to 3 months", "Over 3 months"] },
-    feel: { q: "How does breastfeeding feel?", o: ["Comfortable", "A little tender at first, but it eases after the first few sucks", "It hurts through the whole feed", "My nipples are cracked, bleeding or blistered"],
-      why: [null, null, "Pain that lasts through the feed usually means the latch isn't deep enough.", "Cracked or bleeding nipples are a sign the latch needs adjusting, and they heal faster once it does."] },
+    feel: { q: "How does breastfeeding feel?", o: ["Comfortable", "Tender as baby latches on, but it eases within about 10 seconds", "It still hurts after 10 seconds, or through the whole feed", "My nipples are cracked, bleeding or blistered"],
+      why: [null, null, "Pain that lasts beyond the first 10 seconds or so usually means the latch isn't deep enough.", "Cracked or bleeding nipples are a sign the latch needs adjusting, and they heal faster once it does."] },
     shape: { q: "When your baby comes off the breast, your nipple looks…", o: ["The same shape as before the feed", "Squashed, pinched or angled, like a new lipstick", "White at the tip, or turns white or purple after feeds"],
       why: [null, "A squashed or angled nipple after a feed is a classic sign of a shallow latch.", "A nipple that turns white or purple can mean it's being compressed during the feed."] },
     suck: { q: "During a feed, your baby mostly…", o: ["Takes deep, slow, rhythmic sucks, and I can hear or see swallowing", "Takes quick, light sucks, and I rarely hear swallowing", "Makes clicking noises, or their cheeks pull in", "Comes on and off the breast a lot, or refuses it"],
@@ -1875,7 +1875,7 @@ window.SITE.en.bfc = {
   ],
   signsTitle: "Signs breastfeeding is going well",
   signs: [
-    "Feeding is comfortable. Any tenderness eases after the first few sucks.",
+    "Feeding is comfortable. Any tenderness as baby latches on eases within about 10 seconds.",
     "Your nipple is the same shape at the end of a feed as at the start.",
     "Your baby takes deep, rhythmic sucks, and from day 3 to 4 you can hear swallowing.",
     "After the first day, your baby feeds at least 8 times in 24 hours, usually for 5 to 40 minutes, and comes off by themselves.",
@@ -1908,8 +1908,8 @@ window.SITE.ru.bfc = {
   goodToKnow: "Полезно знать",
   q: {
     age: { q: "Сколько малышу?", o: ["0–2 дня", "3–4 дня", "5–6 дней", "1–4 недели", "1–3 месяца", "Больше 3 месяцев"] },
-    feel: { q: "Какие ощущения во время кормления?", o: ["Комфортно", "Немного чувствительно в начале, но проходит после первых сосательных движений", "Больно на протяжении всего кормления", "Соски потрескались, кровоточат или появились пузыри"],
-      why: [null, null, "Боль на протяжении всего кормления обычно означает, что малыш захватывает грудь недостаточно глубоко.", "Трещины и кровь на сосках — признак того, что прикладывание нужно поправить; после этого они заживают быстрее."] },
+    feel: { q: "Какие ощущения во время кормления?", o: ["Комфортно", "Чувствительно, когда малыш захватывает грудь, но проходит примерно за 10 секунд", "Больно и через 10 секунд или на протяжении всего кормления", "Соски потрескались, кровоточат или появились пузыри"],
+      why: [null, null, "Боль, которая не проходит примерно через 10 секунд, обычно означает, что малыш захватывает грудь недостаточно глубоко.", "Трещины и кровь на сосках — признак того, что прикладывание нужно поправить; после этого они заживают быстрее."] },
     shape: { q: "Когда малыш отпускает грудь, сосок…", o: ["Такой же формы, как до кормления", "Сплющенный, сдавленный или скошенный, как новая помада", "Белый на кончике или белеет/синеет после кормления"],
       why: [null, "Сплющенный или скошенный сосок после кормления — типичный признак поверхностного захвата.", "Сосок, который белеет или синеет, может означать, что его пережимают во время кормления."] },
     suck: { q: "Во время кормления малыш чаще всего…", o: ["Сосёт глубоко, медленно и ритмично, и я слышу или вижу глотки", "Сосёт быстро и легко, глотков почти не слышно", "Цокает или втягивает щёчки", "Часто бросает грудь и снова берёт или отказывается от неё"],
@@ -1952,7 +1952,7 @@ window.SITE.ru.bfc = {
   ],
   signsTitle: "Признаки того, что ГВ идёт хорошо",
   signs: [
-    "Кормить комфортно. Если и есть чувствительность, она проходит после первых сосательных движений.",
+    "Кормить комфортно. Если при захвате и есть чувствительность, она проходит примерно за 10 секунд.",
     "Сосок после кормления такой же формы, как до него.",
     "Малыш сосёт глубоко и ритмично, а с 3–4 дня слышны глотки.",
     "После первых суток малыш ест не меньше 8 раз за 24 часа, обычно 5–40 минут, и сам отпускает грудь.",
