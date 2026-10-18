@@ -482,7 +482,7 @@ function formPage(lang, F, P, formName) {
 /* ---------- breastfeeding check (interactive quiz) ---------- */
 function bfCheckPage(lang) {
   const T = SITE[lang], P = T.bfc;
-  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, q: P.q, results: P.results, helpline: P.helpline },
+  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, goodToKnow: P.goodToKnow, q: P.q, results: P.results, helpline: P.helpline },
     links: { consult: href(lang, lang, "consultation") + "?meeting=1", whatsapp: wa() } };
   const li = (a) => a.map((x) => `<li>${esc(x)}</li>`).join("");
   return `${pageHead(lang, P, "")}
@@ -496,6 +496,7 @@ function bfCheckPage(lang) {
   </div>
   <script type="application/json" id="bfq-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
 </div></section>
+<section class="sec"><div class="wrap narrow"><h2>${esc(P.firstTitle)}</h2><ul class="ticks big">${li(P.first)}</ul></div></section>
 <section class="sec sand"><div class="wrap two">
   <div><h2>${esc(P.signsTitle)}</h2><ul class="ticks">${li(P.signs)}</ul></div>
   <div><h2>${esc(P.helpTitle)}</h2><ul class="dots">${li(P.helpList)}</ul><p class="small"><b>${esc(P.helpline)}</b></p></div>

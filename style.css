@@ -436,3 +436,5 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .bfq-promo b{color:var(--clay);font-size:22px}
 @media (max-width:640px){ .bfq-card{padding:26px 20px} .bfq{min-height:480px} }
 @media (prefers-reduced-motion: reduce){ .bfq *, .bfq-card{animation:none!important} }
+.bfq-tips li::marker{content:"💡  "}
+.bfq-tips{padding-left:28px}

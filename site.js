@@ -81,9 +81,11 @@
     var s = q.s[i]; if (s !== "ok" && q.okAges && q.okAges[i] && q.okAges[i].indexOf(ans.age) > -1) s = "ok"; return s;
   }
   function result(){
-    var notes = { urgent: [], help: [] }, level = "ok";
+    var notes = { urgent: [], help: [] }, tips = [], level = "ok";
     visible().forEach(function(q){ if (q.id === "age" || ans[q.id] === undefined) return;
-      var st = status(q, ans[q.id]); if (st === "ok") return;
+      var i = ans[q.id], tt = T.q[q.id].tip;
+      if (q.tips && q.tips[i] && q.tips[i].indexOf(ans.age) > -1 && tt && tt[i]) tips.push(tt[i]);
+      var st = status(q, i); if (st === "ok") return;
       var w = T.q[q.id].why; notes[st].push(typeof w === "string" ? w : w[ans[q.id]]);
       if (st === "urgent") level = "urgent"; else if (level === "ok") level = "help"; });
     var R = T.results[level], list = notes.urgent.concat(notes.help);
@@ -93,6 +95,7 @@
     swap('<div class="bfq-card bfq-result bfq-' + level + '"><div class="bfq-badge" aria-hidden="true"><svg viewBox="0 0 48 48" width="56" height="56"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="' + icon + '" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
       "<h2>" + esc(R.title) + "</h2><p>" + esc(R.text) + "</p>" +
       (list.length ? '<h3>' + esc(T.noticed) + '</h3><ul class="bfq-notes">' + list.map(function(n, i){ return '<li style="--i:' + i + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
+      (tips.length ? '<h3>' + esc(T.goodToKnow) + '</h3><ul class="bfq-notes bfq-tips">' + tips.map(function(n, i){ return '<li style="--i:' + (i + list.length) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
       (R.extra ? '<p class="bfq-999">' + esc(R.extra) + "</p>" : "") + (R.after ? "<p>" + esc(R.after) + "</p>" : "") +
       '<p class="bfq-ctas"><a class="btn btn-clay" href="' + href + '"' + ext + ">" + esc(R.cta) + '</a><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p>" +
       '<p class="small muted">' + esc(T.helpline) + "</p></div>");
