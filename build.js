@@ -482,7 +482,7 @@ function formPage(lang, F, P, formName) {
 /* ---------- breastfeeding check (interactive quiz) ---------- */
 function bfCheckPage(lang) {
   const T = SITE[lang], P = T.bfc;
-  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, goodToKnow: P.goodToKnow, q: P.q, results: P.results, helpline: P.helpline },
+  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, goodToKnow: P.goodToKnow, firstDays: P.firstDays, q: P.q, results: P.results, helpline: P.helpline },
     links: { consult: href(lang, lang, "consultation") + "?meeting=1", whatsapp: wa() } };
   const li = (a) => a.map((x) => `<li>${esc(x)}</li>`).join("");
   return `${pageHead(lang, P, "")}

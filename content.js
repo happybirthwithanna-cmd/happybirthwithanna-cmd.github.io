@@ -1800,20 +1800,20 @@ window.SITE.ru.consult = {
    Britain recommends). Statuses: "ok", "help" (worth a consultation), "urgent" (midwife/GP/111 today).
    Age groups: 0 = 0–2 days, 1 = 3–4 days, 2 = 5–6 days, 3 = 1–4 weeks, 4 = 1–3 months, 5 = over 3 months. */
 window.SITE.bfCheck = [
-  { id: "age", type: "age" },
-  { id: "feel", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "ok", "help", "help"] },
-  { id: "shape", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
-  { id: "suck", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help", "help"], okAges: { 1: [0] } },
-  { id: "feeds", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"], okAges: { 1: [0], 2: [0] }, tips: { 0: [0, 1] } },
-  { id: "length", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
-  { id: "wet", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
-  { id: "dirty", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
-  { id: "cues", ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
-  { id: "after", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"], okAges: { 1: [0, 1] }, tips: { 1: [0, 1] } },
-  { id: "sleepy", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
-  { id: "skin", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
-  { id: "breasts", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
-  { id: "topup", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help"] }
+  { id: "age", icon: "baby", type: "age" },
+  { id: "feel", icon: "heart", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "ok", "help", "help"] },
+  { id: "shape", icon: "drop", optIcons: ["round", "lipstick", "whitetip"], ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
+  { id: "suck", icon: "wave", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help", "help"], okAges: { 1: [0] } },
+  { id: "feeds", icon: "clock", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"], okAges: { 1: [0], 2: [0] }, tips: { 0: [0, 1] } },
+  { id: "length", icon: "timer", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
+  { id: "wet", icon: "nappy", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
+  { id: "dirty", icon: "nappy", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
+  { id: "cues", icon: "face", ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
+  { id: "after", icon: "smile", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"], okAges: { 1: [0, 1] }, tips: { 1: [0, 1] } },
+  { id: "sleepy", icon: "moon", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "skin", icon: "sun", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
+  { id: "breasts", icon: "drop", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "topup", icon: "bottle", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help"] }
 ];
 
 window.SITE.en.nav["breastfeeding-check"] = "Breastfeeding check";
@@ -1829,6 +1829,9 @@ window.SITE.en.bfc = {
   restart: "Start again",
   noticed: "What I noticed",
   goodToKnow: "Good to know",
+  firstDays: { title: "Your baby is in the first days", text: "A newborn's tummy is tiny, so small, frequent feeds are exactly right.", cont: "Continue",
+    sizes: [{ d: "Day 1", s: "a cherry", ml: "about 5–7 ml" }, { d: "Day 3", s: "a walnut", ml: "about 22–27 ml" }, { d: "Day 7", s: "an apricot", ml: "about 45–60 ml" }],
+    points: ["Colostrum, the first milk, comes in small amounts and is very concentrated. It's all your baby needs.", "Feeding very often, even every hour or two, is normal and helps your milk come in, usually around day 3.", "Offer the breast at early hunger signs: stirring, rooting, hands to mouth. Crying is a late sign."] },
   q: {
     age: { q: "How old is your baby?", o: ["0 to 2 days", "3 to 4 days", "5 to 6 days", "1 to 4 weeks", "1 to 3 months", "Over 3 months"] },
     feel: { q: "How does breastfeeding feel?", o: ["Comfortable", "Tender as baby latches on, but it eases within about 10 seconds", "It still hurts after 10 seconds, or through the whole feed", "My nipples are cracked, bleeding or blistered"],
@@ -1906,6 +1909,9 @@ window.SITE.ru.bfc = {
   restart: "Пройти заново",
   noticed: "На что я обратила внимание",
   goodToKnow: "Полезно знать",
+  firstDays: { title: "У малыша первые дни жизни", text: "Желудочек новорождённого крошечный, поэтому маленькие и частые кормления — именно то, что нужно.", cont: "Продолжить",
+    sizes: [{ d: "1-й день", s: "вишня", ml: "около 5–7 мл" }, { d: "3-й день", s: "грецкий орех", ml: "около 22–27 мл" }, { d: "7-й день", s: "абрикос", ml: "около 45–60 мл" }],
+    points: ["Молозиво — первое молоко — приходит маленькими порциями и очень концентрированное. Это всё, что нужно малышу.", "Очень частые кормления, даже каждые час-два, — это нормально и помогает молоку прийти, обычно примерно на 3-й день.", "Предлагай грудь при ранних признаках голода: шевелится, ищет грудь, тянет руки ко рту. Плач — поздний признак."] },
   q: {
     age: { q: "Сколько малышу?", o: ["0–2 дня", "3–4 дня", "5–6 дней", "1–4 недели", "1–3 месяца", "Больше 3 месяцев"] },
     feel: { q: "Какие ощущения во время кормления?", o: ["Комфортно", "Чувствительно, когда малыш захватывает грудь, но проходит примерно за 10 секунд", "Больно и через 10 секунд или на протяжении всего кормления", "Соски потрескались, кровоточат или появились пузыри"],

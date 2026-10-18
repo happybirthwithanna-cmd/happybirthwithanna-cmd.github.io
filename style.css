@@ -438,3 +438,15 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 @media (prefers-reduced-motion: reduce){ .bfq *, .bfq-card{animation:none!important} }
 .bfq-tips li::marker{content:"💡  "}
 .bfq-tips{padding-left:28px}
+
+.bfq-qic{width:64px;height:64px;border-radius:50%;background:var(--blush);color:var(--clay);display:flex;align-items:center;justify-content:center;margin-bottom:12px;animation:bfqPop .55s cubic-bezier(.2,1.4,.4,1) both .05s}
+.bfq-opt.has-ic{display:flex;align-items:center;gap:14px}
+.bfq-opt-ic{flex:none;width:46px;height:46px;border-radius:12px;background:#fff;color:var(--clay);display:flex;align-items:center;justify-content:center}
+.bfq-opt.is-on .bfq-opt-ic{background:rgba(255,255,255,.18);color:#fff}
+.bfq-tums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 8px;text-align:center}
+.bfq-tum{display:flex;flex-direction:column;align-items:center;gap:2px;animation:bfqIn .5s both;animation-delay:calc(var(--i) * 140ms + 150ms)}
+.bfq-tum svg{animation:bfqPop .6s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 140ms + 200ms)}
+.bfq-tum b{font-weight:500;margin-top:4px}
+.bfq-tum span{font-size:15px}
+.bfq-tum small{color:var(--muted);font-size:13px}
+.bfq-opt-ic{width:56px;height:56px}

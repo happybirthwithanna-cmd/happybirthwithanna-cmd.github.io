@@ -57,7 +57,25 @@
   var box = document.getElementById("bfq"), dataEl = document.getElementById("bfq-data");
   if (!box || !dataEl) return;
   var D = JSON.parse(dataEl.textContent), T = D.t, Q = D.questions;
-  var ans = {}, path = [], pos = 0;
+  var ans = {}, path = [], pos = 0, seenFirst = false;
+  var ICONS = {
+    baby: '<circle cx="24" cy="16" r="7"/><path d="M11 40c1.5-8 6.5-12.5 13-12.5S35.5 32 37 40"/><path d="M21.5 15.5h.01M26.5 15.5h.01M22 19c1.3 1 2.7 1 4 0"/>',
+    heart: '<path d="M24 39s-13-7.8-13-17.8A7.7 7.7 0 0 1 24 16a7.7 7.7 0 0 1 13 5.2C37 31.2 24 39 24 39z"/>',
+    drop: '<path d="M24 8c6 9 12 15 12 22a12 12 0 0 1-24 0c0-7 6-13 12-22z"/><path d="M19 31a5 5 0 0 0 5 5"/>',
+    wave: '<path d="M7 26h5l3-8 5 16 4-12 3 6 3-3h11"/>',
+    clock: '<circle cx="24" cy="25" r="14"/><path d="M24 17v8l6 4"/>',
+    timer: '<circle cx="24" cy="27" r="13"/><path d="M24 20v7M20 8h8M24 8v6M34 15l2-2"/>',
+    nappy: '<path d="M8 15h32v5c0 10-7 18-16 18S8 30 8 20z"/><path d="M8 21h32M17 15v6M31 15v6"/>',
+    face: '<circle cx="24" cy="24" r="14"/><path d="M19 21h.01M29 21h.01"/><circle cx="24" cy="29" r="2.6"/>',
+    smile: '<circle cx="24" cy="24" r="14"/><path d="M18.5 21c1-1.2 2.6-1.2 3.6 0M25.9 21c1-1.2 2.6-1.2 3.6 0M18 28c3.4 3.6 8.6 3.6 12 0"/>',
+    moon: '<path d="M30 9a14 14 0 1 0 9 22A11 11 0 0 1 30 9z"/><path d="M33 12h4l-4 5h4"/>',
+    sun: '<circle cx="24" cy="24" r="7"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4M12.7 12.7l2.8 2.8M32.5 32.5l2.8 2.8M12.7 35.3l2.8-2.8M32.5 15.5l2.8-2.8"/>',
+    bottle: '<path d="M20 7h8v5l3 4v22a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V16l3-4z"/><path d="M17 25h14M17 31h14"/>',
+    round: '<path d="M5 40h38"/><path d="M13 40c0-15 5-25 11-25s11 10 11 25"/>',
+    lipstick: '<path d="M5 40h38"/><path d="M13 40c0-11 2-19 6-25l16 7c1 6 0 12 0 18"/>',
+    whitetip: '<path d="M5 40h38"/><path d="M13 40c0-15 5-25 11-25s11 10 11 25"/><path d="M18.5 21c3-2.5 8-2.5 11 0" stroke-width="4" stroke="#D9C9C6"/>'
+  };
+  function svg(name, size){ return '<svg viewBox="0 0 48 48" width="' + size + '" height="' + size + '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || "") + "</svg>"; }
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
   function visible(){ var age = ans.age; return Q.filter(function(q){ return q.id === "age" || (age !== undefined && q.ages.indexOf(age) > -1); }); }
@@ -71,10 +89,20 @@
     path = visible(); var q = path[pos], t = T.q[q.id], total = path.length;
     var pct = Math.round(pos / total * 100);
     var opts = t.o.map(function(o, i){ var sel = ans[q.id] === i ? " is-on" : "";
-      return '<button type="button" class="bfq-opt' + sel + '" style="--i:' + i + '" data-i="' + i + '">' + esc(o) + "</button>"; }).join("");
+      var ic = q.optIcons ? '<span class="bfq-opt-ic">' + svg(q.optIcons[i], 42) + "</span>" : "";
+      return '<button type="button" class="bfq-opt' + sel + (ic ? " has-ic" : "") + '" style="--i:' + i + '" data-i="' + i + '">' + ic + "<span>" + esc(o) + "</span></button>"; }).join("");
     swap('<div class="bfq-card"><div class="bfq-top"><span>' + esc(T.qOf.replace("{n}", pos + 1).replace("{t}", total)) + '</span>' +
       (pos > 0 ? '<button type="button" class="bfq-back" data-back>← ' + esc(T.back) + "</button>" : "") + '</div>' +
-      '<div class="bfq-bar"><i style="width:' + pct + '%"></i></div><h2>' + esc(t.q) + '</h2><div class="bfq-opts">' + opts + "</div></div>");
+      '<div class="bfq-bar"><i style="width:' + pct + '%"></i></div>' + (q.icon ? '<div class="bfq-qic">' + svg(q.icon, 40) + "</div>" : "") + '<h2>' + esc(t.q) + '</h2><div class="bfq-opts">' + opts + "</div></div>");
+  }
+  function firstDays(){
+    var F = T.firstDays, max = 60;
+    var sizes = F.sizes.map(function(z, i){ var r = [9, 15, 21][i];
+      return '<div class="bfq-tum" style="--i:' + i + '"><svg viewBox="0 0 48 48" width="64" height="64" aria-hidden="true"><circle cx="24" cy="24" r="' + r + '" fill="var(--blush)" stroke="var(--clay)" stroke-width="1.8"/></svg>' +
+        "<b>" + esc(z.d) + "</b><span>" + esc(z.s) + "</span><small>" + esc(z.ml) + "</small></div>"; }).join("");
+    swap('<div class="bfq-card bfq-first"><div class="bfq-qic">' + svg("baby", 40) + "</div><h2>" + esc(F.title) + "</h2><p>" + esc(F.text) + '</p><div class="bfq-tums">' + sizes + "</div>" +
+      '<ul class="bfq-notes bfq-tips">' + F.points.map(function(n, i){ return '<li style="--i:' + (i + 3) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" +
+      '<p class="bfq-ctas"><button type="button" class="btn btn-clay" data-continue>' + esc(F.cont) + " →</button></p></div>");
   }
   function status(q, i){
     if (q.type === "wet") return q.values[i] < q.need[ans.age] ? "urgent" : "ok";
@@ -101,11 +129,14 @@
   }
   box.addEventListener("click", function(e){
     var b = e.target.closest("button"); if (!b) return;
-    if (b.hasAttribute("data-bfq-start") || b.hasAttribute("data-restart")) { ans = {}; pos = 0; return showQ(); }
+    if (b.hasAttribute("data-bfq-start") || b.hasAttribute("data-restart")) { ans = {}; pos = 0; seenFirst = false; return showQ(); }
+    if (b.hasAttribute("data-continue")) { seenFirst = true; path = visible(); pos = 1; return showQ(); }
     if (b.hasAttribute("data-back")) { pos = Math.max(0, pos - 1); return showQ(); }
     if (b.classList.contains("bfq-opt")) {
       var q = path[pos]; ans[q.id] = +b.getAttribute("data-i"); b.classList.add("is-on");
-      setTimeout(function(){ path = visible(); pos++; if (pos >= path.length) result(); else showQ(); }, reduce ? 0 : 180);
+      setTimeout(function(){
+        if (q.id === "age" && ans.age <= 1 && !seenFirst && T.firstDays) return firstDays();
+        path = visible(); pos++; if (pos >= path.length) result(); else showQ(); }, reduce ? 0 : 180);
     }
   });
 })();
