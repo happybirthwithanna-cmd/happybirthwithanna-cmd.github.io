@@ -97,8 +97,7 @@
       (list.length ? '<h3>' + esc(T.noticed) + '</h3><ul class="bfq-notes">' + list.map(function(n, i){ return '<li style="--i:' + i + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
       (tips.length ? '<h3>' + esc(T.goodToKnow) + '</h3><ul class="bfq-notes bfq-tips">' + tips.map(function(n, i){ return '<li style="--i:' + (i + list.length) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
       (R.extra ? '<p class="bfq-999">' + esc(R.extra) + "</p>" : "") + (R.after ? "<p>" + esc(R.after) + "</p>" : "") +
-      '<p class="bfq-ctas"><a class="btn btn-clay" href="' + href + '"' + ext + ">" + esc(R.cta) + '</a><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p>" +
-      '<p class="small muted">' + esc(T.helpline) + "</p></div>");
+      '<p class="bfq-ctas"><a class="btn btn-clay" href="' + href + '"' + ext + ">" + esc(R.cta) + '</a><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p></div>");
   }
   box.addEventListener("click", function(e){
     var b = e.target.closest("button"); if (!b) return;
