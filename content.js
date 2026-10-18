@@ -1793,3 +1793,161 @@ window.SITE.ru.consult = {
   error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне на",
   notReady: "Анкета пока не подключена. Пожалуйста, напиши мне на"
 };
+
+/* ======================= BREASTFEEDING CHECK (/breastfeeding-check, /ru/breastfeeding-check) =======================
+   Interactive self-check. Signs and thresholds follow the UNICEF UK Baby Friendly Initiative
+   breastfeeding assessment and NHS guidance (the parent sources Lactation Consultants of Great
+   Britain recommends). Statuses: "ok", "help" (worth a consultation), "urgent" (midwife/GP/111 today).
+   Age groups: 0 = 0–2 days, 1 = 3–4 days, 2 = 5–6 days, 3 = 1–4 weeks, 4 = 1–3 months, 5 = over 3 months. */
+window.SITE.bfCheck = [
+  { id: "age", type: "age" },
+  { id: "feel", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "ok", "help", "help"] },
+  { id: "shape", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
+  { id: "suck", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help", "help"], okAges: { 1: [0] } },
+  { id: "feeds", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"], okAges: { 1: [0], 2: [0] } },
+  { id: "length", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
+  { id: "wet", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
+  { id: "dirty", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
+  { id: "after", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
+  { id: "sleepy", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "skin", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
+  { id: "breasts", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "topup", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help"] }
+];
+
+window.SITE.en.nav["breastfeeding-check"] = "Breastfeeding check";
+window.SITE.en.meta["breastfeeding-check"] = { title: "Is Breastfeeding Going Well? A 2-Minute Check | Happy Birth with Anna", description: "Answer a few quick questions about latch, nappies, feeds and your baby's tummy and sleep, and find out whether breastfeeding is on track or worth a closer look. In English and Russian." };
+window.SITE.en.bfc = {
+  eyebrow: "Breastfeeding check",
+  h1: "Is breastfeeding going well?",
+  lead: "A two-minute check for the first weeks and months. Answer a few questions about the latch, feeds, nappies and how your baby seems, and see whether things are on track or worth a closer look.",
+  start: "Start the check",
+  intro: "About 12 questions, one at a time. Nothing is saved or sent anywhere.",
+  qOf: "Question {n} of {t}",
+  back: "Back",
+  restart: "Start again",
+  noticed: "What I noticed",
+  q: {
+    age: { q: "How old is your baby?", o: ["0 to 2 days", "3 to 4 days", "5 to 6 days", "1 to 4 weeks", "1 to 3 months", "Over 3 months"] },
+    feel: { q: "How does breastfeeding feel?", o: ["Comfortable", "A little tender at first, but it eases after the first few sucks", "It hurts through the whole feed", "My nipples are cracked, bleeding or blistered"],
+      why: [null, null, "Pain that lasts through the feed usually means the latch isn't deep enough.", "Cracked or bleeding nipples are a sign the latch needs adjusting, and they heal faster once it does."] },
+    shape: { q: "When your baby comes off the breast, your nipple looks…", o: ["The same shape as before the feed", "Squashed, pinched or angled, like a new lipstick", "White at the tip, or turns white or purple after feeds"],
+      why: [null, "A squashed or angled nipple after a feed is a classic sign of a shallow latch.", "A nipple that turns white or purple can mean it's being compressed during the feed."] },
+    suck: { q: "During a feed, your baby mostly…", o: ["Takes deep, slow, rhythmic sucks, and I can hear or see swallowing", "Takes quick, light sucks, and I rarely hear swallowing", "Makes clicking noises, or their cheeks pull in", "Comes on and off the breast a lot, or refuses it"],
+      why: [null, "From day 3 to 4 you should hear regular swallowing. Light sucking without swallowing can mean baby isn't getting milk easily.", "Clicking or dimpled cheeks suggest baby is losing the seal, often a latch or tongue issue.", "Coming on and off the breast, or refusing it, is worth looking at together."] },
+    feeds: { q: "How many feeds does your baby have in 24 hours?", o: ["8 or more", "6 or 7", "Fewer than 6"],
+      why: [null, "After the first day, most babies need at least 8 feeds in 24 hours.", "After the first day, fewer than 6 feeds in 24 hours is worth checking with your midwife or health visitor."] },
+    length: { q: "How long do feeds usually last?", o: ["Usually 5 to 40 minutes, and my baby lets go by themselves", "Often less than 5 minutes", "Often more than 40 minutes, or my baby never seems to finish"],
+      why: [null, "Feeds that are regularly very short can mean baby isn't staying on long enough to get the richer milk.", "Very long feeds can mean milk isn't flowing well, often because of the latch."] },
+    wet: { q: "How many wet nappies in the last 24 hours?", o: ["None", "1 or 2", "3 or 4", "5", "6 or more"],
+      why: "Fewer wet nappies than expected for your baby's age. Please talk to your midwife, health visitor or GP today." },
+    dirty: { q: "What are your baby's dirty nappies like?", o: ["At least 2 a day, yellow and runny, about the size of a £2 coin or bigger", "Fewer than 2 a day", "Still dark green or black"],
+      why: [null, "In the first weeks, fewer than 2 dirty nappies a day can mean baby isn't getting enough milk. Please talk to your midwife today.", "By this age poo should have changed to yellow. Please talk to your midwife today."] },
+    after: { q: "After most feeds, your baby is…", o: ["Calm and content", "Unsettled, and wants to feed again very soon", "Uncomfortable: lots of wind, arching, pulling legs up or crying"],
+      why: [null, "A baby who is rarely settled after feeds may not be getting milk easily.", "Tummy discomfort and lots of wind are often linked to how baby latches and swallows air."] },
+    sleepy: { q: "How alert is your baby around feeds?", o: ["Wakes for feeds and is alert while feeding", "Often falls asleep at the breast before the feed is finished", "Very sleepy and hard to wake for feeds"],
+      why: [null, "Falling asleep early at the breast every time can mean baby is tiring before getting enough milk.", "A baby who is very sleepy and hard to wake for feeds needs checking by your midwife or GP today."] },
+    skin: { q: "What colour is your baby's skin?", o: ["Normal colour", "Yellowish skin, or yellow whites of the eyes"],
+      why: [null, "Yellow skin or eyes (jaundice) needs checking by your midwife or GP today, especially in the first week."] },
+    breasts: { q: "How do your breasts feel?", o: ["Comfortable, and softer after feeds", "Very full, hard or lumpy, and they don't soften after feeds", "There's a red, hot or painful area, or I feel feverish or flu-like"],
+      why: [null, "Breasts that stay very full or lumpy suggest milk isn't being removed well.", "A red, hot, painful area or flu-like feeling can be mastitis. Please contact your GP or NHS 111 today."] },
+    topup: { q: "Do you feel you need to give formula or a dummy because feeding isn't working?", o: ["No", "Yes, or I'm already topping up"],
+      why: [null, "Feeling you need to top up is a good reason to get support. Often it's the latch or feeding pattern that can be improved."] }
+  },
+  results: {
+    ok: { title: "Breastfeeding looks like it's going well", text: "Your answers match the signs that breastfeeding is going well: comfortable feeds, a good latch, enough nappies and a content baby. Keep feeding whenever your baby shows they're hungry.", cta: "Have a question? Message me", ctaHref: "whatsapp" },
+    help: { title: "Some things are worth a closer look", text: "A few of your answers suggest the latch or feeding pattern could work better. This is very common and usually very fixable with the right support, often in a single consultation.", cta: "Book a breastfeeding consultation", ctaHref: "consult" },
+    urgent: { title: "Please speak to your midwife, health visitor or GP today", text: "Some of your answers need a health professional to check you or your baby today. If you can't reach them, call NHS 111.", extra: "Call 999 if your baby is floppy, not responding or struggling to breathe.", after: "Once you've had medical advice, I can help you with feeding.", cta: "Book a breastfeeding consultation", ctaHref: "consult" }
+  },
+  helpline: "National Breastfeeding Helpline: 0300 100 0212",
+  disclaimer: "This check is for information only. It does not diagnose anything and does not replace advice from your midwife, health visitor or GP.",
+  sources: "Based on UNICEF UK Baby Friendly Initiative and NHS guidance, the parent sources recommended by Lactation Consultants of Great Britain.",
+  signsTitle: "Signs breastfeeding is going well",
+  signs: [
+    "Feeding is comfortable. Any tenderness eases after the first few sucks.",
+    "Your nipple is the same shape at the end of a feed as at the start.",
+    "Your baby takes deep, rhythmic sucks, and from day 3 to 4 you can hear swallowing.",
+    "After the first day, your baby feeds at least 8 times in 24 hours, usually for 5 to 40 minutes, and comes off by themselves.",
+    "From about day 6, at least 6 heavy wet nappies a day, and in the first weeks at least 2 yellow, runny dirty nappies.",
+    "Your baby is alert, a normal colour, and content after most feeds."
+  ],
+  helpTitle: "When to get help the same day",
+  helpList: [
+    "Your baby is very sleepy and hard to wake for feeds, or has fewer wet or dirty nappies than expected.",
+    "Your baby's skin or the whites of their eyes look yellow.",
+    "You have a red, hot, painful area on your breast, or feel feverish or flu-like.",
+    "Call 999 if your baby is floppy, not responding or struggling to breathe."
+  ],
+  ctaTitle: "Breastfeeding hurting or not going to plan?",
+  ctaText: "Book a breastfeeding consultation in English or Russian, at home or online. We'll look at the latch together and leave you with a clear plan."
+};
+
+window.SITE.ru.nav["breastfeeding-check"] = "Тест по грудному вскармливанию";
+window.SITE.ru.meta["breastfeeding-check"] = { title: "Всё ли хорошо с грудным вскармливанием? Тест за 2 минуты — Анна Пифко", description: "Ответь на несколько вопросов о прикладывании, кормлениях, подгузниках, животике и сне малыша и узнай, всё ли в порядке или стоит разобраться подробнее. На русском и английском." };
+window.SITE.ru.bfc = {
+  eyebrow: "Тест по ГВ",
+  h1: "Всё ли хорошо с грудным вскармливанием?",
+  lead: "Тест на две минуты для первых недель и месяцев. Ответь на несколько вопросов о прикладывании, кормлениях, подгузниках и самочувствии малыша и узнай, всё ли идёт как надо или стоит разобраться подробнее.",
+  start: "Пройти тест",
+  intro: "Около 12 вопросов, по одному на экране. Ответы никуда не отправляются и не сохраняются.",
+  qOf: "Вопрос {n} из {t}",
+  back: "Назад",
+  restart: "Пройти заново",
+  noticed: "На что я обратила внимание",
+  q: {
+    age: { q: "Сколько малышу?", o: ["0–2 дня", "3–4 дня", "5–6 дней", "1–4 недели", "1–3 месяца", "Больше 3 месяцев"] },
+    feel: { q: "Какие ощущения во время кормления?", o: ["Комфортно", "Немного чувствительно в начале, но проходит после первых сосательных движений", "Больно на протяжении всего кормления", "Соски потрескались, кровоточат или появились пузыри"],
+      why: [null, null, "Боль на протяжении всего кормления обычно означает, что малыш захватывает грудь недостаточно глубоко.", "Трещины и кровь на сосках — признак того, что прикладывание нужно поправить; после этого они заживают быстрее."] },
+    shape: { q: "Когда малыш отпускает грудь, сосок…", o: ["Такой же формы, как до кормления", "Сплющенный, сдавленный или скошенный, как новая помада", "Белый на кончике или белеет/синеет после кормления"],
+      why: [null, "Сплющенный или скошенный сосок после кормления — типичный признак поверхностного захвата.", "Сосок, который белеет или синеет, может означать, что его пережимают во время кормления."] },
+    suck: { q: "Во время кормления малыш чаще всего…", o: ["Сосёт глубоко, медленно и ритмично, и я слышу или вижу глотки", "Сосёт быстро и легко, глотков почти не слышно", "Цокает или втягивает щёчки", "Часто бросает грудь и снова берёт или отказывается от неё"],
+      why: [null, "С 3–4 дня должны быть слышны регулярные глотки. Лёгкое сосание без глотков может означать, что молоко поступает с трудом.", "Цоканье или втянутые щёчки говорят о том, что малыш теряет захват; часто дело в прикладывании или уздечке.", "Частые бросания груди или отказ от неё стоит разобрать вместе."] },
+    feeds: { q: "Сколько кормлений у малыша за 24 часа?", o: ["8 и больше", "6–7", "Меньше 6"],
+      why: [null, "После первых суток большинству малышей нужно не меньше 8 кормлений за 24 часа.", "После первых суток меньше 6 кормлений за 24 часа — повод проверить у акушерки или патронажной сестры."] },
+    length: { q: "Сколько обычно длится кормление?", o: ["Обычно от 5 до 40 минут, и малыш отпускает грудь сам", "Часто меньше 5 минут", "Часто дольше 40 минут, или малыш как будто никогда не наедается"],
+      why: [null, "Постоянно очень короткие кормления могут означать, что малыш не успевает добраться до более жирного молока.", "Очень долгие кормления могут означать, что молоко поступает плохо — часто из-за прикладывания."] },
+    wet: { q: "Сколько мокрых подгузников за последние 24 часа?", o: ["Ни одного", "1–2", "3–4", "5", "6 и больше"],
+      why: "Мокрых подгузников меньше, чем нужно в этом возрасте. Пожалуйста, свяжись с акушеркой, патронажной сестрой или GP сегодня." },
+    dirty: { q: "Какой стул у малыша?", o: ["Не меньше 2 раз в день, жёлтый и жидкий, размером с монету в £2 или больше", "Меньше 2 раз в день", "Всё ещё тёмно-зелёный или чёрный"],
+      why: [null, "В первые недели стул реже 2 раз в день может означать, что малышу не хватает молока. Пожалуйста, свяжись с акушеркой сегодня.", "К этому возрасту стул должен стать жёлтым. Пожалуйста, свяжись с акушеркой сегодня."] },
+    after: { q: "После большинства кормлений малыш…", o: ["Спокойный и довольный", "Беспокойный и скоро снова просит грудь", "Как будто мучается животиком: много газов, выгибается, поджимает ножки или плачет"],
+      why: [null, "Если малыш редко успокаивается после кормления, возможно, ему трудно получать молоко.", "Дискомфорт в животике и много газов часто связаны с тем, как малыш захватывает грудь и заглатывает воздух."] },
+    sleepy: { q: "Насколько активен малыш во время кормлений?", o: ["Просыпается на кормления и активно сосёт", "Часто засыпает у груди, не закончив кормление", "Очень сонный, его трудно разбудить на кормление"],
+      why: [null, "Если малыш каждый раз засыпает у груди раньше времени, он может уставать, не успев наесться.", "Очень сонного малыша, которого трудно разбудить на кормление, нужно сегодня показать акушерке или GP."] },
+    skin: { q: "Какого цвета кожа малыша?", o: ["Обычного цвета", "Желтоватая кожа или желтоватые белки глаз"],
+      why: [null, "Желтизну кожи или глаз (желтуху) нужно сегодня показать акушерке или GP, особенно в первую неделю."] },
+    breasts: { q: "Как ощущается грудь?", o: ["Комфортно, после кормления становится мягче", "Очень полная, твёрдая или с уплотнениями и не смягчается после кормления", "Есть красное, горячее или болезненное место, или знобит, как при гриппе"],
+      why: [null, "Если грудь остаётся переполненной или с уплотнениями, молоко выводится недостаточно хорошо.", "Красное, горячее, болезненное место или ощущение гриппа может быть маститом. Пожалуйста, обратись к GP или в NHS 111 сегодня."] },
+    topup: { q: "Есть ли ощущение, что нужно давать смесь или пустышку, потому что кормление не получается?", o: ["Нет", "Да, или я уже докармливаю"],
+      why: [null, "Желание докармливать — хороший повод обратиться за поддержкой. Часто можно наладить прикладывание или режим кормлений."] }
+  },
+  results: {
+    ok: { title: "Похоже, грудное вскармливание идёт хорошо", text: "Твои ответы совпадают с признаками того, что ГВ налажено: кормления комфортные, малыш хорошо захватывает грудь, подгузников достаточно и малыш доволен. Продолжай кормить, когда малыш показывает, что голоден.", cta: "Есть вопрос? Напиши мне", ctaHref: "whatsapp" },
+    help: { title: "Кое-что стоит разобрать подробнее", text: "Некоторые ответы говорят о том, что прикладывание или режим кормлений можно улучшить. Это очень частая ситуация, и обычно её легко исправить с правильной поддержкой, часто за одну консультацию.", cta: "Записаться на консультацию по ГВ", ctaHref: "consult" },
+    urgent: { title: "Пожалуйста, свяжись сегодня с акушеркой, патронажной сестрой или GP", text: "Некоторые ответы говорят о том, что тебя или малыша нужно сегодня показать специалисту. Если не получается до них дозвониться, звони в NHS 111.", extra: "Звони 999, если малыш вялый, не реагирует или ему трудно дышать.", after: "Когда получишь медицинскую консультацию, я помогу тебе с кормлением.", cta: "Записаться на консультацию по ГВ", ctaHref: "consult" }
+  },
+  helpline: "Национальная линия поддержки ГВ (на английском): 0300 100 0212",
+  disclaimer: "Этот тест носит информационный характер. Он ничего не диагностирует и не заменяет консультацию акушерки, патронажной сестры или GP.",
+  sources: "Основан на рекомендациях UNICEF UK Baby Friendly Initiative и NHS — источниках, которые советует для родителей Ассоциация консультантов по лактации Великобритании (LCGB).",
+  signsTitle: "Признаки того, что ГВ идёт хорошо",
+  signs: [
+    "Кормить комфортно. Если и есть чувствительность, она проходит после первых сосательных движений.",
+    "Сосок после кормления такой же формы, как до него.",
+    "Малыш сосёт глубоко и ритмично, а с 3–4 дня слышны глотки.",
+    "После первых суток малыш ест не меньше 8 раз за 24 часа, обычно 5–40 минут, и сам отпускает грудь.",
+    "Примерно с 6 дня — не меньше 6 тяжёлых мокрых подгузников в день, а в первые недели — не меньше 2 раз жёлтый жидкий стул.",
+    "Малыш активный, обычного цвета и доволен после большинства кормлений."
+  ],
+  helpTitle: "Когда обращаться за помощью в тот же день",
+  helpList: [
+    "Малыш очень сонный и его трудно разбудить на кормление, или мокрых и грязных подгузников меньше, чем должно быть.",
+    "Кожа или белки глаз малыша желтоватые.",
+    "На груди есть красное, горячее, болезненное место, или знобит, как при гриппе.",
+    "Звони 999, если малыш вялый, не реагирует или ему трудно дышать."
+  ],
+  ctaTitle: "Кормление болезненное или идёт не так, как хотелось?",
+  ctaText: "Запишись на консультацию по грудному вскармливанию на русском или английском, дома или онлайн. Мы вместе посмотрим прикладывание, и ты уйдёшь с понятным планом."
+};
+
+window.SITE.en.bfc.promo = "Not sure breastfeeding is going well? Take the 2-minute check";
+window.SITE.ru.bfc.promo = "Не уверена, что с ГВ всё в порядке? Пройди тест за 2 минуты";

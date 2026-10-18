@@ -65,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "breastfeeding-check", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -272,7 +272,7 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
     const T = SITE[lang], P = T.postnatal;
     return `${pageHead(lang, P, "postnatal")}
 <section class="sec tight"><div class="wrap">${stats(P.stats, "stats-row")}<p class="small muted note-under">${esc(P.statsNote)}</p></div></section>
-<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
+<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}${T.bfc ? `<a class="bfq-promo" href="${href(lang, lang, "breastfeeding-check")}"><span>${esc(T.bfc.promo)}</span><b>→</b></a>` : ""}</div></section>
 <section class="sec sand"><div class="wrap two">
   <div><h2>${esc(P.moreTitle)}</h2>${P.more.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
   <div><h3>${esc(P.alsoTitle)}</h3><ul class="ticks">${P.also.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
@@ -479,6 +479,31 @@ function formPage(lang, F, P, formName) {
 </div></section>`;
 }
 
+/* ---------- breastfeeding check (interactive quiz) ---------- */
+function bfCheckPage(lang) {
+  const T = SITE[lang], P = T.bfc;
+  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, q: P.q, results: P.results, helpline: P.helpline },
+    links: { consult: href(lang, lang, "consultation") + "?meeting=1", whatsapp: wa() } };
+  const li = (a) => a.map((x) => `<li>${esc(x)}</li>`).join("");
+  return `${pageHead(lang, P, "")}
+<section class="sec tight"><div class="wrap narrow">
+  <div class="bfq" id="bfq" aria-live="polite">
+    <div class="bfq-card bfq-start">
+      <div class="bfq-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="48" height="48"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M24 41s-14-8.4-14-19.2A8.3 8.3 0 0 1 24 16.6a8.3 8.3 0 0 1 14 5.2C38 32.6 24 41 24 41z"/></svg></div>
+      <p class="bfq-intro">${esc(P.intro)}</p>
+      <button class="btn btn-clay" type="button" data-bfq-start>${esc(P.start)}</button>
+    </div>
+  </div>
+  <script type="application/json" id="bfq-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
+</div></section>
+<section class="sec sand"><div class="wrap two">
+  <div><h2>${esc(P.signsTitle)}</h2><ul class="ticks">${li(P.signs)}</ul></div>
+  <div><h2>${esc(P.helpTitle)}</h2><ul class="dots">${li(P.helpList)}</ul><p class="small"><b>${esc(P.helpline)}</b></p></div>
+</div></section>
+<section class="sec tight"><div class="wrap narrow"><p class="small muted">${esc(P.disclaimer)} ${esc(P.sources)}</p></div></section>
+${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
+}
+
 /* ---------- structured data ---------- */
 function jsonLd(lang, page, o = {}) {
   const T = SITE[lang];
@@ -578,6 +603,7 @@ fs.mkdirSync(path.join(OUT, "ru"), { recursive: true });
 const ENTRIES = [];
 for (const lang of ["en", "ru"]) {
   for (const page of PAGES) ENTRIES.push({ lang, page, o: {} });
+  if (SITE.bfCheck) ENTRIES.push({ lang, page: "breastfeeding-check", o: { body: bfCheckPage(lang) } });
   if (artIn(lang).length) ENTRIES.push({ lang, page: "articles", o: { meta: SITE[lang].articlesPage.meta, body: articlesIndex(lang) } });
   for (const L of landIn(lang)) ENTRIES.push({ lang, page: L.slug, date: L.date, o: { landing: L, alts: ["en", "ru"].filter((l) => L[l]), meta: { title: L[lang].metaTitle, description: L[lang].description }, body: landingPage(lang, L) } });
   for (const a of artIn(lang)) ENTRIES.push({ lang, page: a.slug, date: a.date, o: { article: a, alts: ["en", "ru"].filter((l) => a[l]), meta: { title: a[lang].metaTitle || a[lang].title, description: a[lang].description }, body: articlePage(lang, a) } });

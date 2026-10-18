@@ -398,3 +398,41 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .bank{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin:10px 0 12px}
 .bank dt{color:var(--muted)}
 .bank dd{margin:0;font-weight:500}
+
+/* ---- breastfeeding check ---- */
+.bfq{min-height:420px}
+.bfq-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 32px;box-shadow:0 10px 30px rgba(66,58,57,.06);animation:bfqIn .45s cubic-bezier(.2,.7,.2,1) both}
+.bfq-card.bfq-leave{animation:bfqOut .22s ease forwards}
+@keyframes bfqIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes bfqOut{to{opacity:0;transform:translateY(-10px) scale(.99)}}
+.bfq-start{text-align:center}
+.bfq-icon{color:var(--clay);display:inline-flex;animation:bfqBeat 2.4s ease-in-out infinite}
+@keyframes bfqBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}}
+.bfq-intro{color:var(--muted);margin:10px 0 22px}
+.bfq-top{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);margin-bottom:10px}
+.bfq-back{background:none;border:0;color:var(--clay-d);font:inherit;font-size:14px;cursor:pointer;padding:4px 0}
+.bfq-bar{height:6px;background:var(--blush);border-radius:99px;overflow:hidden;margin-bottom:24px}
+.bfq-bar i{display:block;height:100%;background:var(--clay);border-radius:99px;transition:width .5s ease}
+.bfq-card h2{text-align:left;font-size:clamp(22px,2.6vw,28px);margin-bottom:18px;outline:none}
+.bfq-card h2::after{display:none}
+.bfq-opts{display:grid;gap:10px}
+.bfq-opt{display:block;width:100%;text-align:left;font:inherit;font-size:16px;line-height:1.45;color:var(--ink);background:var(--sand);border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;
+  transition:border-color .15s,background .15s,transform .15s;animation:bfqIn .4s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 60ms + 80ms)}
+.bfq-opt:hover{border-color:var(--rose);transform:translateX(3px)}
+.bfq-opt.is-on{background:var(--clay);border-color:var(--clay);color:#fff;transform:scale(.99)}
+.bfq-result{text-align:left}
+.bfq-badge{display:inline-flex;margin-bottom:8px;animation:bfqPop .6s cubic-bezier(.2,1.4,.4,1) both .1s}
+@keyframes bfqPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.bfq-ok .bfq-badge{color:#5E8B6A}.bfq-help .bfq-badge{color:var(--clay)}.bfq-urgent .bfq-badge{color:#B5462F}
+.bfq-urgent{border-color:#E8C3B8}
+.bfq-result h3{font-size:18px;margin:18px 0 8px}
+.bfq-notes{padding-left:20px;margin:0 0 14px}
+.bfq-notes li{margin-bottom:8px;animation:bfqIn .4s both;animation-delay:calc(var(--i) * 90ms + 300ms)}
+.bfq-999{background:#FBEDED;color:#8A2B2B;border-radius:10px;padding:10px 14px;font-weight:500}
+.bfq-ctas{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 12px}
+.bfq-ctas .btn{white-space:normal;text-align:center}
+.bfq-promo{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;padding:18px 22px;border-radius:16px;background:var(--blush);color:var(--ink);text-decoration:none;font-weight:500;transition:transform .15s}
+.bfq-promo:hover{transform:translateY(-2px)}
+.bfq-promo b{color:var(--clay);font-size:22px}
+@media (max-width:640px){ .bfq-card{padding:26px 20px} .bfq{min-height:480px} }
+@media (prefers-reduced-motion: reduce){ .bfq *, .bfq-card{animation:none!important} }
