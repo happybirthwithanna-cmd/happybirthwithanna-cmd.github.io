@@ -1724,7 +1724,7 @@ window.SITE.en.consult = {
     "How you will know it helped": { l: "How will you know the consultation has helped?", h: "What will you leave with? For example: “I understand what is causing the pain and know what to try”, “I have a routine to try for the next week”, “I know when and where to ask for more help”, “I feel calmer when I think about labour”." },
     "Closeness to goal now (0-10)": { l: "On a scale of 0 to 10, how close do you feel to that goal right now?", h: "0 = nowhere near, 10 = already there" },
     "Anything to know beforehand": { l: "Is there anything you are worried about, or would like me to know before we meet?" },
-    "How they heard about Anna": { l: "How did you hear about me?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Friend or family", "Other"] }
+    "How they heard about Anna": { l: "How did you hear about me?", o: ["Google", "Claude, ChatGPT or another AI assistant", "Instagram", "Telegram", "Doula UK", "Friend or family", "Other"] }
   },
   disclosureTitle: "Your information",
   disclosure: [
@@ -1775,7 +1775,7 @@ window.SITE.ru.consult = {
     "How you will know it helped": { l: "Как ты поймёшь, что консультация помогла?", h: "С чем ты уйдёшь со встречи? Например: «я понимаю, отчего боль, и знаю, что попробовать», «у меня есть режим, который я попробую на этой неделе», «я знаю, когда и куда обратиться за дополнительной помощью», «я думаю о родах спокойнее»." },
     "Closeness to goal now (0-10)": { l: "По шкале от 0 до 10, насколько ты сейчас близка к этой цели?", h: "0 — совсем далеко, 10 — уже достигнута" },
     "Anything to know beforehand": { l: "Есть ли что-то, что тебя тревожит или что мне стоит знать до встречи?" },
-    "How they heard about Anna": { l: "Как ты обо мне узнала?", o: ["Google", "Instagram", "Telegram", "Doula UK", "Друзья или родные", "Другое"] }
+    "How they heard about Anna": { l: "Как ты обо мне узнала?", o: ["Google", "Claude, ChatGPT или другой ИИ-ассистент", "Instagram", "Telegram", "Doula UK", "Друзья или родные", "Другое"] }
   },
   disclosureTitle: "Твои данные",
   disclosure: [
