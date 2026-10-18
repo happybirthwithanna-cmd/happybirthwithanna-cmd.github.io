@@ -457,3 +457,12 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .bfq-consent{margin-top:16px!important;font-size:15px!important}
 .bfq-sent{margin-top:22px;padding:22px;border-radius:16px;background:var(--blush);text-align:center}
 .bfq-sent .bfq-badge{color:var(--clay)}
+
+.cues{margin:22px 0 10px}
+.cues-title{font-weight:500;margin:0 0 10px}
+.cues-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cue{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:14px 8px;border-radius:14px;background:var(--blush);color:var(--clay);font-size:14px;line-height:1.35;animation:bfqIn .45s both;animation-delay:calc(var(--i) * 110ms + 200ms)}
+.cue span{color:var(--ink)}
+.cue-late{background:#fff;border:1.5px dashed #D9B9B4;color:#B5462F}
+.cue-late span{color:#8A2B2B}
+@media (max-width:640px){ .cues-row{grid-template-columns:repeat(2,1fr)} }

@@ -71,6 +71,8 @@
     moon: '<path d="M30 9a14 14 0 1 0 9 22A11 11 0 0 1 30 9z"/><path d="M33 12h4l-4 5h4"/>',
     sun: '<circle cx="24" cy="24" r="7"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4M12.7 12.7l2.8 2.8M32.5 32.5l2.8 2.8M12.7 35.3l2.8-2.8M32.5 15.5l2.8-2.8"/>',
     bottle: '<path d="M20 7h8v5l3 4v22a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V16l3-4z"/><path d="M17 25h14M17 31h14"/>',
+    hand: '<circle cx="24" cy="19" r="10"/><path d="M20.5 17h.01M27.5 17h.01"/><circle cx="25" cy="25.5" r="3.8"/><path d="M25 29.5c0 4 1 7 3 10"/>',
+    cry: '<circle cx="24" cy="23" r="12"/><path d="M18 19.5l3.5-1.5M30 19.5l-3.5-1.5M19.5 22.5h.01M28.5 22.5h.01"/><ellipse cx="24" cy="29" rx="3.6" ry="2.8"/><path d="M18.5 25.5c-.8 1.4-.8 2.6 0 3.6M29.5 25.5c.8 1.4.8 2.6 0 3.6"/>',
     round: '<path d="M5 40h38"/><path d="M13 40c0-15 5-25 11-25s11 10 11 25"/>',
     lipstick: '<path d="M5 40h38"/><path d="M13 40c0-11 2-19 6-25l16 7c1 6 0 12 0 18"/>',
     whitetip: '<path d="M5 40h38"/><path d="M13 40c0-15 5-25 11-25s11 10 11 25"/><path d="M18.5 21c3-2.5 8-2.5 11 0" stroke-width="4" stroke="#D9C9C6"/>'
@@ -101,7 +103,7 @@
       return '<div class="bfq-tum" style="--i:' + i + '"><svg viewBox="0 0 48 48" width="64" height="64" aria-hidden="true"><circle cx="24" cy="24" r="' + r + '" fill="var(--blush)" stroke="var(--clay)" stroke-width="1.8"/></svg>' +
         "<b>" + esc(z.d) + "</b><span>" + esc(z.s) + "</span><small>" + esc(z.ml) + "</small></div>"; }).join("");
     swap('<div class="bfq-card bfq-first"><div class="bfq-qic">' + svg("baby", 40) + "</div><h2>" + esc(F.title) + "</h2><p>" + esc(F.text) + '</p><div class="bfq-tums">' + sizes + "</div>" +
-      '<ul class="bfq-notes bfq-tips">' + F.points.map(function(n, i){ return '<li style="--i:' + (i + 3) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" +
+      (T.cuesHtml || "") + '<ul class="bfq-notes bfq-tips">' + F.points.map(function(n, i){ return '<li style="--i:' + (i + 3) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" +
       '<p class="bfq-ctas"><button type="button" class="btn btn-clay" data-continue>' + esc(F.cont) + " →</button></p></div>");
   }
   function status(q, i){

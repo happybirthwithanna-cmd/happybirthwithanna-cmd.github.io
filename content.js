@@ -1808,7 +1808,7 @@ window.SITE.bfCheck = [
   { id: "length", label: "Feed length", icon: "timer", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
   { id: "wet", label: "Wet nappies in 24 hours", icon: "nappy", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
   { id: "dirty", label: "Dirty nappies", icon: "nappy", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
-  { id: "cues", label: "When the breast is offered", icon: "face", ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
+  { id: "cues", label: "When the breast is offered", icon: "face", optIcons: ["hand", "cry"], ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
   { id: "after", label: "Baby after feeds", icon: "smile", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"], okAges: { 1: [0, 1] }, tips: { 1: [0, 1] } },
   { id: "sleepy", label: "Alertness at feeds", icon: "moon", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
   { id: "skin", label: "Skin colour", icon: "sun", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
@@ -1988,3 +1988,13 @@ window.SITE.ru.bfc = {
 
 window.SITE.en.bfc.promo = "Not sure breastfeeding is going well? Take the 2-minute check";
 window.SITE.ru.bfc.promo = "Не уверена, что с ГВ всё в порядке? Пройди тест за 2 минуты";
+
+/* Hunger-cue drawings for the breastfeeding check (simple line art, 48x48) */
+window.SITE.cueIcons = {
+  stir: '<circle cx="24" cy="24" r="10"/><path d="M20.5 22.5h.01M27.5 22.5h.01M21.5 28h5"/><path d="M8 17c-2.5 4.5-2.5 9.5 0 14M40 17c2.5 4.5 2.5 9.5 0 14M12.5 20.5c-1.3 2.3-1.3 4.7 0 7M35.5 20.5c1.3 2.3 1.3 4.7 0 7"/>',
+  root: '<circle cx="20" cy="24" r="11"/><path d="M16 21h.01M22 21h.01"/><ellipse cx="26.5" cy="28" rx="2.6" ry="2.2"/><path d="M34 24h8M38.5 20.5 42 24l-3.5 3.5"/>',
+  hand: '<circle cx="24" cy="19" r="10"/><path d="M20.5 17h.01M27.5 17h.01"/><circle cx="25" cy="25.5" r="3.8"/><path d="M25 29.5c0 4 1 7 3 10"/>',
+  cry: '<circle cx="24" cy="23" r="12"/><path d="M18 19.5l3.5-1.5M30 19.5l-3.5-1.5M19.5 22.5h.01M28.5 22.5h.01"/><ellipse cx="24" cy="29" rx="3.6" ry="2.8"/><path d="M18.5 25.5c-.8 1.4-.8 2.6 0 3.6M29.5 25.5c.8 1.4.8 2.6 0 3.6"/>'
+};
+window.SITE.en.bfc.cues = { title: "Early hunger signs", items: [["stir", "Stirring and waking"], ["root", "Rooting: turning the head, opening the mouth"], ["hand", "Hands to mouth, sucking fingers"], ["cry", "Crying: a late sign"]] };
+window.SITE.ru.bfc.cues = { title: "Ранние признаки голода", items: [["stir", "Шевелится, просыпается"], ["root", "Ищет грудь: поворачивает голову, открывает рот"], ["hand", "Тянет руки ко рту, сосёт пальцы"], ["cry", "Плачет — поздний признак"]] };

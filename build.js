@@ -480,9 +480,14 @@ function formPage(lang, F, P, formName) {
 }
 
 /* ---------- breastfeeding check (interactive quiz) ---------- */
+function cueStrip(lang) {
+  const C = SITE[lang].bfc.cues, I = SITE.cueIcons;
+  const ic = (n) => `<svg viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
+  return `<div class="cues"><p class="cues-title">${esc(C.title)}</p><div class="cues-row">${C.items.map(([n, t], i) => `<div class="cue${n === "cry" ? " cue-late" : ""}" style="--i:${i}">${ic(n)}<span>${esc(t)}</span></div>`).join("")}</div></div>`;
+}
 function bfCheckPage(lang) {
   const T = SITE[lang], P = T.bfc;
-  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, goodToKnow: P.goodToKnow, firstDays: P.firstDays, lead: P.lead_, q: P.q, results: P.results, helpline: P.helpline },
+  const data = { questions: SITE.bfCheck, t: { qOf: P.qOf, back: P.back, restart: P.restart, noticed: P.noticed, goodToKnow: P.goodToKnow, firstDays: P.firstDays, cuesHtml: cueStrip(lang), lead: P.lead_, q: P.q, results: P.results, helpline: P.helpline },
     links: { consult: href(lang, lang, "consultation") + "?meeting=1", whatsapp: wa(), privacy: href(lang, lang, "privacy"), endpoint: S.intakeEndpoint || "" }, lang };
   const li = (a) => a.map((x) => `<li>${esc(x)}</li>`).join("");
   return `${pageHead(lang, P, "")}
@@ -496,7 +501,7 @@ function bfCheckPage(lang) {
   </div>
   <script type="application/json" id="bfq-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
 </div></section>
-<section class="sec"><div class="wrap narrow"><h2>${esc(P.firstTitle)}</h2><ul class="ticks big">${li(P.first)}</ul></div></section>
+<section class="sec"><div class="wrap narrow"><h2>${esc(P.firstTitle)}</h2><ul class="ticks big">${li(P.first)}</ul>${cueStrip(lang)}</div></section>
 <section class="sec sand"><div class="wrap two">
   <div><h2>${esc(P.signsTitle)}</h2><ul class="ticks">${li(P.signs)}</ul></div>
   <div><h2>${esc(P.helpTitle)}</h2><ul class="dots">${li(P.helpList)}</ul><p class="small"><b>${esc(P.helpline)}</b></p></div>
