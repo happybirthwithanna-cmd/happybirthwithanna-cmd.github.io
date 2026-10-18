@@ -9,6 +9,8 @@ const NOTIFY = "anna@happybirth-doula.co.uk";   // who gets the "new form" email
 const ANSWERS = "Answers";
 const CARD = "Client card";
 const CONSULTS = "Consultations";
+const CHECKS = "Breastfeeding checks";
+const CHECK_ORDER = ["Received", "Full name", "Phone", "Email", "Preferred contact", "Result", "Noticed", "Language", "Consent to hold this information", "Form"];
 const BLUSH = "#F5EEEB";
 
 const SECTIONS = [
@@ -27,7 +29,7 @@ const CONSULT_ORDER = ["Received", "Full name", "Consultation topic", "Goal for 
   "Email", "Phone", "Preferred contact", "Preferred language", "How they heard about Anna",
   "Consent to hold this information", "Language", "Form"];
 const DATES = ["Date of birth", "Estimated due date", "Due date or baby's date of birth"];
-const WIDE = ["Goal for this consultation", "How you will know it helped", "Anything to know beforehand", "Home address", "Children (names and ages)", "Types of birth experienced", "Conditions in previous pregnancies", "Anything else"];
+const WIDE = ["Noticed", "Goal for this consultation", "How you will know it helped", "Anything to know beforehand", "Home address", "Children (names and ages)", "Types of birth experienced", "Conditions in previous pregnancies", "Anything else"];
 
 // ---------- receiving a form ----------
 function doPost(e) {
@@ -37,12 +39,19 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     if (data.website) return ok();                                  // spam robot
     data["Received"] = new Date();
-    const consult = data["Form"] === "Consultation";
-    const sh = consult ? consultSheet() : answersSheet();
-    const h = ensureHeaders(sh, Object.keys(data), consult ? CONSULT_ORDER : ORDER);
+    const consult = data["Form"] === "Consultation", check = data["Form"] === "Breastfeeding check";
+    const sh = check ? checkSheet() : consult ? consultSheet() : answersSheet();
+    const h = ensureHeaders(sh, Object.keys(data), check ? CHECK_ORDER : consult ? CONSULT_ORDER : ORDER);
     sh.insertRowBefore(2);                                          // newest at the top
     sh.getRange(2, 1, 1, h.length).setValues([h.map(k => toCell(k, data[k]))]);
     formatRows(sh, 2, 1, h);
+    if (check) {
+      MailApp.sendEmail(NOTIFY, "Breastfeeding check: " + (data["Full name"] || "unnamed"),
+        (data["Full name"] || "Someone") + " took the breastfeeding check and left their details.\nResult: " + (data["Result"] || "") +
+        "\nContact: " + (data["Preferred contact"] || "") + " " + (data["Phone"] || "") +
+        "\n\nOpen the Breastfeeding checks tab to read the answers:\n" + SpreadsheetApp.getActiveSpreadsheet().getUrl());
+      return ok();
+    }
     if (consult) {
       MailApp.sendEmail(NOTIFY, "Consultation form: " + (data["Full name"] || "unnamed"),
         (data["Full name"] || "Someone") + " has filled in the consultation form (" +
@@ -142,8 +151,13 @@ function buildCard(ss, answers) {
 function answersSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sh = ss.getSheetByName(ANSWERS);
-  if (!sh) { sh = ss.getSheets().filter(s => [CARD, CONSULTS].indexOf(s.getName()) === -1)[0] || ss.insertSheet(); sh.setName(ANSWERS); }
+  if (!sh) { sh = ss.getSheets().filter(s => [CARD, CONSULTS, CHECKS].indexOf(s.getName()) === -1)[0] || ss.insertSheet(); sh.setName(ANSWERS); }
   return sh;
+}
+
+function checkSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  return ss.getSheetByName(CHECKS) || ss.insertSheet(CHECKS);
 }
 
 function consultSheet() {

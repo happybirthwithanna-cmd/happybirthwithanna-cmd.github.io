@@ -108,6 +108,35 @@
     if (q.type === "wet") return q.values[i] < q.need[ans.age] ? "urgent" : "ok";
     var s = q.s[i]; if (s !== "ok" && q.okAges && q.okAges[i] && q.okAges[i].indexOf(ans.age) > -1) s = "ok"; return s;
   }
+  var lastResult = null;
+  function leadForm(){
+    var L = T.lead, opts = L.contactO.map(function(o, i){ return '<label class="opt"><input type="radio" name="contact" value="' + esc(o) + '"' + (i === 0 ? " checked" : "") + "><span>" + esc(o) + "</span></label>"; }).join("");
+    return '<form class="bfq-lead" novalidate><h3>' + esc(L.title) + "</h3><p>" + esc(L.text) + "</p>" +
+      '<div class="form-grid"><div class="fld"><label for="bl-n">' + esc(L.name) + ' <span class="req">*</span></label><input id="bl-n" name="name" type="text" autocomplete="name" required></div>' +
+      '<div class="fld"><label for="bl-p">' + esc(L.phone) + ' <span class="req">*</span></label><input id="bl-p" name="phone" type="tel" autocomplete="tel" required></div>' +
+      '<div class="fld full"><label for="bl-e">' + esc(L.email) + '</label><input id="bl-e" name="email" type="email" autocomplete="email"></div>' +
+      '<fieldset class="fld full"><legend>' + esc(L.contact) + '</legend><div class="opts">' + opts + "</div></fieldset></div>" +
+      '<div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>' +
+      '<label class="opt bfq-consent"><input type="checkbox" name="consent" required><span>' + esc(L.consent) + ' <span class="req">*</span> <a href="' + D.links.privacy + '" target="_blank" rel="noopener">' + esc(L.privacy) + "</a></span></label>" +
+      '<p class="form-msg err" hidden>' + esc(L.error) + "</p>" +
+      '<p class="bfq-ctas"><button type="submit" class="btn btn-clay">' + esc(L.send) + '</button><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p>" +
+      '<p class="small"><a href="' + D.links.consult + '">' + esc(L.or) + " →</a></p></form>";
+  }
+  box.addEventListener("submit", function(e){
+    var f = e.target; if (!f.classList.contains("bfq-lead")) return;
+    e.preventDefault();
+    var err = f.querySelector(".form-msg"); err.hidden = true;
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    if (f.website.value) return;
+    var data = { "Form": "Breastfeeding check", "Language": D.lang, "Full name": f.name.value.trim(), "Phone": f.phone.value.trim(), "Email": f.email.value.trim(),
+      "Preferred contact": (f.querySelector('input[name="contact"]:checked') || {}).value || "", "Result": T.results[lastResult.level].title,
+      "Noticed": lastResult.notes.join("\n"), "Consent to hold this information": "Yes" };
+    visible().forEach(function(q){ if (ans[q.id] !== undefined) data[q.label] = T.q[q.id].o[ans[q.id]]; });
+    var btn = f.querySelector('button[type="submit"]'), label = btn.textContent; btn.disabled = true; btn.textContent = T.lead.sending;
+    fetch(D.links.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(data) })
+      .then(function(){ f.outerHTML = '<div class="bfq-sent"><div class="bfq-badge" aria-hidden="true">' + svg("heart", 44) + "</div><p>" + esc(T.lead.thanks) + "</p></div>"; })
+      .catch(function(){ err.hidden = false; btn.disabled = false; btn.textContent = label; });
+  });
   function result(){
     var notes = { urgent: [], help: [] }, tips = [], level = "ok";
     visible().forEach(function(q){ if (q.id === "age" || ans[q.id] === undefined) return;
@@ -125,7 +154,10 @@
       (list.length ? '<h3>' + esc(T.noticed) + '</h3><ul class="bfq-notes">' + list.map(function(n, i){ return '<li style="--i:' + i + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
       (tips.length ? '<h3>' + esc(T.goodToKnow) + '</h3><ul class="bfq-notes bfq-tips">' + tips.map(function(n, i){ return '<li style="--i:' + (i + list.length) + '">' + esc(n) + "</li>"; }).join("") + "</ul>" : "") +
       (R.extra ? '<p class="bfq-999">' + esc(R.extra) + "</p>" : "") + (R.after ? "<p>" + esc(R.after) + "</p>" : "") +
-      '<p class="bfq-ctas"><a class="btn btn-clay" href="' + href + '"' + ext + ">" + esc(R.cta) + '</a><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p></div>");
+      (level === "ok" || !D.links.endpoint ?
+        '<p class="bfq-ctas"><a class="btn btn-clay" href="' + href + '"' + ext + ">" + esc(R.cta) + '</a><button type="button" class="btn btn-line" data-restart>' + esc(T.restart) + "</button></p>" :
+        leadForm()) + "</div>");
+    lastResult = { level: level, notes: list };
   }
   box.addEventListener("click", function(e){
     var b = e.target.closest("button"); if (!b) return;

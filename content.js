@@ -1800,20 +1800,20 @@ window.SITE.ru.consult = {
    Britain recommends). Statuses: "ok", "help" (worth a consultation), "urgent" (midwife/GP/111 today).
    Age groups: 0 = 0–2 days, 1 = 3–4 days, 2 = 5–6 days, 3 = 1–4 weeks, 4 = 1–3 months, 5 = over 3 months. */
 window.SITE.bfCheck = [
-  { id: "age", icon: "baby", type: "age" },
-  { id: "feel", icon: "heart", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "ok", "help", "help"] },
-  { id: "shape", icon: "drop", optIcons: ["round", "lipstick", "whitetip"], ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
-  { id: "suck", icon: "wave", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help", "help"], okAges: { 1: [0] } },
-  { id: "feeds", icon: "clock", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"], okAges: { 1: [0], 2: [0] }, tips: { 0: [0, 1] } },
-  { id: "length", icon: "timer", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
-  { id: "wet", icon: "nappy", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
-  { id: "dirty", icon: "nappy", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
-  { id: "cues", icon: "face", ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
-  { id: "after", icon: "smile", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"], okAges: { 1: [0, 1] }, tips: { 1: [0, 1] } },
-  { id: "sleepy", icon: "moon", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
-  { id: "skin", icon: "sun", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
-  { id: "breasts", icon: "drop", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
-  { id: "topup", icon: "bottle", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help"] }
+  { id: "age", label: "Baby's age", icon: "baby", type: "age" },
+  { id: "feel", label: "Comfort", icon: "heart", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "ok", "help", "help"] },
+  { id: "shape", label: "Nipple after feeds", icon: "drop", optIcons: ["round", "lipstick", "whitetip"], ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"] },
+  { id: "suck", label: "Sucking and swallowing", icon: "wave", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help", "help"], okAges: { 1: [0] } },
+  { id: "feeds", label: "Feeds in 24 hours", icon: "clock", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"], okAges: { 1: [0], 2: [0] }, tips: { 0: [0, 1] } },
+  { id: "length", label: "Feed length", icon: "timer", ages: [0, 1, 2, 3, 4], s: ["ok", "help", "help"] },
+  { id: "wet", label: "Wet nappies in 24 hours", icon: "nappy", type: "wet", ages: [0, 1, 2, 3, 4, 5], values: [0, 1, 3, 5, 6], need: [1, 3, 5, 6, 6, 6] },
+  { id: "dirty", label: "Dirty nappies", icon: "nappy", ages: [2, 3], s: ["ok", "urgent", "urgent"] },
+  { id: "cues", label: "When the breast is offered", icon: "face", ages: [0, 1, 2, 3, 4], s: ["ok", "ok"], tips: { 1: [0, 1, 2, 3, 4] } },
+  { id: "after", label: "Baby after feeds", icon: "smile", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "help"], okAges: { 1: [0, 1] }, tips: { 1: [0, 1] } },
+  { id: "sleepy", label: "Alertness at feeds", icon: "moon", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "skin", label: "Skin colour", icon: "sun", ages: [0, 1, 2, 3], s: ["ok", "urgent"] },
+  { id: "breasts", label: "Breasts", icon: "drop", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help", "urgent"] },
+  { id: "topup", label: "Topping up", icon: "bottle", ages: [0, 1, 2, 3, 4, 5], s: ["ok", "help"] }
 ];
 
 window.SITE.en.nav["breastfeeding-check"] = "Breastfeeding check";
@@ -1829,6 +1829,11 @@ window.SITE.en.bfc = {
   restart: "Start again",
   noticed: "What I noticed",
   goodToKnow: "Good to know",
+  lead_: { title: "Would you like me to look at this with you?", text: "Leave your details and I'll get in touch. Your answers will come to me too, so we don't start from scratch.",
+    name: "Your name", phone: "Phone", email: "Email", contact: "How should I contact you?", contactO: ["WhatsApp", "Telegram", "Phone call", "Email"],
+    consent: "I agree to Anna Pifko keeping my details and these answers, including health information about me and my baby, to contact me about breastfeeding support. I can withdraw this at any time.",
+    privacy: "Privacy notice", send: "Send my answers to Anna", sending: "Sending…", thanks: "Thank you. Your answers have reached me and I'll be in touch soon, usually the same day.",
+    error: "Something went wrong and your answers were not sent. Please try again, or message me on WhatsApp.", or: "Or book a consultation directly" },
   firstDays: { title: "Your baby is in the first days", text: "A newborn's tummy is tiny, so small, frequent feeds are exactly right.", cont: "Continue",
     sizes: [{ d: "Day 1", s: "a cherry", ml: "about 5–7 ml" }, { d: "Day 3", s: "a walnut", ml: "about 22–27 ml" }, { d: "Day 7", s: "an apricot", ml: "about 45–60 ml" }],
     points: ["Colostrum, the first milk, comes in small amounts and is very concentrated. It's all your baby needs.", "Feeding very often, even every hour or two, is normal and helps your milk come in, usually around day 3.", "Offer the breast at early hunger signs: stirring, rooting, hands to mouth. Crying is a late sign."] },
@@ -1909,6 +1914,11 @@ window.SITE.ru.bfc = {
   restart: "Пройти заново",
   noticed: "На что я обратила внимание",
   goodToKnow: "Полезно знать",
+  lead_: { title: "Хочешь, чтобы я разобралась в этом вместе с тобой?", text: "Оставь свои контакты, и я с тобой свяжусь. Твои ответы тоже придут ко мне, чтобы нам не начинать с нуля.",
+    name: "Твоё имя", phone: "Телефон", email: "Email", contact: "Как с тобой связаться?", contactO: ["WhatsApp", "Telegram", "Звонок", "Email"],
+    consent: "Я согласна, чтобы Анна Пифко хранила мои контакты и эти ответы, включая сведения о моём здоровье и здоровье малыша, чтобы связаться со мной по поводу поддержки ГВ. Я могу отозвать это согласие в любой момент.",
+    privacy: "Политика конфиденциальности", send: "Отправить ответы Анне", sending: "Отправляю…", thanks: "Спасибо! Твои ответы у меня, я скоро свяжусь с тобой, обычно в тот же день.",
+    error: "Что-то пошло не так, и ответы не отправились. Попробуй ещё раз или напиши мне в WhatsApp.", or: "Или сразу записаться на консультацию" },
   firstDays: { title: "У малыша первые дни жизни", text: "Желудочек новорождённого крошечный, поэтому маленькие и частые кормления — именно то, что нужно.", cont: "Продолжить",
     sizes: [{ d: "1-й день", s: "вишня", ml: "около 5–7 мл" }, { d: "3-й день", s: "грецкий орех", ml: "около 22–27 мл" }, { d: "7-й день", s: "абрикос", ml: "около 45–60 мл" }],
     points: ["Молозиво — первое молоко — приходит маленькими порциями и очень концентрированное. Это всё, что нужно малышу.", "Очень частые кормления, даже каждые час-два, — это нормально и помогает молоку прийти, обычно примерно на 3-й день.", "Предлагай грудь при ранних признаках голода: шевелится, ищет грудь, тянет руки ко рту. Плач — поздний признак."] },

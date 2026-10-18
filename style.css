@@ -450,3 +450,10 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;heig
 .bfq-tum span{font-size:15px}
 .bfq-tum small{color:var(--muted);font-size:13px}
 .bfq-opt-ic{width:56px;height:56px}
+.bfq-lead{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.bfq-lead h3{margin:0 0 6px;font-size:20px}
+.bfq-lead .form-grid{margin-top:12px}
+.bfq-lead input[type=text],.bfq-lead input[type=email],.bfq-lead input[type=tel]{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid #D9D2CE;border-radius:10px;padding:11px 14px;min-height:46px}
+.bfq-consent{margin-top:16px!important;font-size:15px!important}
+.bfq-sent{margin-top:22px;padding:22px;border-radius:16px;background:var(--blush);text-align:center}
+.bfq-sent .bfq-badge{color:var(--clay)}

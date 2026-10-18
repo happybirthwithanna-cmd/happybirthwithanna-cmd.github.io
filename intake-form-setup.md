@@ -95,3 +95,14 @@ can carry the same link (Workflows).
 
 The new client form (/intake) is now for families who have paid their deposit: send them
 that link with your deposit confirmation.
+
+## Breastfeeding check answers (added 18 Oct)
+
+When the breastfeeding check (happybirth-doula.co.uk/breastfeeding-check) gives "worth a
+closer look" or "speak to your midwife", the mum can leave her name, phone, email and
+preferred contact. Her details, every answer and what the check noticed go to a
+**Breastfeeding checks** tab, and you get an email titled "Breastfeeding check: name".
+
+This needs the latest **intake-sheet-script.gs** pasted in, then **Deploy → Manage
+deployments → pencil → Version: New version → Deploy**. The tab is created automatically
+with the first answer.
