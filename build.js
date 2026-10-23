@@ -237,6 +237,7 @@ const BODY = {
 <section class="sec sand"><div class="wrap">
   <h2>${esc(H.servicesTitle)}</h2>
   <div class="cards4">${H.services.map((s) => `<a class="card-link" href="${href(lang, lang, s.page)}"><span class="from">${esc(s.from)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p><span class="more">${esc(T.ui.readMore)} →</span></a>`).join("")}</div>
+  ${H.bfPromo ? `<a class="bfq-promo" href="${href(lang, lang, "breastfeeding-check")}"><span>${esc(H.bfPromo)}</span><b>→</b></a>` : ""}
 </div></section>
 
 <section class="sec"><div class="wrap two">
@@ -501,11 +502,13 @@ function bfCheckPage(lang) {
   </div>
   <script type="application/json" id="bfq-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
 </div></section>
+<section class="sec"><div class="wrap narrow"><h2>${esc(P.latchTitle)}</h2><ul class="ticks big">${li(P.latch)}</ul></div></section>
 <section class="sec"><div class="wrap narrow"><h2>${esc(P.firstTitle)}</h2><ul class="ticks big">${li(P.first)}</ul>${cueStrip(lang)}</div></section>
 <section class="sec sand"><div class="wrap two">
   <div><h2>${esc(P.signsTitle)}</h2><ul class="ticks">${li(P.signs)}</ul></div>
   <div><h2>${esc(P.helpTitle)}</h2><ul class="dots">${li(P.helpList)}</ul><p class="small"><b>${esc(P.helpline)}</b></p></div>
 </div></section>
+<section class="sec"><div class="wrap narrow"><h2>${esc(P.faq.title)}</h2><div class="faq">${P.faq.items.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</div></div></section>
 <section class="sec tight"><div class="wrap narrow"><p class="small muted">${esc(P.disclaimer)} ${esc(P.sources)}</p></div></section>
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
 }
@@ -548,6 +551,7 @@ function jsonLd(lang, page, o = {}) {
   if (page !== "home") graph.push({ "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: T.nav.home, item: absUrl(lang, "home") },
     { "@type": "ListItem", position: 2, name: T.nav[page], item: absUrl(lang, page) }] });
+  if (page === "breastfeeding-check" && T.bfc) graph.push({ "@type": "FAQPage", mainEntity: T.bfc.faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
   if (page === "home" || page === "about") graph.push({ "@type": "FAQPage", mainEntity: T.faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
   const svc = T[page] && T[page].services;
   if (svc && page !== "home") svc.forEach((s) => {
