@@ -65,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "breastfeeding-check", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("");
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "breastfeeding-check", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("") + `<li><a href="/birth-plan">${esc(T.nav.birthPlan || "Birth plan template")}</a></li>`;
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -264,7 +264,7 @@ ${ctaBand(lang, H.ctaTitle, H.ctaText)}`;
     const T = SITE[lang], P = T.pregnancy;
     return `${pageHead(lang, P, "pregnancy")}
 <section class="sec tight"><div class="wrap">${stats(P.stats, "stats-row")}</div></section>
-<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}</div></section>
+<section class="sec"><div class="wrap"><h2>${esc(P.servicesTitle)}</h2>${serviceCards(lang, P.services)}${P.birthPlanPromo ? `<a class="bfq-promo" href="/birth-plan"><span>${esc(P.birthPlanPromo)}</span><b>→</b></a>` : ""}</div></section>
 <section class="sec sand"><div class="wrap narrow"><h2>${esc(P.curriculumTitle)}</h2><ul class="ticks cols2">${P.curriculum.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></section>
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
@@ -630,7 +630,7 @@ if (SITE.intakeForm) for (const lang of ["en", "ru"]) {
 // page shown for addresses that don't exist
 fs.writeFileSync(path.join(OUT, "404.html"), render("en", "home", { noindex: true, meta: { title: "Page not found | Happy Birth with Anna", description: "This page doesn’t exist." },
   body: `<section class="sec"><div class="wrap narrow center"><h1>Page not found</h1><p class="lead" style="margin-inline:auto">Sorry — this page has moved or doesn’t exist. Страница не найдена.</p><div class="btns" style="justify-content:center"><a class="btn btn-clay" href="${href("en", "en", "home")}">Go to the home page</a><a class="btn btn-line" href="${href("en", "ru", "home")}">На главную (RU)</a></div></div></section>` }));
-for (const f of ["style.css", "site.js", "CNAME", "share.jpg", "icon.png", "favicon.svg"])
+for (const f of ["style.css", "site.js", "CNAME", "share.jpg", "icon.png", "favicon.svg", "birth-plan.html", "jspdf.umd.min.js"])
   if (fs.existsSync(path.join(ROOT, f))) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
 if (fs.existsSync(path.join(ROOT, "images"))) {
   fs.mkdirSync(path.join(OUT, "images"), { recursive: true });
@@ -660,6 +660,7 @@ for (const e of ENTRIES) {
   if (alts.length > 1) sm += `<xhtml:link rel="alternate" hreflang="en-GB" href="${absUrl("en", e.page)}"/><xhtml:link rel="alternate" hreflang="ru" href="${absUrl("ru", e.page)}"/>`;
   sm += `</url>\n`;
 }
+sm += `  <url><loc>${D}/birth-plan</loc><lastmod>${today}</lastmod></url>\n`;
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), sm + "</urlset>\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${D}/sitemap.xml\n`);
 console.log("Built", ENTRIES.length, "pages into", path.basename(OUT));

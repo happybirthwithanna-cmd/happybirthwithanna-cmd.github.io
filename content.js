@@ -2007,3 +2007,8 @@ window.SITE.ru.bfc.latchTitle = "Признаки правильного при�
 window.SITE.ru.bfc.latch = ["Ротик широко открыт, сначала к груди прикасается подбородок, носик свободен.", "Над верхней губой видно больше тёмной кожи вокруг соска, чем под нижней.", "Щёчки остаются круглыми, а не втягиваются.", "Глубокие ритмичные сосательные движения с паузами, слышны или видны глотки.", "Через первые 10 секунд кормить комфортно.", "Сосок после кормления такой же формы, как до него."];
 window.SITE.en.home.bfPromo = "Free 2-minute breastfeeding check: is your baby latching well and getting enough milk?";
 window.SITE.ru.home.bfPromo = "Бесплатный тест по ГВ за 2 минуты: правильно ли малыш берёт грудь и хватает ли ему молока?";
+
+window.SITE.en.pregnancy.birthPlanPromo = "Free birth plan template: tap your preferences and download a PDF for your midwife";
+window.SITE.ru.pregnancy.birthPlanPromo = "Бесплатный шаблон плана родов (на английском): отметь свои пожелания и скачай PDF для акушерки";
+window.SITE.en.nav.birthPlan = "Birth plan template";
+window.SITE.ru.nav.birthPlan = "Шаблон плана родов";
