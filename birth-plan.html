@@ -452,7 +452,7 @@ $("#logoDel").addEventListener("click",()=>{setLogo("");mark("logo")});
 const K={yes:"#27455c",no:"#c4647a",ask:"#a0741c",ink:"#2b2228",mut:"#7d6c74",line:"#e6d8dc",wash:"#f8eef0"};
 function wrap(ctx,text,maxW){const out=[];String(text).split("\n").forEach(par=>{let line="";par.split(/\s+/).forEach(w=>{const t=line?line+" "+w:w;if(line&&ctx.measureText(t).width>maxW){out.push(line);line=w}else line=t});out.push(line)});return out}
 async function buildPages(){
-  const p=P(), W=1654, H=2339, mm=W/210, M=15*mm, IW=W-2*M;
+  const p=P(), W=2480, H=3508, mm=W/210, M=15*mm, IW=W-2*M;
   const F=(w,s,it)=>(it?"italic 400":w)+" "+(s*mm)+"px Jost,Helvetica,Arial,sans-serif", D=s=>"500 "+(s*mm)+"px Jost,Helvetica,Arial,sans-serif";
   try{await Promise.all([document.fonts.load("400 20px Jost"),document.fonts.load("500 20px Jost"),document.fonts.load("600 20px Jost"),document.fonts.load("italic 400 20px Jost")])}catch(e){}
   const pages=[]; let ctx,y;
@@ -512,7 +512,7 @@ $("#pdfBtn").addEventListener("click",async()=>{
 $("#closeBtn").addEventListener("click",()=>{$("#sheet").hidden=true});
 $("#saveBtn").addEventListener("click",async()=>{
   try{const pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",compress:true});
-    lastPages.forEach((c,i)=>{if(i)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",.92),"JPEG",0,0,210,297)});
+    lastPages.forEach((c,i)=>{if(i)pdf.addPage();pdf.addImage(c.toDataURL("image/png"),"PNG",0,0,210,297,undefined,"FAST")});
     const nm=(P().name||"client").replace(/[^\p{L}\p{N} _-]/gu,"").trim()||"client";
     pdf.save("Birth preferences - "+nm+".pdf");
     $("#sheetMsg").textContent="Downloaded. Look in your Downloads folder, or in Files on a phone.";
