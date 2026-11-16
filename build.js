@@ -128,7 +128,7 @@ function serviceCards(lang, list) {
     <h3>${esc(s.name)}</h3>
     <p class="price">${esc(s.price || T.ui.priceOnRequest)}</p>
     ${s.who && s.who.length ? `<p class="lbl">${esc(T.ui.whoFor)}</p><ul class="dots">${s.who.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
-    ${s.includes && s.includes.length ? `<p class="lbl">${esc(T.ui.includes)}</p><ul class="ticks">${s.includes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+    ${s.includes && s.includes.length ? `<p class="lbl">${esc(T.ui.includes)}</p><ul class="ticks">${s.includes.map((x) => `<li>${esc(x).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</li>`).join("")}</ul>` : ""}
     <div class="svc-foot"><a class="btn btn-clay btn-sm" href="${S.calendly}" target="_blank" rel="noopener">${esc(T.ui.bookService)}</a>${s.payLink ? `<a class="btn btn-line btn-sm" href="${s.payLink}" target="_blank" rel="noopener">${esc(T.ui.payNow)}</a>` : ""}</div>
   </article>`).join("")}</div>`;
 }
