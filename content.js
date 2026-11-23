@@ -2012,3 +2012,29 @@ window.SITE.en.pregnancy.birthPlanPromo = "Free birth plan template: tap your pr
 window.SITE.ru.pregnancy.birthPlanPromo = "Бесплатный шаблон плана родов (на английском): отметь свои пожелания и скачай PDF для акушерки";
 window.SITE.en.nav.birthPlan = "Birth plan template";
 window.SITE.ru.nav.birthPlan = "Шаблон плана родов";
+
+/* Monthly family support after the postnatal weeks (added Nov 2026) */
+(function(){
+  var en = { tag: "Monthly support", name: "Monthly family support", price: "£150 / month",
+    who: ["Families after the first postnatal weeks, as your baby grows", "Parents who want someone to turn to between health visitor checks"],
+    includes: [
+      "Each month we choose the focus together: one area to work on, a bigger challenge to solve, or simply staying in touch",
+      "Sleep and daily routines, feeding, starting solids and baby massage",
+      "Next steps for your baby's age and stage, and help telling what's typical from what's worth checking with your health visitor or GP",
+      "Books, resources and trusted professionals, chosen for your baby's age and for where you are as a parent",
+      "Ongoing access to me by message",
+      "Complements your health visitor and GP, and never replaces them"
+    ] };
+  var ru = { tag: "Поддержка", name: "Ежемесячное сопровождение семьи", price: "£150 в месяц",
+    who: ["Семьям после первых послеродовых недель, пока малыш растёт", "Родителям, которым нужен человек, к которому можно обратиться между визитами патронажной сестры"],
+    includes: [
+      "Каждый месяц вместе выбираем фокус: одна тема, большая задача или просто поддержка на связи",
+      "Сон и режим дня, кормление, прикорм и детский массаж",
+      "Следующие шаги по возрасту и этапу развития малыша и помощь отличить норму от того, что стоит показать патронажной сестре или GP",
+      "Книги, материалы и проверенные специалисты — с учётом возраста малыша и того, где ты сейчас как родитель",
+      "Постоянная связь со мной в мессенджере",
+      "Дополняет наблюдение у патронажной сестры и GP, но не заменяет его"
+    ] };
+  window.SITE.en.postnatal.services.splice(1, 0, en);
+  window.SITE.ru.postnatal.services.splice(1, 0, ru);
+})();
