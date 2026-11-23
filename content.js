@@ -2041,7 +2041,9 @@ window.SITE.ru.nav.birthPlan = "Шаблон плана родов";
 
 /* ======================= COACHING (/coaching, /ru/coaching) ======================= */
 window.SITE.settings.coachingInstagram = "anna_psy_and_coach";
-window.SITE.settings.coachingBooking = "";   // optional booking link (e.g. a Calendly coaching event)
+window.SITE.settings.coachingBooking = "";
+// Contact buttons (WhatsApp/Telegram) at the bottom of the coaching page: switch on with true when ready
+window.SITE.settings.coachingContact = false;   // optional booking link (e.g. a Calendly coaching event)
 
 window.SITE.en.nav.coaching = "Coaching";
 window.SITE.en.meta.coaching = { title: "Coaching Online in English or Russian | Anna Pifko", description: "One-to-one coaching online with Anna Pifko: for stress, burnout, big decisions, self-worth and life changes such as becoming a parent. Gestalt-informed, EMCC and BPS ethics. English and Russian." };

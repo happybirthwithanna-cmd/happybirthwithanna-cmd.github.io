@@ -355,11 +355,11 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
 <section class="sec"><div class="wrap"><h2>${esc(P.casesTitle)}</h2>${cases}</div></section>
 <section class="sec sand"><div class="wrap"><h2>${esc(P.reviewsTitle)}</h2>${reviews}</div></section>
 <section class="sec"><div class="wrap narrow"><h2>${esc(P.notTitle)}</h2><p>${esc(P.not)}</p></div></section>
-<section class="cta-band"><div class="wrap cta-inner">
+${S.coachingContact ? `<section class="cta-band"><div class="wrap cta-inner">
   <div><h2>${esc(P.ctaTitle)}</h2><p>${esc(P.ctaText)}</p></div>
   <div class="cta-btns">${book}<a class="btn ${book ? "btn-ghost-light" : "btn-cream"}" href="${wa()}" target="_blank" rel="noopener">${esc(T.ui.whatsapp)}</a>
   <a class="btn btn-ghost-light" href="${tg()}" target="_blank" rel="noopener">${esc(T.ui.telegram)}</a></div>
-</div></section>`;
+</div></section>` : ""}`;
   },
 
   mentoring(lang) {
