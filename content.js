@@ -2128,8 +2128,8 @@ window.SITE.ru.coaching = {
 };
 
 /* front page: coaching option in the chooser */
-window.SITE.en.home.choose.splice(4, 0, { text: "I’d like coaching for a decision or change in my life", page: "coaching" });
-window.SITE.ru.home.choose.splice(4, 0, { text: "Мне нужен коучинг: важное решение или перемены в жизни", page: "coaching" });
+window.SITE.en.home.choose.splice(4, 0, { text: "I want adult coaching", page: "coaching" });
+window.SITE.ru.home.choose.splice(4, 0, { text: "Хочу коучинг для взрослых", page: "coaching" });
 
 /* about page: coaching */
 window.SITE.en.about.paragraphs.splice(1, 0, "After my psychology degree I also began working as a coach, to bring evidence-based approaches to adults facing big decisions and changes. My coaching is Gestalt-informed and follows the EMCC and BPS codes of ethics.");
