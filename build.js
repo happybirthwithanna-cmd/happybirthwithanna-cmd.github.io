@@ -13,7 +13,7 @@ const win = {};
 new Function("window", fs.readFileSync(path.join(ROOT, "content.js"), "utf8"))(win);
 const SITE = win.SITE, S = SITE.settings, D = S.domain;
 
-const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "payment", "privacy", "contact"];
+const PAGES = ["home", "pregnancy", "postnatal", "children", "adults", "mentoring", "coaching", "about", "team", "reviews", "payment", "privacy", "contact"];
 const NAV = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "reviews", "articles", "contact"];
 const PARTNERS = SITE.partners || [];
 const ARTICLES = SITE.articles || [];
@@ -65,7 +65,7 @@ function header(lang, page, alts = ["en", "ru"]) {
 
 function footer(lang) {
   const T = SITE[lang];
-  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "breastfeeding-check", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("") + `<li><a href="/birth-plan">${esc(T.nav.birthPlan || "Birth plan template")}</a></li>`;
+  const ex = ["pregnancy", "postnatal", "children", "adults", "mentoring", "about", "team", "reviews", "articles", "payment", "privacy", "contact", "coaching", "breastfeeding-check", "consultation", "intake"].map((p) => `<li><a href="${href(lang, lang, p)}">${esc(T.nav[p])}</a></li>`).join("") + `<li><a href="/birth-plan">${esc(T.nav.birthPlan || "Birth plan template")}</a></li>`;
   const land = landIn(lang).map((l) => `<li><a href="${href(lang, lang, l.slug)}">${esc(l[lang].h1)}</a></li>`).join("");
   return `<div class="rebozo" aria-hidden="true"></div>
 <footer class="foot">
@@ -335,6 +335,33 @@ ${partnersBand(lang)}
 ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   },
 
+  coaching(lang) {
+    const T = SITE[lang], P = T.coaching, li = (a) => a.map((x) => `<li>${esc(x)}</li>`).join("");
+    const insta = S.coachingInstagram ? `<p class="more-link"><a href="https://www.instagram.com/${S.coachingInstagram}/" target="_blank" rel="noopener">${esc(P.instaText)}: @${esc(S.coachingInstagram)} →</a></p>` : "";
+    const cases = P.cases.length
+      ? `<div class="team">${P.cases.map((c, i) => `<article class="person"><p class="tag">${esc(P.caseLabel)} ${i + 1}</p><h3>${esc(c.title)}</h3>${(c.text || []).map((p) => `<p>${esc(p)}</p>`).join("")}</article>`).join("")}</div>`
+      : `<p class="muted center">${esc(P.casesEmpty)}</p>`;
+    const reviews = P.reviews.length ? reviewCards(lang, P.reviews) : `<p class="muted center">${esc(P.reviewsEmpty)}</p>`;
+    const book = S.coachingBooking ? `<a class="btn btn-cream" href="${S.coachingBooking}" target="_blank" rel="noopener">${esc(T.ui.book)}</a>` : "";
+    return `${pageHead(lang, P, "anna-about")}
+<section class="sec"><div class="wrap two">
+  <div><h2>${esc(P.topicsTitle)}</h2><ul class="ticks big">${li(P.topics)}</ul></div>
+  <div><h2>${esc(P.howTitle)}</h2>${P.how.map((p) => `<p>${esc(p)}</p>`).join("")}${insta}</div>
+</div></section>
+<section class="sec sand"><div class="wrap"><h2>${esc(P.packageTitle)}</h2>
+  <div class="svc-grid">${P.packages.map((k) => `<article class="svc"><h3>${esc(k.name)}</h3><p class="price">${esc(k.price)}</p><p>${esc(k.text)}</p></article>`).join("")}</div>
+  <p class="small muted note-under">${esc(P.packageNote)}</p>
+</div></section>
+<section class="sec"><div class="wrap"><h2>${esc(P.casesTitle)}</h2>${cases}</div></section>
+<section class="sec sand"><div class="wrap"><h2>${esc(P.reviewsTitle)}</h2>${reviews}</div></section>
+<section class="sec"><div class="wrap narrow"><h2>${esc(P.notTitle)}</h2><p>${esc(P.not)}</p></div></section>
+<section class="cta-band"><div class="wrap cta-inner">
+  <div><h2>${esc(P.ctaTitle)}</h2><p>${esc(P.ctaText)}</p></div>
+  <div class="cta-btns">${book}<a class="btn ${book ? "btn-ghost-light" : "btn-cream"}" href="${wa()}" target="_blank" rel="noopener">${esc(T.ui.whatsapp)}</a>
+  <a class="btn btn-ghost-light" href="${tg()}" target="_blank" rel="noopener">${esc(T.ui.telegram)}</a></div>
+</div></section>`;
+  },
+
   mentoring(lang) {
     const T = SITE[lang], P = T.mentoring;
     return `${pageHead(lang, P, "anna-about")}
@@ -351,7 +378,7 @@ ${ctaBand(lang, P.ctaTitle, P.ctaText)}`;
   <div><p class="eyebrow">${esc(P.eyebrow)}</p><h1>${esc(P.h1)}</h1><p class="lead">${esc(P.lead)}</p></div>
   ${fs.existsSync(path.join(ROOT, "images", "anna-about.jpg")) ? img(lang, "anna-about", P.photoAlt, "arch arch-sm") : ""}
 </div></section>
-<section class="sec"><div class="wrap narrow story">${P.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>
+<section class="sec"><div class="wrap narrow story">${P.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}${P.coachingLink ? `<p class="more-link"><a href="${href(lang, lang, "coaching")}">${esc(P.coachingLink)} →</a></p>` : ""}</div></section>
 <section class="sec exp"><div class="wrap narrow center">
   <h2>${esc(T.home.experienceTitle)}</h2>
   <p class="lead-sm">${esc(T.home.experienceLead)}</p>

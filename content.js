@@ -2038,3 +2038,101 @@ window.SITE.ru.nav.birthPlan = "Шаблон плана родов";
   window.SITE.en.postnatal.services.splice(1, 0, en);
   window.SITE.ru.postnatal.services.splice(1, 0, ru);
 })();
+
+/* ======================= COACHING (/coaching, /ru/coaching) ======================= */
+window.SITE.settings.coachingInstagram = "anna_psy_and_coach";
+window.SITE.settings.coachingBooking = "";   // optional booking link (e.g. a Calendly coaching event)
+
+window.SITE.en.nav.coaching = "Coaching";
+window.SITE.en.meta.coaching = { title: "Coaching Online in English or Russian | Anna Pifko", description: "One-to-one coaching online with Anna Pifko: for stress, burnout, big decisions, self-worth and life changes such as becoming a parent. Gestalt-informed, EMCC and BPS ethics. English and Russian." };
+window.SITE.en.coaching = {
+  eyebrow: "Coaching",
+  h1: "Coaching for big decisions and changes",
+  lead: "One-to-one coaching online, in English or Russian, for when you feel stuck, overloaded or at a crossroads, and want to move forward in a way that fits you.",
+  topicsTitle: "What we can work on",
+  topics: [
+    "Stress, overload and burnout",
+    "A big decision you keep putting off, at work or at home",
+    "Self-worth, confidence and saying what you really think",
+    "Relationships and setting boundaries",
+    "Life changes: becoming a parent, returning to work, moving country",
+    "Feeling stuck or not progressing at work",
+    "Priorities, energy and making time for yourself"
+  ],
+  howTitle: "How I work",
+  how: [
+    "My coaching is informed by the Gestalt approach: we work with what is happening for you now, notice what holds you back, and try new ways of acting in small, concrete steps.",
+    "Behind it are a First Class BSc in Psychology with Child Development, research experience in psychology, and ten years of supporting families through some of the biggest changes of their lives as a doula.",
+    "I follow the EMCC and BPS codes of ethics. Everything you share stays confidential."
+  ],
+  packageTitle: "Sessions and prices",
+  packages: [
+    { name: "Six-session package", text: "A clear goal, six sessions and a review at the end. Many people continue afterwards.", price: "£10 per session (founding offer, usually £60)" },
+    { name: "Ongoing coaching", text: "Open-ended sessions at your pace, once you know you want to keep going.", price: "On request" }
+  ],
+  packageNote: "All sessions are online, in English or Russian.",
+  notTitle: "What coaching is not",
+  not: "Coaching is not therapy or treatment. I do not diagnose, treat mental health conditions or advise on medication. If you are struggling with your mental health, your GP or a registered therapist is the right first step, and I am happy to help you think about where to go.",
+  casesTitle: "Coaching results",
+  casesEmpty: "Anonymised case stories will appear here, shared with clients' permission and in line with the EMCC code of ethics.",
+  caseLabel: "Coaching results · case",
+  reviewsTitle: "What clients say",
+  reviewsEmpty: "Reviews from coaching clients will appear here.",
+  cases: [],
+  reviews: [],
+  instaText: "More about my approach on Instagram",
+  ctaTitle: "Would you like to start?",
+  ctaText: "Write to me and tell me a little about what you would like to change. We will see together whether coaching is right for you."
+};
+
+window.SITE.ru.nav.coaching = "Коучинг";
+window.SITE.ru.meta.coaching = { title: "Психологический коучинг онлайн на русском — Анна Пифко", description: "Индивидуальный коучинг онлайн с Анной Пифко: стресс, выгорание, важные решения, самоценность и перемены в жизни, например рождение ребёнка или переезд. Гештальт-подход, этика EMCC и BPS. На русском и английском." };
+window.SITE.ru.coaching = {
+  eyebrow: "Коучинг",
+  h1: "Коучинг для важных решений и перемен",
+  lead: "Индивидуальный коучинг онлайн на русском или английском — когда чувствуешь, что застряла, перегружена или стоишь на распутье и хочешь двигаться дальше так, как подходит именно тебе.",
+  topicsTitle: "С чем можно прийти",
+  topics: [
+    "Стресс, перегрузка и выгорание",
+    "Важное решение, которое всё время откладывается, — на работе или дома",
+    "Самоценность, уверенность и умение говорить, что думаешь",
+    "Отношения и личные границы",
+    "Перемены в жизни: рождение ребёнка, выход на работу, переезд в другую страну",
+    "Ощущение, что застряла или не растёшь в работе",
+    "Приоритеты, энергия и время для себя"
+  ],
+  howTitle: "Как я работаю",
+  how: [
+    "Мой коучинг опирается на гештальт-подход: мы работаем с тем, что происходит с тобой сейчас, замечаем, что тебя сдерживает, и пробуем новые способы действовать маленькими конкретными шагами.",
+    "За этим стоят диплом бакалавра психологии с отличием (BSc Psychology with Child Development), опыт научной работы в психологии и десять лет сопровождения семей в самые большие перемены их жизни в роли доулы.",
+    "Я следую этическим кодексам EMCC и BPS. Всё, чем ты делишься, остаётся конфиденциальным."
+  ],
+  packageTitle: "Сессии и стоимость",
+  packages: [
+    { name: "Пакет из шести сессий", text: "Чёткая цель, шесть сессий и подведение итогов в конце. Многие продолжают и после.", price: "£10 за сессию (стартовое предложение, обычно £60)" },
+    { name: "Длительный коучинг", text: "Сессии без ограничения по количеству, в твоём темпе, когда понятно, что хочется продолжать.", price: "По запросу" }
+  ],
+  packageNote: "Все сессии онлайн, на русском или английском.",
+  notTitle: "Чем коучинг не является",
+  not: "Коучинг — это не терапия и не лечение. Я не ставлю диагнозы, не работаю с психиатрическими состояниями и не даю советов по лекарствам. Если тебе тяжело с психическим здоровьем, правильный первый шаг — GP или зарегистрированный терапевт, и я помогу подумать, куда обратиться.",
+  casesTitle: "Результаты коучинга",
+  casesEmpty: "Здесь появятся анонимные истории клиентов — с их согласия и в соответствии с этическим кодексом EMCC.",
+  caseLabel: "Результаты коучинга · кейс №",
+  reviewsTitle: "Отзывы клиентов",
+  reviewsEmpty: "Здесь появятся отзывы клиентов коучинга.",
+  cases: [],
+  reviews: [],
+  instaText: "Больше о моём подходе в Instagram",
+  ctaTitle: "Хочешь начать?",
+  ctaText: "Напиши мне и расскажи немного о том, что хочется изменить. Вместе посмотрим, подходит ли тебе коучинг."
+};
+
+/* front page: coaching option in the chooser */
+window.SITE.en.home.choose.splice(4, 0, { text: "I’d like coaching for a decision or change in my life", page: "coaching" });
+window.SITE.ru.home.choose.splice(4, 0, { text: "Мне нужен коучинг: важное решение или перемены в жизни", page: "coaching" });
+
+/* about page: coaching */
+window.SITE.en.about.paragraphs.splice(1, 0, "After my psychology degree I also began working as a coach, to bring evidence-based approaches to adults facing big decisions and changes. My coaching is Gestalt-informed and follows the EMCC and BPS codes of ethics.");
+window.SITE.ru.about.paragraphs.splice(1, 0, "После диплома по психологии я начала работать и как коуч, чтобы применять подходы, основанные на доказательствах, с теми, кто стоит перед важными решениями и переменами. Мой коучинг опирается на гештальт-подход и следует этическим кодексам EMCC и BPS.");
+window.SITE.en.about.coachingLink = "About my coaching";
+window.SITE.ru.about.coachingLink = "О моём коучинге";
