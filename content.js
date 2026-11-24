@@ -2045,10 +2045,10 @@ window.SITE.settings.coachingBooking = "";
 // Contact buttons (WhatsApp/Telegram) at the bottom of the coaching page: switch on with true when ready
 window.SITE.settings.coachingContact = false;   // optional booking link (e.g. a Calendly coaching event)
 
-window.SITE.en.nav.coaching = "Coaching";
-window.SITE.en.meta.coaching = { title: "Coaching Online in English or Russian | Anna Pifko", description: "One-to-one coaching online with Anna Pifko: for stress, burnout, big decisions, self-worth and life changes such as becoming a parent. Gestalt-informed, EMCC and BPS ethics. English and Russian." };
+window.SITE.en.nav.coaching = "Wellbeing coaching";
+window.SITE.en.meta.coaching = { title: "Wellbeing and Psychology Coach Online, English or Russian | Anna Pifko", description: "One-to-one coaching online with Anna Pifko: for stress, burnout, big decisions, self-worth and life changes such as becoming a parent. Gestalt-informed, EMCC and BPS ethics. English and Russian." };
 window.SITE.en.coaching = {
-  eyebrow: "Coaching",
+  eyebrow: "Wellbeing and psychology coach",
   h1: "Coaching for big decisions and changes",
   lead: "One-to-one coaching online, in English or Russian, for when you feel stuck, overloaded or at a crossroads, and want to move forward in a way that fits you.",
   topicsTitle: "What we can work on",
@@ -2087,10 +2087,10 @@ window.SITE.en.coaching = {
   ctaText: "Write to me and tell me a little about what you would like to change. We will see together whether coaching is right for you."
 };
 
-window.SITE.ru.nav.coaching = "Коучинг";
-window.SITE.ru.meta.coaching = { title: "Психологический коучинг онлайн на русском — Анна Пифко", description: "Индивидуальный коучинг онлайн с Анной Пифко: стресс, выгорание, важные решения, самоценность и перемены в жизни, например рождение ребёнка или переезд. Гештальт-подход, этика EMCC и BPS. На русском и английском." };
+window.SITE.ru.nav.coaching = "Психологический коучинг";
+window.SITE.ru.meta.coaching = { title: "Коуч по благополучию и психологии онлайн на русском — Анна Пифко", description: "Индивидуальный коучинг онлайн с Анной Пифко: стресс, выгорание, важные решения, самоценность и перемены в жизни, например рождение ребёнка или переезд. Гештальт-подход, этика EMCC и BPS. На русском и английском." };
 window.SITE.ru.coaching = {
-  eyebrow: "Коучинг",
+  eyebrow: "Коуч по благополучию и психологии",
   h1: "Коучинг для важных решений и перемен",
   lead: "Индивидуальный коучинг онлайн на русском или английском — когда чувствуешь, что застряла, перегружена или стоишь на распутье и хочешь двигаться дальше так, как подходит именно тебе.",
   topicsTitle: "С чем можно прийти",
@@ -2130,11 +2130,11 @@ window.SITE.ru.coaching = {
 };
 
 /* front page: coaching option in the chooser */
-window.SITE.en.home.choose.splice(4, 0, { text: "I want adult coaching", page: "coaching" });
-window.SITE.ru.home.choose.splice(4, 0, { text: "Хочу коучинг для взрослых", page: "coaching" });
+window.SITE.en.home.choose.splice(4, 0, { text: "I’m looking for a wellbeing and psychology coach", page: "coaching" });
+window.SITE.ru.home.choose.splice(4, 0, { text: "Мне нужен коуч по благополучию и психологии", page: "coaching" });
 
 /* about page: coaching */
-window.SITE.en.about.paragraphs.splice(1, 0, "After my psychology degree I also began working as a coach, to bring evidence-based approaches to adults facing big decisions and changes. My coaching is Gestalt-informed and follows the EMCC and BPS codes of ethics.");
-window.SITE.ru.about.paragraphs.splice(1, 0, "После диплома по психологии я начала работать и как коуч, чтобы применять подходы, основанные на доказательствах, с теми, кто стоит перед важными решениями и переменами. Мой коучинг опирается на гештальт-подход и следует этическим кодексам EMCC и BPS.");
-window.SITE.en.about.coachingLink = "About my coaching";
+window.SITE.en.about.paragraphs.splice(1, 0, "After my psychology degree I also began working as a wellbeing and psychology coach, to bring evidence-based approaches to adults facing big decisions and changes. My coaching is Gestalt-informed and follows the EMCC and BPS codes of ethics.");
+window.SITE.ru.about.paragraphs.splice(1, 0, "После диплома по психологии я начала работать и как коуч по благополучию и психологии, чтобы применять подходы, основанные на доказательствах, с теми, кто стоит перед важными решениями и переменами. Мой коучинг опирается на гештальт-подход и следует этическим кодексам EMCC и BPS.");
+window.SITE.en.about.coachingLink = "About my wellbeing and psychology coaching";
 window.SITE.ru.about.coachingLink = "О моём коучинге";
